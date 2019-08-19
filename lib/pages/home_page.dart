@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../service/service_method.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -27,6 +28,26 @@ class _HomePageState extends State<HomePage> {
            child: Text(homePageContent),  
          ),
        ),
+    );
+  }
+}
+
+class SwiperDiy extends StatelessWidget {
+  final List swiperDataList;
+  SwiperDiy({Key key,this.swiperDataList}):super(key:key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 333.0,
+      child: Swiper(
+        itemBuilder: (BuildContext buildContext, int index){
+          return Image.network("${swiperDataList[index]['image']}", fit: BoxFit.fill);
+        },
+        itemCount: swiperDataList.length,
+        pagination: new SwiperPagination(),
+        autoplay: true,
+      ),
     );
   }
 }
