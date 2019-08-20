@@ -3,6 +3,7 @@ import '../service/service_method.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 // import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../components/adBanner.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -36,11 +37,13 @@ class _HomePageState extends State<HomePage> {
                var data = snapshot.data['data'];
                List <Map> swiperDataList = (data['focus'] as List).cast();
               List <Map> navigatorList = (data['kingKongAreaV4'] as List).cast();
+              String advertesPicture = data['operationCfg'][0]['picUrls'][0];
 
                return Column(
                  children: <Widget>[
                    SwiperDiy(swiperDataList: swiperDataList,),
                    TopNavigator(navigatorList:navigatorList),
+                   AdBanner(advertesPicture:advertesPicture)
                  ],
                );
              } else {
