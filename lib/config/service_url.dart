@@ -1,4 +1,4 @@
-const serviceUrl= 'xxxxxx';
+const serviceUrl= 'https://miniapp.you.163.com';
 const servicePath={
-  'homePageContext': serviceUrl+'wxmini/homePageContent', 
+  'homePageContext': serviceUrl+'/xhr/index/index.json', 
 };

@@ -24,13 +24,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Container(
        child: Scaffold(
-         appBar: AppBar(title: Text('百姓生活+')),
+         appBar: AppBar(
+           title: Text('严选', style: TextStyle(color: Colors.black),),
+           backgroundColor:Colors.white
+           ),
          body: FutureBuilder(
            future: getHomePageContent(),
            builder: (context, snapshot) {
              if(snapshot.hasData) {
-               var data = json.decode(snapshot.data.toString());
-               List <Map> swiperDataList = (data['data']['slides'] as List).cast();
+              //  var data = json.decode(snapshot.data.toString());
+               var data = snapshot.data['data']['focus'];
+               List <Map> swiperDataList = (data as List).cast();
                return Column(
                  children: <Widget>[
                    SwiperDiy(swiperDataList: swiperDataList,)
@@ -58,7 +62,7 @@ class SwiperDiy extends StatelessWidget {
       width: ScreenUtil().setWidth(750),
       child: Swiper(
         itemBuilder: (BuildContext buildContext, int index){
-          return Image.network("${swiperDataList[index]['image']}", fit: BoxFit.fill);
+          return Image.network("${swiperDataList[index]['img']}", fit: BoxFit.fill);
         },
         itemCount: swiperDataList.length,
         pagination: new SwiperPagination(),
