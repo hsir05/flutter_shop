@@ -4,6 +4,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 // import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../components/adBanner.dart';
+// import '../components/leaderPhone.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -38,12 +39,15 @@ class _HomePageState extends State<HomePage> {
                List <Map> swiperDataList = (data['focus'] as List).cast();
               List <Map> navigatorList = (data['kingKongAreaV4'] as List).cast();
               String advertesPicture = data['operationCfg'][0]['picUrls'][0];
+              // String leaderPhone = '18093189741';
+              // String leaderImage = data['operationCfg'][0]['picUrls'][0];
 
                return Column(
                  children: <Widget>[
                    SwiperDiy(swiperDataList: swiperDataList,),
                    TopNavigator(navigatorList:navigatorList),
-                   AdBanner(advertesPicture:advertesPicture)
+                   AdBanner(advertesPicture:advertesPicture),
+                  //  LeaderPhone(leaderPhone:leaderPhone, leaderImage:leaderImage)
                  ],
                );
              } else {
@@ -79,7 +83,7 @@ class SwiperDiy extends StatelessWidget {
   }
 }
 
-// 导航 kingKongAreaV4
+// icon导航
 class TopNavigator extends StatelessWidget {
   final List navigatorList;
   TopNavigator({Key key, this.navigatorList}) : super(key: key);
