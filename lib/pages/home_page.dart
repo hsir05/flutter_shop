@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import '../service/service_method.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
+import 'package:flutter_easyrefresh/material_footer.dart';
+import 'package:flutter_easyrefresh/material_header.dart';
+import '../service/service_method.dart';
 import '../components/adBanner.dart';
 import '../components/special.dart';
 // import '../components/leaderPhone.dart';
@@ -52,6 +54,8 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
               List<Map> floor3 = (data['categoryItemsV4'][2]['itemList'] as List).cast(); //楼层1商品和图片 
 
                return EasyRefresh(
+                 footer: MaterialFooter(),
+                 header: MaterialHeader(),
                  child: ListView(
                  children: <Widget>[
                    SwiperDiy(swiperDataList: swiperDataList,),
@@ -69,6 +73,9 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                   Recommend(recommendList:recomList)
                  ],
                ),
+               onRefresh: ()async{
+                  print('开始加载最新内容');
+               },
                onLoad: ()async{
                   print('开始加载更多');
                    var option={
