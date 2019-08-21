@@ -4,6 +4,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 // import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../components/adBanner.dart';
+import '../components/recommend.dart';
 // import '../components/leaderPhone.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,10 +27,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Container(
        child: Scaffold(
-         appBar: AppBar(
-           title: Text('严选', style: TextStyle(color: Colors.black),),
-           backgroundColor:Colors.white
-           ),
+        //  appBar: AppBar(
+        //    title: Text('严选', style: TextStyle(color: Colors.black),),
+        //    backgroundColor:Colors.white
+        //    ),
          body: FutureBuilder(
            future: getHomePageContent(),
            builder: (context, snapshot) {
@@ -41,14 +42,19 @@ class _HomePageState extends State<HomePage> {
               String advertesPicture = data['operationCfg'][0]['picUrls'][0];
               // String leaderPhone = '18093189741';
               // String leaderImage = data['operationCfg'][0]['picUrls'][0];
+              List <Map> recommendList = (data['timePurchaseItems']['itemList'] as List).cast();
 
-               return Column(
+               return SingleChildScrollView(
+                 child: Column(
                  children: <Widget>[
                    SwiperDiy(swiperDataList: swiperDataList,),
                    TopNavigator(navigatorList:navigatorList),
                    AdBanner(advertesPicture:advertesPicture),
                   //  LeaderPhone(leaderPhone:leaderPhone, leaderImage:leaderImage)
+                  Recommend(recommendList:recommendList),
+                  
                  ],
+               ),
                );
              } else {
                return Center(child: Text('加载中....'),);
@@ -69,7 +75,9 @@ class SwiperDiy extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Container(
-      height: ScreenUtil().setHeight(333),
+      color: Colors.white,
+      padding: EdgeInsets.only(top:20.0),
+      height: ScreenUtil().setHeight(373),
       width: ScreenUtil().setWidth(750),
       child: Swiper(
         itemBuilder: (BuildContext buildContext, int index){
