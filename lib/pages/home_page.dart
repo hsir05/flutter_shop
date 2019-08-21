@@ -3,6 +3,7 @@ import '../service/service_method.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 import '../components/adBanner.dart';
 import '../components/special.dart';
 // import '../components/leaderPhone.dart';
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
               // String leaderImage = data['operationCfg'][0]['picUrls'][0];
               List <Map> specialList = (data['timePurchaseItems']['itemList'] as List).cast();
               // List <Map> manufList = (data['manufactureItems']['manufactureItems']['itemList'] as List).cast();
-              
+
               String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
               String floor2Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
               String floor3Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
@@ -50,8 +51,8 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
               List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
               List<Map> floor3 = (data['categoryItemsV4'][2]['itemList'] as List).cast(); //楼层1商品和图片 
 
-               return SingleChildScrollView(
-                 child: Column(
+               return EasyRefresh(
+                 child: ListView(
                  children: <Widget>[
                    SwiperDiy(swiperDataList: swiperDataList,),
                    TopNavigator(navigatorList:navigatorList),
@@ -68,6 +69,20 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                   Recommend(recommendList:recomList)
                  ],
                ),
+               onLoad: ()async{
+                  print('开始加载更多');
+                   var option={
+                      'size':size,
+                      'lastItemId':lastItemId
+                    };
+                    request('recommendData', option).then((data){
+                        List<Map> newRecomList = (data['data']['rcmdItemList'] as List).cast();
+                        setState(() {
+                            recomList.addAll(newRecomList);
+                            lastItemId = newRecomList[newRecomList.length - 1]['id']; 
+                          });
+                    }); 
+                },
                );
              } else {
                return Center(child: Text('加载中....'),);
