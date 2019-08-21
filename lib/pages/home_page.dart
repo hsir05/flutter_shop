@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../service/service_method.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-// import 'dart:convert';
+import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../components/adBanner.dart';
 import '../components/special.dart';
@@ -19,11 +19,6 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive =>true;
   void initState() {
-    getHomePageContent().then((val){
-      setState((){
-        homePageContent=val.toString();
-      });
-    });
     super.initState();
   }
   @override
@@ -31,7 +26,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
     return Container(
        child: Scaffold(
          body: FutureBuilder(
-           future: getHomePageContent(),
+           future: request('homePageContext', null),
            builder: (context, snapshot) {
              if(snapshot.hasData) {
 
