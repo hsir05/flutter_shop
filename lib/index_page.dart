@@ -11,14 +11,15 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
+   PageController _pageController;
 
-   final List tabBodies = [
+    final List<Widget> tabBodies = [
     HomePage(),
     CategoryPage(),
     CartPage(),
     MemberPage()
   ];
-
+   
   final List<BottomNavigationBarItem> bottomTabs = [
     BottomNavigationBarItem(
       icon: Icon(CupertinoIcons.home),
@@ -38,13 +39,20 @@ class _IndexPageState extends State<IndexPage> {
     ),
   ];
 
-    int currentIndex = 0;
-    var currentPage;
-    @override
-    void initState() {
-        currentPage = tabBodies[currentIndex];
-        super.initState();
-    }
+  int currentIndex = 0;
+  var currentPage;
+  @override
+  void initState() {
+    currentPage=tabBodies[currentIndex];
+    _pageController=new PageController()
+      ..addListener(() {
+        if (currentPage != _pageController.page.round()) {
+          setState(() {
+            currentPage = _pageController.page.round();
+          });
+        }
+    });
+  }
 
     @override
     Widget build(BuildContext context) {
@@ -61,7 +69,11 @@ class _IndexPageState extends State<IndexPage> {
               });
           },
         ),
-        body: currentPage,
+        // body: currentPage,
+        body: IndexedStack(
+          index: currentIndex,
+          children: tabBodies
+        )
       );
     }
 }

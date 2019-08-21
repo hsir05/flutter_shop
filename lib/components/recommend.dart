@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class Recommend extends StatelessWidget {
   final List recommendList;
   Recommend({Key key, this.recommendList}) : super(key: key);
