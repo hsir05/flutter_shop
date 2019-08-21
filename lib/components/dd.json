@@ -1,0 +1,1126 @@
+{
+    "code": "200",
+    "data": {
+        "itemList": null,
+        "rcmdItemList": [
+            {
+                "type": 0,
+                "indexRcmdPic": {
+                    "title": "婴童开学季",
+                    "desc": null,
+                    "picUrls": [
+                        "https://yanxuan.nosdn.127.net/d6ee13b2c7467208ea57b12b77321540.png"
+                    ],
+                    "targetJump": "/pages/webview/index?url=https%3A%2F%2Fact.you.163.com%2Fact%2Fpub%2FJakAZXRL1tMj.html",
+                    "payload": {
+                        "linkType": 1
+                    }
+                },
+                "categoryItem": null,
+                "pinItem": null,
+                "id": 0
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 3439006,
+                    "name": "男/女轻弹云朵家居拖鞋",
+                    "categoryId": 1008010,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/0c8cbfa42d229d50cbb9846e41be5d5f.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/0c8cbfa42d229d50cbb9846e41be5d5f.png",
+                    "retailPrice": 9.90,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "轻盈舒适，提升家人幸福感",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": "4色可选",
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "",
+                    "itemTagList": [],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/81170feaf6b4d9d2f76cd7354d5f6a2a.png",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "婴儿粉",
+                                "女L（39-40）"
+                            ],
+                            "frontUserName": "曲****妞",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/feef0e94d91b0525424c57cf80e90dc0.jpg",
+                            "content": "拖鞋轻巧柔软，防滑，无异味，尺码合适，做工精细。颜色很漂亮，物超所值，是个不错的选择。下次还会光顾。",
+                            "createTime": 1559654754718,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/c3c12777fafc81122b257612ca9753b4.jpg",
+                                "https://yanxuan.nosdn.127.net/f67c78f46ac9fc8ca27218d0bf27430f.jpg",
+                                "https://yanxuan.nosdn.127.net/bc8146685dd65b79884b1c871abfcb82.jpg",
+                                "https://yanxuan.nosdn.127.net/630d1be9d45d9248414c1fa03ca8809c.jpg",
+                                "https://yanxuan.nosdn.127.net/ff45e760c32699c9f1e1d832237babd6.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 2,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 3439006
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 1114010,
+                    "name": "玩趣彩虹四季拖鞋",
+                    "categoryId": 1008010,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/9be72b135c1053cc429911e6146acded.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/9be72b135c1053cc429911e6146acded.png",
+                    "retailPrice": 19.90,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "10种颜色可选，柔软好心情",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": "10色可选",
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "",
+                    "itemTagList": [],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/c0f4af9d6ebe100a8f3dea35ee3ea40d.png",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "粉绿色",
+                                "女款36-37码"
+                            ],
+                            "frontUserName": "S****a",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/b2e7e9c70a416f125d95aedfcf2d8304",
+                            "content": "穿着舒适轻便，静音。夜里起来奶娃，走路不影响家人休息。",
+                            "createTime": 1561645418842,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/37adf05a8cc3f40df7f43fe5572032c5.jpg",
+                                "https://yanxuan.nosdn.127.net/cc5d210f4af994172af8ff2e49398c89.jpg",
+                                "https://yanxuan.nosdn.127.net/64c3112aecf049e239af9e83c3db23dd.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 5,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 1114010
+            },
+            {
+                "type": 2,
+                "indexRcmdPic": null,
+                "categoryItem": null,
+                "pinItem": {
+                    "id": 2008922,
+                    "description": "泰国野葛精粹，紧致胸部曲线",
+                    "categoryId": 1013001,
+                    "userNum": 2,
+                    "recentUsers": "[\"https://yanxuan.nosdn.127.net/ce28333da9114de661b0df1ee66d121c\",\"https://yanxuan.nosdn.127.net/4eb0da6045ada1e6fd346436f6f7ac54\",\"https://yanxuan.nosdn.127.net/7955d8e6bb7400c5a02de2473381e79c\"]",
+                    "picUrl": "https://yanxuan-item.nosdn.127.net/c4b7a6022f7d16cc857f214783c3598d.jpg",
+                    "title": "春风美胸按摩精华液",
+                    "itemId": 3469016,
+                    "price": 99.50,
+                    "originPrice": 199.00,
+                    "returnPrice": 0.00,
+                    "skuNum": 1,
+                    "joinUsers": 157,
+                    "limitTime": false,
+                    "modeType": 2,
+                    "status": 0,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "30ml"
+                            ],
+                            "frontUserName": "瀾*****",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/41790b1b1e218444596c88bd5b169fb5.jpg",
+                            "content": "已经用了，效果方面没感觉有什么作用，但保湿滋润还不错，就把它作为洗完澡后的简单小护理吧！味道淡淡的，挺好闻。",
+                            "createTime": 1553617556692,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/c53040a26054d198533bef7217729664.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 6,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ]
+                },
+                "id": 3469016
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 1177000,
+                    "name": "酸梅汤 350毫升*9瓶",
+                    "categoryId": 109206008,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/df03eaa6d957998728e3c425b900401e.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/df03eaa6d957998728e3c425b900401e.png",
+                    "retailPrice": 38.00,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "酸甜适口，还原儿时好味道",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": null,
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "",
+                    "itemTagList": [
+                        {
+                            "type": 103,
+                            "name": "满4免1",
+                            "itemTag": "MULTI__LIST",
+                            "itemTagType": "ACTIVITY",
+                            "freshmanExclusive": false
+                        }
+                    ],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/f32506b84ad9ed7df3868d7cb2f05b83.jpg",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "350毫升*9瓶"
+                            ],
+                            "frontUserName": "少****凡",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/8accf9878e6bc08834dc32d5d71e8f2e",
+                            "content": "味道还是很赞，夏天的解暑必备神器，加上冰块还有两片柠檬更好喝。看商品详情里面图片上有桂花，饮品倒出来没有。",
+                            "createTime": 1565788297489,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/c1853ed26976df8a8c4a07bb75fb588d.jpg",
+                                "https://yanxuan.nosdn.127.net/80bb00227c1d45abf57df6cac6293fcb.jpg",
+                                "https://yanxuan.nosdn.127.net/1f7a2d219cffab1054c20f880f2d4a56.jpeg",
+                                "https://yanxuan.nosdn.127.net/335a8cdf6a01363bc5cfc5156a03e1e8.jpg",
+                                "https://yanxuan.nosdn.127.net/071a2dd07806e26ca4e44d206d88993c.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 4,
+                            "appendCommentVO": null,
+                            "star": 4
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 1177000
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 1113001,
+                    "name": "6包/提  谷风一木3层软抽面巾纸",
+                    "categoryId": 109256012,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/85824fffc0fc2042b3d068a1a20b560f.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/85824fffc0fc2042b3d068a1a20b560f.png",
+                    "retailPrice": 16.90,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "网易员工人手一盒，销量稳居前三",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": null,
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "",
+                    "itemTagList": [
+                        {
+                            "type": 103,
+                            "name": "满赠",
+                            "itemTag": "MULTI__LIST",
+                            "itemTagType": "ACTIVITY",
+                            "freshmanExclusive": false
+                        }
+                    ],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/84bf6c4e94bbfb48e456f44966932d68.jpg",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "6包/提"
+                            ],
+                            "frontUserName": "雨****水",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/c370469a1d070d2cb15b93597aa318ed",
+                            "content": "第二次购买了，很好",
+                            "createTime": 1561170937814,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/1713d18ec8acae01455b44251ec171a1.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 3,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 1113001
+            },
+            {
+                "type": 2,
+                "indexRcmdPic": null,
+                "categoryItem": null,
+                "pinItem": {
+                    "id": 2008923,
+                    "description": "水润万物 七色幻彩",
+                    "categoryId": 1043000,
+                    "userNum": 2,
+                    "recentUsers": "[\"https://yanxuan.nosdn.127.net/66618f114ab48ff0148760be91a946c0\",\"https://yanxuan.nosdn.127.net/4c55ec030c9321f62aa52fcd801c0e0c\",\"https://yanxuan.nosdn.127.net/14b3ab9f0c7db0518e573d722adc7230\"]",
+                    "picUrl": "https://yanxuan-item.nosdn.127.net/97589789dbd44442d1478c2e9974979d.jpg",
+                    "title": "网易智造 幻彩香薰灯加湿器",
+                    "itemId": 1664003,
+                    "price": 108.00,
+                    "originPrice": 169.00,
+                    "returnPrice": 0.00,
+                    "skuNum": 1,
+                    "joinUsers": 161,
+                    "limitTime": false,
+                    "modeType": 2,
+                    "status": 0,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "七色幻彩"
+                            ],
+                            "frontUserName": "****。",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/48d29c3e154b01943a0e37ecb78a9468.jpg",
+                            "content": "用了好久才来评价。讲真，每天晚上都被空调吹得嗓子冒烟，因为本身皮肤就比较缺水，所以日夜经受空调的摧残皮肤就更干了。用上加湿器之后有所缓解，关键是这个东西好迷你啊，跟我以前买的巨无霸不一样，不过贼好用，还能加点精油进去＋多种小彩灯，功能简便好用，很喜欢",
+                            "createTime": 1561803089985,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/6fd0997890c05033a4f0afd807ef2180.jpg",
+                                "https://yanxuan.nosdn.127.net/c4546b4eedbc182c2ad83e26de88e191.jpg",
+                                "https://yanxuan.nosdn.127.net/ad69d3b968c5edc1add9393e3512678d.jpg",
+                                "https://yanxuan.nosdn.127.net/334194d8ba5fe96f213325b612ede580.jpg",
+                                "https://yanxuan.nosdn.127.net/3f3a4d4c94c84e47d0ab98e580b5c2ee.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 5,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ]
+                },
+                "id": 1664003
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 1142056,
+                    "name": "雪麸蛋糕 北海道牛奶风味 180克",
+                    "categoryId": 1008015,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/db53cb751965b843975e9e3bfcbaf227.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/db53cb751965b843975e9e3bfcbaf227.png",
+                    "retailPrice": 9.90,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "松软蛋糕，浓醇奶香",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": null,
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "2个口味",
+                    "itemTagList": [
+                        {
+                            "type": 103,
+                            "name": "2件8.5折",
+                            "itemTag": "MULTI__LIST",
+                            "itemTagType": "ACTIVITY",
+                            "freshmanExclusive": false
+                        }
+                    ],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/914a3b4fe21c1be072a38489fd7b1f9d.jpg",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "北海道牛奶风味-180克"
+                            ],
+                            "frontUserName": "G****a",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/038e2051ed01697ab52d1dd4793f1bcc.jpg",
+                            "content": "外裹巧克力脆皮，内夹甜奶油沙拉，入口松软，回味香甜……",
+                            "createTime": 1561124214426,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/bce3f748a8609b4cb2ebc3065d340c98.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 6,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 1142056
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 3438018,
+                    "name": "男/女 舒弹按摩家居拖鞋",
+                    "categoryId": 1008010,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/622f2bd775e32536b0085013b9198ae2.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/622f2bd775e32536b0085013b9198ae2.png",
+                    "retailPrice": 19.90,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "柔软舒适，按摩解压",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": "7色可选",
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "",
+                    "itemTagList": [],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/200359baa0bfb5a20ad62bd070219aa6.png",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "婴儿粉",
+                                "女M（37-38）"
+                            ],
+                            "frontUserName": "s****0",
+                            "frontUserAvatar": null,
+                            "content": "系统默认好评",
+                            "createTime": 1564424352486,
+                            "picList": null,
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 3,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 3438018
+            },
+            {
+                "type": 2,
+                "indexRcmdPic": null,
+                "categoryItem": null,
+                "pinItem": {
+                    "id": 2008917,
+                    "description": "小巧便携，出差旅行必备",
+                    "categoryId": 1043000,
+                    "userNum": 2,
+                    "recentUsers": "[\"https://yanxuan.nosdn.127.net/7b690d1994c4dfa13e6dd4d5bb505a2c\",\"https://yanxuan.nosdn.127.net/6a097df49d3bd4d43d753be7bdcc8dca\",\"https://yanxuan.nosdn.127.net/92b23f2f692382c26576f2f18a8d2ba1\"]",
+                    "picUrl": "https://yanxuan-item.nosdn.127.net/e75a910fe1b4004cf12be3e40155768f.jpg",
+                    "title": "网易智造2U便携充电器",
+                    "itemId": 1450013,
+                    "price": 29.00,
+                    "originPrice": 39.00,
+                    "returnPrice": 0.00,
+                    "skuNum": 1,
+                    "joinUsers": 172,
+                    "limitTime": false,
+                    "modeType": 2,
+                    "status": 0,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "白"
+                            ],
+                            "frontUserName": "a****y",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/6414fbdd30082c5ca678a6b90c0b6b2b.jpg",
+                            "content": "特别好用，便于携带很小巧，严选多做活动啊，特别好用，便于携带很小巧，严选多做活动啊，特别好用，便于携带很小巧，严选多做活动啊",
+                            "createTime": 1563243843238,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/c8ace0887fbdf31ba7e6234509f92cbf.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 4,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ]
+                },
+                "id": 1450013
+            },
+            {
+                "type": 0,
+                "indexRcmdPic": {
+                    "title": "夏凉拖鞋选购指南",
+                    "desc": null,
+                    "picUrls": [
+                        "https://yanxuan.nosdn.127.net/7d1a26efb297bc1fae3614cc8516c205.png"
+                    ],
+                    "targetJump": "/pages/webview/index?url=https%3A%2F%2Fyou.163.com%2Ftopic%2Fv1%2Fpub%2FwGICCMIPt3.html",
+                    "payload": {
+                        "linkType": 1
+                    }
+                },
+                "categoryItem": null,
+                "pinItem": null,
+                "id": 0
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 1092026,
+                    "name": "5条装 女式纯棉免洗内裤",
+                    "categoryId": 1013006,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/b869136c3abde7c48cd3806e41417cfb.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/b869136c3abde7c48cd3806e41417cfb.png",
+                    "retailPrice": 19.90,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "100%纯棉，出行必备",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": null,
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "",
+                    "itemTagList": [],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/ffedd62c06d32f6485b5e5e72d083ee3.png",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "5条装",
+                                "S~M（女式））"
+                            ],
+                            "frontUserName": "1****0",
+                            "frontUserAvatar": null,
+                            "content": "",
+                            "createTime": 1557791358742,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/af36a8929f559a6dbc8135d52cd157c2.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 5,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 1092026
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 1666060,
+                    "name": "天然酵母面包 北海道牛奶风味 270克",
+                    "categoryId": 1008015,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/33fd21d0d6f7d16a5eda72c5ec9d1504.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/33fd21d0d6f7d16a5eda72c5ec9d1504.png",
+                    "retailPrice": 16.00,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "手撕面包，奶香浓郁",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": null,
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "2个口味",
+                    "itemTagList": [
+                        {
+                            "type": 103,
+                            "name": "加价购",
+                            "itemTag": "MULTI__LIST",
+                            "itemTagType": "ACTIVITY",
+                            "freshmanExclusive": false
+                        }
+                    ],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/57d95beab4c0b0476b2f72b7a119756c.jpg",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "北海道牛奶风味",
+                                "1千克"
+                            ],
+                            "frontUserName": "1****2",
+                            "frontUserAvatar": null,
+                            "content": "一大盒子，够吃好多天的。不甜腻，松软，喜欢的味道。我的严选精配早餐不错哦",
+                            "createTime": 1553763453652,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/39ba761845c6113d273f8c26b15ab048.jpg",
+                                "https://yanxuan.nosdn.127.net/19e2ef154df58aa208635574644b7703.jpg",
+                                "https://yanxuan.nosdn.127.net/88c7c89be0f8d108bb2c6be34ec08d3b.jpg",
+                                "https://yanxuan.nosdn.127.net/990420ba444cbb5206cf08cb59d79f49.jpg",
+                                "https://yanxuan.nosdn.127.net/cd6601a6fabe38051d50b82d86b59a41.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 5,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 1666060
+            },
+            {
+                "type": 2,
+                "indexRcmdPic": null,
+                "categoryItem": null,
+                "pinItem": {
+                    "id": 2008913,
+                    "description": "充电,磁吸,折叠挂钩,全新升级",
+                    "categoryId": 1005000,
+                    "userNum": 2,
+                    "recentUsers": "[\"https://yanxuan.nosdn.127.net/c454163bc01738c7523d01668f578b40\",\"https://yanxuan.nosdn.127.net/4372d3013c0ec6179ae310bd5c9d544c\",\"https://yanxuan.nosdn.127.net/a6e39c6d59925298f35f68f994c447e9\"]",
+                    "picUrl": "https://yanxuan-item.nosdn.127.net/3b5f5d45ff8ffa4db5b8ace8fa439e45.jpg",
+                    "title": "网易智造壁挂式感应小夜灯 充电款",
+                    "itemId": 3440021,
+                    "price": 49.00,
+                    "originPrice": 59.00,
+                    "returnPrice": 0.00,
+                    "skuNum": 1,
+                    "joinUsers": 164,
+                    "limitTime": false,
+                    "modeType": 2,
+                    "status": 0,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "透亮白"
+                            ],
+                            "frontUserName": "1****6",
+                            "frontUserAvatar": null,
+                            "content": "非常棒！非常喜欢严选家的品质！",
+                            "createTime": 1556546771284,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/de10b6b209f47f270df7e529c93169fa.jpg",
+                                "https://yanxuan.nosdn.127.net/beef1562982971f88ae9fdeaa2695709.jpg",
+                                "https://yanxuan.nosdn.127.net/c2bfad820b78dcc3eedcda02c812c9a5.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 4,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ]
+                },
+                "id": 3440021
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 1535011,
+                    "name": "常温纯牛奶 250毫升*12盒*2提",
+                    "categoryId": 109206008,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/1979054e3a1c8409f10191242165e674.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/1979054e3a1c8409f10191242165e674.png",
+                    "retailPrice": 88.00,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "滴滴香浓，纯粹好奶",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": null,
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "",
+                    "itemTagList": [
+                        {
+                            "type": 103,
+                            "name": "2件8.5折",
+                            "itemTag": "MULTI__LIST",
+                            "itemTagType": "ACTIVITY",
+                            "freshmanExclusive": false
+                        }
+                    ],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/a81aa3cf09c5679d3edcc86416408294.jpg",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "纯牛奶 12盒*2提"
+                            ],
+                            "frontUserName": "1****2",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/bbc8304429439634b4e4d4c1176d0529.jpg",
+                            "content": "这牛奶我一般是用来做拿铁和奶萃咖啡的，真的好好喝呀！",
+                            "createTime": 1559263178439,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/966bbae17011a18186d31e2cad242fb7.jpg",
+                                "https://yanxuan.nosdn.127.net/d68f4c44e25504ba98e59ece249a0e17.jpg",
+                                "https://yanxuan.nosdn.127.net/ecfa98f05de9dd7b917c4065805ca514.jpg",
+                                "https://yanxuan.nosdn.127.net/c4e6b37f0eaf37c01829e475ef8d8f7d.jpg",
+                                "https://yanxuan.nosdn.127.net/eb35496da3f0a8a065b2de11a148c245.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 5,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 1535011
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 3402020,
+                    "name": "3kg/1kg 强力去污酵素洗衣液",
+                    "categoryId": 109243015,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/f9f37332e201eee130e1a0a7e311608e.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/f9f37332e201eee130e1a0a7e311608e.png",
+                    "retailPrice": 49.90,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "复合酵素，“酵”醒全家衣物洁净",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": null,
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "",
+                    "itemTagList": [
+                        {
+                            "type": 103,
+                            "name": "满赠",
+                            "itemTag": "MULTI__LIST",
+                            "itemTagType": "ACTIVITY",
+                            "freshmanExclusive": false
+                        }
+                    ],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/dadf50686b6727bf41edbdfcfa2ce7c6.jpg",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "3kg"
+                            ],
+                            "frontUserName": "南****鱼",
+                            "frontUserAvatar": "http://q.qlogo.cn/qqapp/101330628/5C70E9641B7FFE392E82C70F30B5C92B/100",
+                            "content": "好香哦，相信洗出来的衣服也会香香的",
+                            "createTime": 1565162025707,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/f8aad3454957bba7a2bbd6a94bbec125.jpg",
+                                "https://yanxuan.nosdn.127.net/692b851c827ba287aa2be7d8cd32ba50.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 4,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 3402020
+            },
+            {
+                "type": 2,
+                "indexRcmdPic": null,
+                "categoryItem": null,
+                "pinItem": {
+                    "id": 2008921,
+                    "description": "增强免疫力，抗辐射",
+                    "categoryId": 1005002,
+                    "userNum": 2,
+                    "recentUsers": "[\"https://yanxuan.nosdn.127.net/233108756ac2ea4f47a70d638194f273\",\"https://yanxuan.nosdn.127.net/48a7aa0e745e12119186e900b802c82e\",\"https://yanxuan.nosdn.127.net/421ed54218a6a505e96654b5054ceaf4\"]",
+                    "picUrl": "https://yanxuan-item.nosdn.127.net/4727a34c37d08e49716511ec4397653f.jpg",
+                    "title": "皇乳营养液 500克",
+                    "itemId": 1321013,
+                    "price": 96.00,
+                    "originPrice": 160.00,
+                    "returnPrice": 0.00,
+                    "skuNum": 1,
+                    "joinUsers": 145,
+                    "limitTime": false,
+                    "modeType": 2,
+                    "status": 0,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "500克"
+                            ],
+                            "frontUserName": "m****6",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/89f3839c4b543f39b0a996b559d11b9a.jpg",
+                            "content": "多次购买，严粉严粉",
+                            "createTime": 1553516632067,
+                            "picList": null,
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 3,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ]
+                },
+                "id": 1321013
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 1143007,
+                    "name": "香脆薯条 100克",
+                    "categoryId": 1005011,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/78366781586e1338c3ec4ab7bb08c2c5.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/78366781586e1338c3ec4ab7bb08c2c5.png",
+                    "retailPrice": 9.90,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "金黄松脆，薯香纯正",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": null,
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "4个口味",
+                    "itemTagList": [
+                        {
+                            "type": 103,
+                            "name": "满赠",
+                            "itemTag": "MULTI__LIST",
+                            "itemTagType": "ACTIVITY",
+                            "freshmanExclusive": false
+                        }
+                    ],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/7a9a206f092516c2391283ca4e82d378.jpg",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "番茄味 100克"
+                            ],
+                            "frontUserName": "丽*****",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/17868be96358239f19ebf1dba9f764e0",
+                            "content": "好吃，好吃，真好吃，全家人都喜欢吃，忍不住一次次回购。",
+                            "createTime": 1557234594903,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/8524b6093858a4bbdd016a2d0d475b64.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 5,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 1143007
+            },
+            {
+                "type": 1,
+                "indexRcmdPic": null,
+                "categoryItem": {
+                    "id": 3384005,
+                    "name": "真虾肉鲜虾片 40克",
+                    "categoryId": 1005011,
+                    "primaryPicUrl": "https://yanxuan-item.nosdn.127.net/d8d557874955c8abeacc32c79bc23eac.png",
+                    "listPicUrl": "https://yanxuan-item.nosdn.127.net/d8d557874955c8abeacc32c79bc23eac.png",
+                    "retailPrice": 6.90,
+                    "activityPrice": null,
+                    "soldOut": false,
+                    "few": false,
+                    "last": false,
+                    "simpleDesc": "虾肉含量30%，鲜香酥脆",
+                    "simpleDescClose": false,
+                    "extraPrice": "",
+                    "newOnShelf": false,
+                    "forSale": false,
+                    "specification": null,
+                    "unShelf": false,
+                    "limitedFlag": false,
+                    "limitedTag": "",
+                    "productPlace": "2个口味",
+                    "itemTagList": [
+                        {
+                            "type": 103,
+                            "name": "2件8.5折",
+                            "itemTag": "MULTI__LIST",
+                            "itemTagType": "ACTIVITY",
+                            "freshmanExclusive": false
+                        }
+                    ],
+                    "goodRate": null,
+                    "heat": null,
+                    "repoCount": null,
+                    "scenePicUrl": "https://yanxuan-item.nosdn.127.net/680c7c419de8a3fdadfffe0eaa84ba50.jpg",
+                    "freshman": true,
+                    "appExclusiveFlag": false,
+                    "accessTime": 0,
+                    "promotionFlag": 0,
+                    "specTag": null,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "原味 40克"
+                            ],
+                            "frontUserName": "w****1",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/7d06b7bc5702fc7d8bebbe5db71276ce.jpg",
+                            "content": "这个特别推荐，超级好吃哦",
+                            "createTime": 1555167109286,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/0c331ba3c88c5c570c28f337706e0149.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 5,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ],
+                    "promBanner": null,
+                    "promLogo": null,
+                    "promDesc": null,
+                    "limitedSingleProm": false
+                },
+                "pinItem": null,
+                "id": 3384005
+            },
+            {
+                "type": 2,
+                "indexRcmdPic": null,
+                "categoryItem": null,
+                "pinItem": {
+                    "id": 2008920,
+                    "description": "产区名庄伊拉苏，柔美妖娆",
+                    "categoryId": 1005002,
+                    "userNum": 2,
+                    "recentUsers": "[\"https://yanxuan.nosdn.127.net/5a6c31b36cbfee5d33091fe5641da767\",\"https://yanxuan.nosdn.127.net/526108425fdb30f1c114f7ce46018582\",\"https://yanxuan.nosdn.127.net/3c263a50651e696006106566158a6522\"]",
+                    "picUrl": "https://yanxuan-item.nosdn.127.net/24b8289cc1ca371991915c7a76667752.jpg",
+                    "title": "智利直采 黑皮诺干红葡萄酒 750毫升",
+                    "itemId": 1424004,
+                    "price": 98.00,
+                    "originPrice": 128.00,
+                    "returnPrice": 0.00,
+                    "skuNum": 1,
+                    "joinUsers": 154,
+                    "limitTime": false,
+                    "modeType": 2,
+                    "status": 0,
+                    "comments": [
+                        {
+                            "skuInfo": [
+                                "750毫升"
+                            ],
+                            "frontUserName": "雨*****",
+                            "frontUserAvatar": "https://yanxuan.nosdn.127.net/d9df12545857e437959b6af8c7ebe0c5.jpg",
+                            "content": "下次活动还会继续购买！赞赞赞",
+                            "createTime": 1544316317714,
+                            "picList": [
+                                "https://yanxuan.nosdn.127.net/5f861b48f16412e8e17786d54f174583.jpg"
+                            ],
+                            "kfReplyTitle": null,
+                            "kfReplyContent": null,
+                            "memLevel": 6,
+                            "appendCommentVO": null,
+                            "star": 5
+                        }
+                    ]
+                },
+                "id": 1424004
+            }
+        ],
+        "rcmdVer": null,
+        "title": null,
+        "type": 0,
+        "hasMore": true
+    }
+}

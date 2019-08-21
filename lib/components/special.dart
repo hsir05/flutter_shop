@@ -20,21 +20,6 @@ class Special extends StatelessWidget {
     );
   }
 
-  //推荐商品标题
-  // Widget _titleWidget() {
-  //   return Container(
-  //     alignment: Alignment.centerLeft,
-  //     padding: EdgeInsets.fromLTRB(10.0, 2.0, 0, 5.0),
-  //     decoration: BoxDecoration(
-  //       color: Colors.white,
-  //       border: Border(
-  //         bottom: BorderSide(width: 0.5, color: Colors.black12)
-  //       )
-  //     ),
-  //     child: Text('特约商品', style: TextStyle(color: Colors.pink)),
-  //   );
-  // }
-
   // 推荐商品
   Widget _item(index) {
     return InkWell(

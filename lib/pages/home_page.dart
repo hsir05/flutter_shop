@@ -8,6 +8,7 @@ import '../components/special.dart';
 // import '../components/leaderPhone.dart';
 import '../components/floorTitle.dart';
 import '../components/floorContent.dart';
+import '../components/recommend.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -15,10 +16,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
   String homePageContent='正在获取数据';
+  int lastItemId = 0;
+  int size = 20;
+  List<Map> recomList=[];
 
   @override
   bool get wantKeepAlive =>true;
   void initState() {
+    _getRecommend();
     super.initState();
   }
   @override
@@ -29,7 +34,6 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
            future: request('homePageContext', null),
            builder: (context, snapshot) {
              if(snapshot.hasData) {
-
                var data = snapshot.data['data'];
                List <Map> swiperDataList = (data['focus'] as List).cast();
               List <Map> navigatorList = (data['kingKongAreaV4'] as List).cast();
@@ -38,15 +42,13 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
               // String leaderImage = data['operationCfg'][0]['picUrls'][0];
               List <Map> specialList = (data['timePurchaseItems']['itemList'] as List).cast();
               // List <Map> manufList = (data['manufactureItems']['manufactureItems']['itemList'] as List).cast();
-
-
+              
               String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
               String floor2Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
               String floor3Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
               List<Map> floor1 = (data['categoryItemsV4'][0]['itemList'] as List).cast(); //楼层1商品和图片 
               List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
               List<Map> floor3 = (data['categoryItemsV4'][2]['itemList'] as List).cast(); //楼层1商品和图片 
-
 
                return SingleChildScrollView(
                  child: Column(
@@ -63,6 +65,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                   FloorContent(floorGoodsList:floor2),
                   FloorTitle(picture_address:floor3Title),
                   FloorContent(floorGoodsList:floor3),
+                  Recommend(recommendList:recomList)
                  ],
                ),
                );
@@ -73,6 +76,20 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
          ),
        ),
     );
+  }
+
+  void _getRecommend() {
+    var option={
+      'size':size,
+      'lastItemId':lastItemId
+    };
+    request('recommendData', option).then((data){
+        List<Map> newRecomList = (data['data']['rcmdItemList'] as List).cast();
+         setState(() {
+            recomList.addAll(newRecomList);
+            lastItemId = newRecomList[newRecomList.length - 1]['id']; 
+          });
+    }); 
   }
 }
 
