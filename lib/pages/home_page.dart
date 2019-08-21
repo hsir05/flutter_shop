@@ -4,8 +4,10 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 // import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../components/adBanner.dart';
-import '../components/recommend.dart';
+import '../components/special.dart';
 // import '../components/leaderPhone.dart';
+import '../components/floorTitle.dart';
+import '../components/floorContent.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -28,10 +30,6 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
   Widget build(BuildContext context) {
     return Container(
        child: Scaffold(
-        //  appBar: AppBar(
-        //    title: Text('严选', style: TextStyle(color: Colors.black),),
-        //    backgroundColor:Colors.white
-        //    ),
          body: FutureBuilder(
            future: getHomePageContent(),
            builder: (context, snapshot) {
@@ -43,7 +41,17 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
               String advertesPicture = data['operationCfg'][0]['picUrls'][0];
               // String leaderPhone = '18093189741';
               // String leaderImage = data['operationCfg'][0]['picUrls'][0];
-              List <Map> recommendList = (data['timePurchaseItems']['itemList'] as List).cast();
+              List <Map> specialList = (data['timePurchaseItems']['itemList'] as List).cast();
+              // List <Map> manufList = (data['manufactureItems']['manufactureItems']['itemList'] as List).cast();
+
+
+              String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
+              String floor2Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
+              String floor3Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
+              List<Map> floor1 = (data['categoryItemsV4'][0]['itemList'] as List).cast(); //楼层1商品和图片 
+              List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
+              List<Map> floor3 = (data['categoryItemsV4'][2]['itemList'] as List).cast(); //楼层1商品和图片 
+
 
                return SingleChildScrollView(
                  child: Column(
@@ -52,8 +60,14 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                    TopNavigator(navigatorList:navigatorList),
                    AdBanner(advertesPicture:advertesPicture),
                   //  LeaderPhone(leaderPhone:leaderPhone, leaderImage:leaderImage)
-                  Recommend(recommendList:recommendList),
-                  
+                  Special(specialList:specialList),
+
+                  FloorTitle(picture_address:floor1Title),
+                  FloorContent(floorGoodsList:floor1),
+                  FloorTitle(picture_address:floor2Title),
+                  FloorContent(floorGoodsList:floor2),
+                  FloorTitle(picture_address:floor3Title),
+                  FloorContent(floorGoodsList:floor3),
                  ],
                ),
                );
