@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/material_footer.dart';
 import 'package:flutter_easyrefresh/material_header.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../service/service_method.dart';
 import '../components/adBanner.dart';
 import '../components/special.dart';
@@ -86,7 +87,11 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                 },
                );
              } else {
-               return Center(child: Text('加载中....'),);
+              //  return Center(child: Text('加载中....'),);
+               return SpinKitFadingCircle(
+                    color: Colors.black,
+                    size: 50.0,
+                  );
              }
            },
          ),

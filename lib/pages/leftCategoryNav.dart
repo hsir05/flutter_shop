@@ -55,7 +55,6 @@ void initState() {
     await request('getCategory',null).then((val){
           CategoryBigListModel category = CategoryBigListModel.formJson(val['data']['categoryList']);
            print('_____++++++++++_______val____++++++++++___');
-          print(category.data);
           setState(() {
             list =category.data;
           });

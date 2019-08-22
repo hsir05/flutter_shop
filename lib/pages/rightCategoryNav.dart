@@ -14,9 +14,9 @@ class _RightCategoryNavState extends State<RightCategoryNav> {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
 
     return Container(
-      margin: EdgeInsets.only(top: 20.0),
+      margin: EdgeInsets.only(top: 10.0),
       padding: EdgeInsets.all(10.0),
-      width: ScreenUtil().setWidth(320),
+      width: ScreenUtil().setWidth(570),
       child: Image.network(pictUrl),
     );
   }
