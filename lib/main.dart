@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:provide/provide.dart';
+// import './provide/counter.dart';
 import 'index_page.dart';
 
 void main()=>runApp(MyApp());

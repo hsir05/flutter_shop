@@ -20,7 +20,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
   String homePageContent='正在获取数据';
   int lastItemId = 0;
-  int size = 20;
+  int size = 10;
   List<Map> recomList=[];
 
   @override
@@ -47,11 +47,8 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
               // List <Map> manufList = (data['manufactureItems']['manufactureItems']['itemList'] as List).cast();
 
               String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
-              String floor2Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
-              String floor3Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
               List<Map> floor1 = (data['categoryItemsV4'][0]['itemList'] as List).cast(); //楼层1商品和图片 
               List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
-              List<Map> floor3 = (data['categoryItemsV4'][2]['itemList'] as List).cast(); //楼层1商品和图片 
 
                return EasyRefresh(
                  footer: MaterialFooter(),
@@ -66,10 +63,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
 
                   FloorTitle(picture_address:floor1Title),
                   FloorContent(floorGoodsList:floor1),
-                  FloorTitle(picture_address:floor2Title),
                   FloorContent(floorGoodsList:floor2),
-                  FloorTitle(picture_address:floor3Title),
-                  FloorContent(floorGoodsList:floor3),
                   Recommend(recommendList:recomList)
                  ],
                ),

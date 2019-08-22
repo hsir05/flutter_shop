@@ -3,6 +3,7 @@ import '../service/service_method.dart';
 import 'dart:convert';
 import '../model/category.dart';
 import'./leftCategoryNav.dart';
+import'./rightCategoryNav.dart';
 
 class CategoryPage extends StatefulWidget {
   @override
@@ -12,15 +13,18 @@ class CategoryPage extends StatefulWidget {
 class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
-    // _getCategory();
     return Container(
-      child: LeftCategoryNav()
+      child: Row(children: <Widget>[
+        LeftCategoryNav(),
+        Column(children: <Widget>[
+          RightCategoryNav()
+        ],)
+      ],)
     );
   }
 
   void _getCategory()async{
     await request('getCategory', null).then((val){
-      print('_____++++++++++_______val____++++++++++___');
       CategoryBigListModel list = CategoryBigListModel.formJson(val['data']['categoryList']);
       list.data.forEach((item)=>print(item.name));
     });

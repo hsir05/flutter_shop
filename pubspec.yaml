@@ -32,6 +32,7 @@ dev_dependencies:
   flutter_screenutil: ^0.5.3
   url_launcher: ^5.0.1
   flutter_easyrefresh: ^2.0.3
+  provide: ^1.0.2
 
 
 

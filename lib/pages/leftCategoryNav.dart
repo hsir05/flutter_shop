@@ -20,6 +20,8 @@ void initState() {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
+
     return Container(
       width: ScreenUtil().setWidth(180),
       decoration: BoxDecoration(border: Border(right: BorderSide(width: 1,color: Colors.black12))),
