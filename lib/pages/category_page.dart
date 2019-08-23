@@ -124,9 +124,10 @@ class _RightTopBannerState extends State<RightTopBanner> {
     return Provide<ChildCategory>(
       builder: (context,child,childCategory){
         return Container(
-          margin: EdgeInsets.only(top: 20),
+          margin: EdgeInsets.only(top: 10),
           padding: EdgeInsets.only(left:10.0, right: 10.0),
           width: ScreenUtil().setWidth(570),
+          height: ScreenUtil().setHeight(200),
           child: Image.network(childCategory.rightTopBanUrl, fit: BoxFit.fill),
         );
       }
@@ -145,9 +146,7 @@ class _RightListState extends State<RightList> {
   Widget build(BuildContext context) {
       return Provide<ChildCategory>(
         builder: (context,child,childCategory){
-          print("=====================");
           var ind = childCategory.childIndex;
-          print(ind);
           return Container(
             width: ScreenUtil().setWidth(570),
             height: ScreenUtil().setHeight(900),
@@ -163,10 +162,11 @@ class _RightListState extends State<RightList> {
         onTap: (){print('点击了');},
         child: Container(
           width: ScreenUtil().setWidth(175),
+          height: ScreenUtil().setHeight(230),
           child: Column(
             children: <Widget>[
-              Image.network(val.bannerUrl),
-              Text(val.name)
+              Image.network(val.bannerUrl, width: ScreenUtil().setWidth(170), fit: BoxFit.fill,),
+              Text(val.name, overflow: TextOverflow.ellipsis,)
             ],
           ),
         ),

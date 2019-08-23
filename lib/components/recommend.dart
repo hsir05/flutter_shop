@@ -32,9 +32,15 @@ class Recommend extends StatelessWidget {
               child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Image.network(val['categoryItem']['listPicUrl'], width: ScreenUtil().setWidth(375),),
-                Text(val['categoryItem']['name'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
-                Text('￥${val['categoryItem']['retailPrice']}'),
+                Image.network(val['categoryItem']['listPicUrl'], width: ScreenUtil().setWidth(375),height: ScreenUtil().setHeight(360)),
+                Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child: Text(val['categoryItem']['name'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
+                ),
+                  Padding(
+                  padding: EdgeInsets.only(left:5.0),
+                  child: Text('￥${val['categoryItem']['retailPrice']}'),
+                  )
               ])));
         }else if (val['type'] == 2)  {
            return InkWell(
@@ -49,16 +55,20 @@ class Recommend extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.network(val['pinItem']['picUrl'], width: ScreenUtil().setWidth(375),),
-                  Text(val['pinItem']['title'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
-                  Row(
+                  Image.network(val['pinItem']['picUrl'], width: ScreenUtil().setWidth(375), height: ScreenUtil().setHeight(360),),
+                   Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child:Text(val['pinItem']['title'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26)))),
+                  Padding(
+                    padding: EdgeInsets.only(left: 5.0),
+                    child: Row(
                     children: <Widget>[
                       Text('￥${val['pinItem']['price']}'),
-                      Text(
-                        '￥${val['pinItem']['originPrice']}',
+                      Text(  '￥${val['pinItem']['originPrice']}',
                         style: TextStyle(color:Colors.black26,decoration: TextDecoration.lineThrough),
                       )
-                    ],)
+                    ],),
+                  )
                 ]))); 
         } else {
           return InkWell(
@@ -73,8 +83,11 @@ class Recommend extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.network(val['indexRcmdPic']['picUrls'][0], width: ScreenUtil().setWidth(375),),
-                  Text(val['indexRcmdPic']['title'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
+                  Image.network(val['indexRcmdPic']['picUrls'][0], width: ScreenUtil().setWidth(375),height: ScreenUtil().setHeight(360)),
+                  Padding(
+                    padding: EdgeInsets.only(left:5.0, top: 5.0,),
+                    child: Text(val['indexRcmdPic']['title'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
+                  )
                 ]))); 
         }
       }).toList();

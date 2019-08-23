@@ -13,21 +13,20 @@ class Special extends StatelessWidget {
       height: ScreenUtil().setHeight(380),
       margin: EdgeInsets.only(top:10.0),
       child: Column(children: <Widget>[
-        // _titleWidget(),
         TitleWidget(title:title),
         _specialList()
       ],),
     );
   }
 
-  // 推荐商品
+  // 特约商品
   Widget _item(index) {
     return InkWell(
       onTap: () {},
       child: Container(
-        height: ScreenUtil().setHeight(330),
+        height: ScreenUtil().setHeight(270),
         width: ScreenUtil().setWidth(250),
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(5.0),
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border(
@@ -36,9 +35,11 @@ class Special extends StatelessWidget {
         ),
         child: Column(
           children: <Widget>[
-            Image.network(specialList[index]['listPicUrl']),
-            Text('￥${specialList[index]['actualPrice']}'),
-            Text('￥${specialList[index]['retailPrice']}', style: TextStyle(decoration: TextDecoration.lineThrough, color: Colors.grey),)
+            Image.network(specialList[index]['listPicUrl'], height: ScreenUtil().setHeight(260),),
+            Row(children: <Widget>[
+              Text('￥${specialList[index]['actualPrice']}'),
+              Text('￥${specialList[index]['retailPrice']}', style: TextStyle(decoration: TextDecoration.lineThrough, color: Colors.grey),)
+            ],)
           ],
         ),
       ),

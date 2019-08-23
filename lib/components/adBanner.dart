@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AdBanner extends StatelessWidget {
   final String advertesPicture;
@@ -6,8 +7,10 @@ class AdBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Container(
-      child: Image.network(advertesPicture),
+      padding: EdgeInsets.only(left: 10.0, right: 10.0),
+      child: Image.network(advertesPicture, width: ScreenUtil().setWidth(730), height: ScreenUtil().setHeight(150),),
     );
   }
 }

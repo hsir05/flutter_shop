@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
               // List <Map> manufList = (data['manufactureItems']['manufactureItems']['itemList'] as List).cast();
 
               String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
-              List<Map> floor1 = (data['categoryItemsV4'][0]['itemList'] as List).cast(); //楼层1商品和图片 
+              // List<Map> floor1 = (data['categoryItemsV4'][0]['itemList'] as List).cast(); //楼层1商品和图片 
               List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
 
                return EasyRefresh(
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                   Special(specialList:specialList),
 
                   FloorTitle(picture_address:floor1Title),
-                  FloorContent(floorGoodsList:floor1),
+                  // FloorContent(floorGoodsList:floor1),
                   FloorContent(floorGoodsList:floor2),
                   Recommend(recommendList:recomList)
                  ],
@@ -165,7 +165,7 @@ class TopNavigator extends StatelessWidget {
       onTap: () {print('点击了导航');},
       child: Column(
         children: <Widget>[
-          Image.network(item['picUrls'][0], width: ScreenUtil().setWidth(95)),
+          Image.network(item['picUrls'][0], width: ScreenUtil().setWidth(95), height: ScreenUtil().setHeight(95),),
           Text(item['title'])
         ],
       ),
