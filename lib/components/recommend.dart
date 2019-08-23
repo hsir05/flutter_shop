@@ -30,12 +30,12 @@ class Recommend extends StatelessWidget {
               padding: EdgeInsets.all(5.0),
               margin:EdgeInsets.only(bottom:3.0),
               child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Image.network(val['categoryItem']['listPicUrl'], width: ScreenUtil().setWidth(375),),
-                  Text(val['categoryItem']['name'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
-                  Text('￥${val['categoryItem']['retailPrice']}'),
-                ])));
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Image.network(val['categoryItem']['listPicUrl'], width: ScreenUtil().setWidth(375),),
+                Text(val['categoryItem']['name'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
+                Text('￥${val['categoryItem']['retailPrice']}'),
+              ])));
         }else if (val['type'] == 2)  {
            return InkWell(
             onTap:(){print('点击了火爆商品');},
