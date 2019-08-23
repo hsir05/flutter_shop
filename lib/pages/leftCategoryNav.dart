@@ -44,11 +44,10 @@ void initState() {
         setState(() {
            listIndex=index;
          });
-        var childList = cateList[index].subCategoryList;
+        // var childList = cateList[index].subCategoryList;
         var rightTopBanUrl = cateList[index].focusBannerList[0].picUrl;
-        print(childList);
-        print(rightTopBanUrl);
-        Provide.value<ChildCategory>(context).getChildCategory(childList, rightTopBanUrl);
+        // Provide.value<ChildCategory>(context).getChildCategory(childList);
+        Provide.value<ChildCategory>(context).changeChildIndex(index, rightTopBanUrl);
       },
       child: Container(
         height: ScreenUtil().setHeight(100),

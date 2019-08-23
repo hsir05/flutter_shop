@@ -52,7 +52,8 @@ class _CategoryPageState extends State<CategoryPage> {
       });
   }
   Future _isLoadFinish(context)async{
-      Provide.value<ChildCategory>(context).getChildCategory(list, list[0].focusBannerList[0].picUrl);
+      Provide.value<ChildCategory>(context).getChildCategory(list);
+      Provide.value<ChildCategory>(context).changeChildIndex(0, list[0].focusBannerList[0].picUrl);
       return 'end';
   }
 }
@@ -143,14 +144,17 @@ class _RightListState extends State<RightList> {
   @override
   Widget build(BuildContext context) {
       return Provide<ChildCategory>(
-      builder: (context,child,childCategory){
+        builder: (context,child,childCategory){
+          print("=====================");
+          var ind = childCategory.childIndex;
+          print(ind);
           return Container(
             width: ScreenUtil().setWidth(570),
             height: ScreenUtil().setHeight(900),
             padding: EdgeInsets.all(10.0),
-            child: _rightWrapList(childCategory.childCategoryList[3].subCategoryList),
+            child: _rightWrapList(childCategory.childCategoryList[ind].subCategoryList),
           );
-      });
+        });
   }
 
   Widget _rightWrapList(List list) {
