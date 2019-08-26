@@ -30,10 +30,13 @@ class _CategoryPageState extends State<CategoryPage> {
               child: Row(children: <Widget>[
                 LeftCategoryNav(),
                Flexible(
-                 child:  ListView(children: <Widget>[
+                 child: Column(children: <Widget>[
                   RightTopBanner(),
-                  RightList()
-                ],),
+                  Expanded(
+                    child: RightList(),
+                  )
+
+                 ],),
                )
               ],)
             );
@@ -147,12 +150,19 @@ class _RightListState extends State<RightList> {
       return Provide<ChildCategory>(
         builder: (context,child,childCategory){
           var ind = childCategory.childIndex;
-          return Container(
-            width: ScreenUtil().setWidth(570),
-            height: ScreenUtil().setHeight(900),
-            padding: EdgeInsets.all(10.0),
-            child: _rightWrapList(childCategory.childCategoryList[ind].subCategoryList),
+          return ListView(
+            shrinkWrap: true,
+            children: <Widget>[
+              _rightWrapList(childCategory.childCategoryList[ind].subCategoryList),
+            ],
           );
+          // return Container(
+          //   width: ScreenUtil().setWidth(570),
+          //   height: ScreenUtil().setHeight(900),
+          //   padding: EdgeInsets.all(10.0),
+          //   color: Colors.black12,
+          //   child: _rightWrapList(childCategory.childCategoryList[ind].subCategoryList),
+          // );
         });
   }
 

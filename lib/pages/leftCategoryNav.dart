@@ -39,6 +39,8 @@ void initState() {
   }
 
   Widget _leftInkWel(List cateList, int index){
+    bool isClick = false;
+    isClick = (index == listIndex) ? true : false;
     return InkWell(
       onTap:(){
         setState(() {
@@ -51,7 +53,7 @@ void initState() {
         height: ScreenUtil().setHeight(100),
         padding: EdgeInsets.only(left: 10.0,top: 20.0),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: isClick ? Color.fromRGBO(236, 236, 236, 1.0) : Colors.white,
           border: Border(
             bottom: BorderSide(width: 1, color: Colors.black12)
           )
