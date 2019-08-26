@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'dart:convert';
+import 'dart:async';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/material_footer.dart';
 import 'package:flutter_easyrefresh/material_header.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../service/service_method.dart';
 import '../components/adBanner.dart';
 import '../components/special.dart';
@@ -68,22 +70,35 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                   Recommend(recommendList:recomList)
                  ],
                ),
-               onRefresh: ()async{
-                  print('开始加载最新内容');
-               },
                onLoad: ()async{
                   print('开始加载更多');
-                   var option={
-                      'size':size,
-                      'lastItemId':lastItemId
-                    };
-                    request('recommendData', option).then((data){
-                        List<Map> newRecomList = (data['data']['rcmdItemList'] as List).cast();
-                        setState(() {
-                            recomList.addAll(newRecomList);
-                            lastItemId = newRecomList[newRecomList.length - 1]['id']; 
-                          });
-                    }); 
+                  Fluttertoast.showToast(
+                    msg: "已经到底了",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER,
+                    timeInSecForIos: 1,
+                    // backgroundColor: Colors.pink,
+                    // textColor: Colors.white,
+                    fontSize: 14.0
+                  );
+
+                 
+                   var timer;
+                    timer = Timer.periodic(
+                      const Duration(milliseconds: 2000), (Void) {
+                          var option={
+                          'size':size,
+                          'lastItemId':lastItemId
+                        };
+                        request('recommendData', option).then((data){
+                            List<Map> newRecomList = (data['data']['rcmdItemList'] as List).cast();
+                            setState(() {
+                                recomList.addAll(newRecomList);
+                                lastItemId = newRecomList[newRecomList.length - 1]['id']; 
+                              });
+                        });
+                        (timer as Timer).cancel();
+                      });
                 },
                );
              } else {
