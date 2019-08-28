@@ -63,7 +63,6 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                    AdBanner(advertesPicture:advertesPicture),
                   //  LeaderPhone(leaderPhone:leaderPhone, leaderImage:leaderImage)
                   Special(specialList:specialList),
-
                   FloorTitle(picture_address:floor1Title),
                   // FloorContent(floorGoodsList:floor1),
                   FloorContent(floorGoodsList:floor2),
@@ -73,7 +72,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                onLoad: ()async{
                   print('开始加载更多');
                   Fluttertoast.showToast(
-                    msg: "已经到底了",
+                    msg: "正在加载更多数据...",
                     toastLength: Toast.LENGTH_SHORT,
                     gravity: ToastGravity.CENTER,
                     timeInSecForIos: 1,
@@ -102,7 +101,6 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                 },
                );
              } else {
-              //  return Center(child: Text('加载中....'),);
                return SpinKitFadingCircle(
                     color: Colors.black,
                     size: 50.0,

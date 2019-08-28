@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './title.dart';
+import '../routers/application.dart';
 
 class Recommend extends StatelessWidget {
   List<Map> recommendList=[];
@@ -12,17 +13,19 @@ class Recommend extends StatelessWidget {
     return Container(
       child: Column(children: <Widget>[
         TitleWidget(title:title),
-        _wrapList()
+        _wrapList(context)
       ],),
     );
   }
 
-  Widget _wrapList() {
+  Widget _wrapList(context) {
     if (recommendList.length!= 0){
       List<Widget>listWidget = recommendList.map((val){
         if (val['type'] == 1) {
            return InkWell(
-            onTap:(){print('点击了火爆商品');},
+            onTap:(){
+              Application.router.navigateTo(context,"/detail?id=${val['id']}");
+              print('点击了火爆商品');},
             child: 
             Container(
               width: ScreenUtil().setWidth(372),
@@ -44,7 +47,9 @@ class Recommend extends StatelessWidget {
               ])));
         }else if (val['type'] == 2)  {
            return InkWell(
-            onTap:(){print('点击了火爆商品');},
+            onTap:(){
+              Application.router.navigateTo(context,"/detail?id=${val['id']}");
+              print('点击了火爆商品');},
             child: 
             Container(
               alignment:Alignment.centerLeft,
@@ -72,7 +77,10 @@ class Recommend extends StatelessWidget {
                 ]))); 
         } else {
           return InkWell(
-            onTap:(){print('点击了火爆商品');},
+            onTap:(){
+              print('点击了火爆商品');
+              Application.router.navigateTo(context,"/detail?id=${val['id']}");
+              },
             child: 
             Container(
               alignment:Alignment.centerLeft,
