@@ -44,14 +44,10 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                List <Map> swiperDataList = (data['focus'] as List).cast();
               List <Map> navigatorList = (data['kingKongAreaV4'] as List).cast();
               String advertesPicture = data['operationCfg'][0]['picUrls'][0];
-              // String leaderPhone = '18093189741';
-              // String leaderImage = data['operationCfg'][0]['picUrls'][0];
               List <Map> specialList = (data['timePurchaseItems']['itemList'] as List).cast();
-              // List <Map> manufList = (data['manufactureItems']['manufactureItems']['itemList'] as List).cast();
 
               String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
-              // List<Map> floor1 = (data['categoryItemsV4'][0]['itemList'] as List).cast(); //楼层1商品和图片 
-              List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
+              // List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
 
                return EasyRefresh(
                  footer: MaterialFooter(),
@@ -61,11 +57,9 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                    SwiperDiy(swiperDataList: swiperDataList,),
                    TopNavigator(navigatorList:navigatorList),
                    AdBanner(advertesPicture:advertesPicture),
-                  //  LeaderPhone(leaderPhone:leaderPhone, leaderImage:leaderImage)
                   Special(specialList:specialList),
                   FloorTitle(picture_address:floor1Title),
-                  // FloorContent(floorGoodsList:floor1),
-                  FloorContent(floorGoodsList:floor2),
+                  // FloorContent(floorGoodsList:floor2),
                   Recommend(recommendList:recomList)
                  ],
                ),

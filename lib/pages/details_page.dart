@@ -42,7 +42,6 @@ class DetailsPage extends StatelessWidget {
   }
 
   Future _getBackInfo(BuildContext context)async{
-    
     await Provide.value<DetailsInfoProvide>(context).getRecGoodsInfo(itemId);
     return await Provide.value<DetailsInfoProvide>(context).getGoodsInfo(itemId);
   }
