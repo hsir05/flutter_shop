@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './home_page.dart';
 import './search_page.dart';
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(180, 40, 45, 1),
@@ -44,8 +46,8 @@ class Login extends StatelessWidget {
             )),
 
             Container(
-              width: 350.0,
-              height: 60.0,
+              width: ScreenUtil().setWidth(640),
+              height: ScreenUtil().setHeight(100),
               child: RaisedButton.icon(
                   label: Text('手机号快捷登陆',style: TextStyle(fontSize: 18.0,fontWeight: FontWeight.w300, color: Colors.white)),
                   icon: Icon(Icons.phone_iphone, color: Colors.white,),
@@ -55,8 +57,8 @@ class Login extends StatelessWidget {
                 ),
             ),
             Container(
-              width: 350.0,
-              height: 60.0,
+              width: ScreenUtil().setWidth(640),
+              height: ScreenUtil().setHeight(100),
               margin: EdgeInsets.only(top: 15.0),
               child:  RaisedButton.icon(
                   label: Text('邮箱账号登陆',style: TextStyle(fontSize: 18.0,fontWeight: FontWeight.w300, color: Color.fromRGBO(221, 26, 33, 1))),
@@ -78,37 +80,39 @@ class Login extends StatelessWidget {
             ),
 
             Container(
-              height: 60.0,
-              width: 300.0,
+              height: ScreenUtil().setHeight(90),
+              width: ScreenUtil().setWidth(640),
               margin: EdgeInsets.only(top: 150.0),
-              child: Row(children: <Widget>[
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
                 RaisedButton.icon(
                   label: Text('微信',style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w300, color: Color.fromRGBO(127, 127, 127, 1),)),
-                  icon: Image.asset("assets/images/wechat.png",width: 26.0,),
+                  icon: Image.asset("assets/images/wechat.png",width: ScreenUtil().setWidth(46),),
                   elevation: 0,
                   color: Colors.transparent,
                   onPressed: () {print('cion');},
                 ),
                 Container(
-                  height: 20.0,
+                  height: ScreenUtil().setHeight(20),
                   width: 1.0,
                   color: Color.fromRGBO(127, 127, 127, 1),
                 ),
                 RaisedButton.icon(
                   label: Text('QQ',style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w300, color: Color.fromRGBO(127, 127, 127, 1),)),
-                  icon: Image.asset("assets/images/qqchat.png",width: 26.0,),
+                  icon: Image.asset("assets/images/qqchat.png",width: ScreenUtil().setWidth(46)),
                   elevation: 0,
                   color: Colors.transparent,
                   onPressed: () {print('cion');},
                 ),
                 Container(
-                  height: 20.0,
+                  height: ScreenUtil().setHeight(20),
                   width: 1.0,
                   color: Color.fromRGBO(127, 127, 127, 1),
                 ),
                  RaisedButton.icon(
                   label: Text('微博',style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w300, color: Color.fromRGBO(127, 127, 127, 1),)),
-                  icon: Image.asset("assets/images/weibo.png",width: 26.0,),
+                  icon: Image.asset("assets/images/weibo.png",width: ScreenUtil().setWidth(46),),
                   elevation: 0,
                   color: Colors.transparent,
                   onPressed: () {print('cion');},
