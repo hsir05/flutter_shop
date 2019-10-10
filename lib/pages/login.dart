@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './home_page.dart';
-import './search_page.dart';
+// import './search_page.dart';
+import './searchBar.dart';
+
 
 class Login extends StatelessWidget {
+  bool _hasdeleteIcon = false;
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
@@ -25,9 +28,10 @@ class Login extends StatelessWidget {
                   icon: Icon(Icons.search),
                   tooltip: 'search',
                   onPressed: () {
-                    Navigator.push(context,new  MaterialPageRoute(
-                      builder:(context) =>SearchPage())
-                    );
+                    showSearch(context: context,delegate: SearchBarDelegate());
+                    // Navigator.push(context,new  MaterialPageRoute(
+                    //   builder:(context) =>SearchPage())
+                    // );
                   }),
             IconButton(
                 icon: Icon(Icons.shopping_cart),
@@ -89,6 +93,7 @@ class Login extends StatelessWidget {
                 children: <Widget>[
                 RaisedButton.icon( 
                   label: labelText('微信'),
+                   splashColor: Colors.transparent,
                   icon: Image.asset("assets/images/wechat.png",width: ScreenUtil().setWidth(46),),
                   elevation: 0,
                   color: Colors.transparent,
@@ -99,6 +104,7 @@ class Login extends StatelessWidget {
 
                 RaisedButton.icon(
                   label: labelText('QQ'),
+                   splashColor: Colors.transparent,
                   icon: Image.asset("assets/images/qqchat.png",width: ScreenUtil().setWidth(46)),
                   elevation: 0,
                   color: Colors.transparent,
@@ -111,6 +117,7 @@ class Login extends StatelessWidget {
                   label: labelText('微博'),
                   icon: Image.asset("assets/images/weibo.png",width: ScreenUtil().setWidth(46),),
                   elevation: 0,
+                  splashColor: Colors.transparent,
                   color: Colors.transparent,
                   onPressed: () {print('cion');},
                 ),
