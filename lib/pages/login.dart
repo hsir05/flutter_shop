@@ -56,6 +56,7 @@ class Login extends StatelessWidget {
                   onPressed: () {print('cion');},
                 ),
             ),
+            
             Container(
               width: ScreenUtil().setWidth(640),
               height: ScreenUtil().setHeight(100),
@@ -86,43 +87,50 @@ class Login extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                RaisedButton.icon(
-                  label: Text('微信',style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w300, color: Color.fromRGBO(127, 127, 127, 1),)),
+                RaisedButton.icon( 
+                  label: labelText('微信'),
                   icon: Image.asset("assets/images/wechat.png",width: ScreenUtil().setWidth(46),),
                   elevation: 0,
                   color: Colors.transparent,
                   onPressed: () {print('cion');},
                 ),
-                Container(
-                  height: ScreenUtil().setHeight(20),
-                  width: 1.0,
-                  color: Color.fromRGBO(127, 127, 127, 1),
-                ),
+
+                vertLine(),
+
                 RaisedButton.icon(
-                  label: Text('QQ',style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w300, color: Color.fromRGBO(127, 127, 127, 1),)),
+                  label: labelText('QQ'),
                   icon: Image.asset("assets/images/qqchat.png",width: ScreenUtil().setWidth(46)),
                   elevation: 0,
                   color: Colors.transparent,
                   onPressed: () {print('cion');},
                 ),
-                Container(
-                  height: ScreenUtil().setHeight(20),
-                  width: 1.0,
-                  color: Color.fromRGBO(127, 127, 127, 1),
-                ),
+
+                vertLine(),
+
                  RaisedButton.icon(
-                  label: Text('微博',style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w300, color: Color.fromRGBO(127, 127, 127, 1),)),
+                  label: labelText('微博'),
                   icon: Image.asset("assets/images/weibo.png",width: ScreenUtil().setWidth(46),),
                   elevation: 0,
                   color: Colors.transparent,
                   onPressed: () {print('cion');},
                 ),
               ],),
-              
             )
           ],
         ),
       )
     );
   }
+
+Widget vertLine() {
+    return Container(
+        height: ScreenUtil().setHeight(40),
+        width: 1.0,
+        color: Color.fromRGBO(127, 127, 127, 1),
+      );
+  }
+  Widget labelText(String text) {
+    return Text(text,style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w300, color: Color.fromRGBO(127, 127, 127, 1),));
+  }
+  
 }
