@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './home_page.dart';
+import './search_page.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -22,6 +23,9 @@ class Login extends StatelessWidget {
                   icon: Icon(Icons.search),
                   tooltip: 'search',
                   onPressed: () {
+                    Navigator.push(context,new  MaterialPageRoute(
+                      builder:(context) =>SearchPage())
+                    );
                   }),
             IconButton(
                 icon: Icon(Icons.shopping_cart),
