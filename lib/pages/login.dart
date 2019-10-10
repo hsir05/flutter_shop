@@ -29,9 +29,6 @@ class Login extends StatelessWidget {
                   tooltip: 'search',
                   onPressed: () {
                     showSearch(context: context,delegate: SearchBarDelegate());
-                    // Navigator.push(context,new  MaterialPageRoute(
-                    //   builder:(context) =>SearchPage())
-                    // );
                   }),
             IconButton(
                 icon: Icon(Icons.shopping_cart),
