@@ -75,7 +75,6 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                     fontSize: 14.0
                   );
 
-                 
                    var timer;
                     timer = Timer.periodic(
                       const Duration(milliseconds: 2000), (Void) {

@@ -36,6 +36,7 @@ dev_dependencies:
   flutter_spinkit: ^4.0.0
   fluttertoast: ^3.1.0
   fluro: ^1.5.1
+  shared_preferences: ^0.5.3+4
 
 
 
@@ -54,7 +55,19 @@ flutter:
   # assets:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
-
+  assets:
+    - assets/images/noCart.png
+    - assets/images/yanxuan.png
+    - assets/images/wechat.png
+    - assets/images/qqchat.png
+    - assets/images/weibo.png
+  # fonts:
+  #       - family: MaterialIcons
+  #         fonts:
+  #           - asset: fonts/MaterialIcons.ttf
+    # - family: MaterialIcons
+    # fonts:
+    #   - asset: assets/fonts/MaterialIcons.ttf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
