@@ -134,7 +134,7 @@ Widget vertLine() {
       );
   }
   Widget labelText(String text) {
-    return Text(text,style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w300, color: Color.fromRGBO(127, 127, 127, 1),));
+    return Text(text, style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w300, color: Color.fromRGBO(127, 127, 127, 1),));
   }
   
 }

@@ -25,7 +25,7 @@ class _CartPageState extends State<CartPage> {
     return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Center(child: Image.asset("assets/images/noCart.png",width: ScreenUtil().setWidth(130),)),
+          Center(child: Image.asset("assets/images/noCart.png",width: ScreenUtil().setWidth(150),)),
           Center(child: Text('去添加点什么吧', style: TextStyle(fontSize: 16.0, color:Colors.black38))),
           Padding(
             padding: EdgeInsets.only(top: 15.0),

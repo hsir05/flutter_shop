@@ -61,6 +61,21 @@ flutter:
     - assets/images/wechat.png
     - assets/images/qqchat.png
     - assets/images/weibo.png
+    - assets/images/membg.png
+    - assets/images/avatar.png
+    - assets/images/qr.png
+    - assets/images/01.png
+    - assets/images/02.png
+    - assets/images/03.png
+    - assets/images/04.png
+    - assets/images/05.png 
+    - assets/images/06.png
+    - assets/images/07.png
+    - assets/images/08.png
+    - assets/images/09.png
+    - assets/images/10.png
+    - assets/images/11.png
+    - assets/images/12.png
   # fonts:
   #       - family: MaterialIcons
   #         fonts:
