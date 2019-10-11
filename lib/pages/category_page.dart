@@ -127,7 +127,7 @@ class _RightTopBannerState extends State<RightTopBanner> {
     return Provide<ChildCategory>(
       builder: (context,child,childCategory){
         return Container(
-          margin: EdgeInsets.only(top: 10),
+          margin: EdgeInsets.only(top: 20),
           padding: EdgeInsets.only(left:10.0, right: 10.0),
           width: ScreenUtil().setWidth(570),
           height: ScreenUtil().setHeight(200),

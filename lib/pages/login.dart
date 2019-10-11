@@ -42,7 +42,7 @@ class Login extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Center(child: Padding(
-              padding: EdgeInsets.only(top:100.0, bottom: 100.0),
+              padding: EdgeInsets.only(top:ScreenUtil().setHeight(170), bottom: ScreenUtil().setHeight(170)),
               child: Image.asset("assets/images/yanxuan.png",width: 150.0,),
             )),
 
@@ -84,7 +84,7 @@ class Login extends StatelessWidget {
             Container(
               height: ScreenUtil().setHeight(90),
               width: ScreenUtil().setWidth(640),
-              margin: EdgeInsets.only(top: 150.0),
+              margin: EdgeInsets.only(top: ScreenUtil().setHeight(270)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

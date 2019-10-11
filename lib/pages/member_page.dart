@@ -135,6 +135,7 @@ class MemberPage  extends StatelessWidget {
         children: <Widget>[
           Container(
             width: ScreenUtil().setWidth(190),
+            height: ScreenUtil().setHeight(190),
             margin: EdgeInsets.only(left: 30.0, right: 15.0),
             child: CircleAvatar(
               radius: 50.0,

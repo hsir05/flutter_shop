@@ -10,7 +10,7 @@ class Special extends StatelessWidget {
   Widget build(BuildContext context) {
     String title = '特约商品';
     return Container(
-      height: ScreenUtil().setHeight(380),
+      height: ScreenUtil().setHeight(390),
       margin: EdgeInsets.only(top:10.0),
       child: Column(children: <Widget>[
         TitleWidget(title:title),
@@ -24,7 +24,7 @@ class Special extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        height: ScreenUtil().setHeight(270),
+        height: ScreenUtil().setHeight(280),
         width: ScreenUtil().setWidth(250),
         padding: EdgeInsets.all(5.0),
         decoration: BoxDecoration(
