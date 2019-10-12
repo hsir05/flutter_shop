@@ -34,7 +34,7 @@ class _CartPageState extends State<CartPage> {
                 textColor: Colors.white,
                 child: Text('登陆',style: TextStyle(fontSize: 16.0, color: Colors.white)),
                 onPressed: () {
-                  Navigator.push(context,new  MaterialPageRoute(
+                  Navigator.push(context, MaterialPageRoute(
                     builder:(context) =>Login())
                   );
                 }

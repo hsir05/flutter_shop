@@ -5,14 +5,18 @@ import './router_handler.dart';
 class Routes{
   static String root='/';
   static String detailsPage = '/detail';
+  static String orderPage = '/order';
   static void configureRoutes(Router router){
     router.notFoundHandler = new Handler(
       handlerFunc: (BuildContext context, Map<String, List<String>> params){
         print('ERROR====>ROUTE WAS NOT FONUND!!!');
       }
     );
+    router.define(root, handler:homeHandler);
 
-    router.define(detailsPage,handler:detailsHandler);
+    router.define(detailsPage, handler:detailsHandler);
+
+    router.define(orderPage, handler:orderHandler);
+    
   }
-
 }

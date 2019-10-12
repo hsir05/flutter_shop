@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import './home_page.dart';
-// import './search_page.dart';
+import '../routers/application.dart';
 import './searchBar.dart';
 
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
 
-class Login extends StatelessWidget {
+class _LoginState extends State<Login> {
   bool _hasdeleteIcon = false;
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
@@ -17,9 +21,7 @@ class Login extends StatelessWidget {
                   icon: Icon(Icons.home),
                   tooltip: 'search',
                   onPressed: () {
-                     Navigator.push(context,new  MaterialPageRoute(
-                      builder:(context) =>HomePage())
-                    );
+                    Application.router.navigateTo(context,"/");
                   }),
         title: Text("网易严选"),
         centerTitle: true,

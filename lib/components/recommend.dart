@@ -80,7 +80,7 @@ class Recommend extends StatelessWidget {
             onTap:(){
               print('点击了火爆商品');
               Application.router.navigateTo(context,"/detail?id=${val['id']}");
-              },
+            },
             child: 
             Container(
               alignment:Alignment.centerLeft,

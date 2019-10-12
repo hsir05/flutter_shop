@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../routers/application.dart';
 
 class MemberPage  extends StatelessWidget {
   final List<Map> menuList = [
     {
       "icon":'assets/images/01.png',
-      "name": '我的订单'
+      "name": '我的订单',
+      "targetUrl": '/order'
     },
     {
       "icon": 'assets/images/02.png',
@@ -113,7 +115,7 @@ class MemberPage  extends StatelessWidget {
              },
              color: Colors.white,
              elevation: 0,
-             child:Text('退出登陆', style: TextStyle(color: Color.fromRGBO(238, 238, 238, 1), fontSize: 16.0),)
+             child:Text('退出登陆', style: TextStyle(color: Color.fromRGBO(51, 51, 51, 1), fontSize: 16.0),)
           ),
          )
         ],
@@ -213,14 +215,18 @@ class MemberPage  extends StatelessWidget {
               childAspectRatio: 1,
             ),
             itemBuilder: (context, index) {
-              return menuItem(menuList[index]);
+              return menuItem(context, menuList[index]);
             },
           )
       );
     }
 
-  Widget menuItem(item) {
-    return Container(
+  Widget menuItem(BuildContext context, item) {
+    return InkWell(
+      onTap: (){ 
+        Application.router.navigateTo(context, item['targetUrl']);
+      },
+      child: Container(
       decoration: BoxDecoration(
         color: Colors.white,
         border:Border.all(width: 0.25, color: Color.fromRGBO(181, 178, 178, 1)),
@@ -237,8 +243,10 @@ class MemberPage  extends StatelessWidget {
           Text(item['name'])
         ],
       ),
+    )
     );
   }
+
 void mCupertinoAlertDialog(BuildContext context){
   showDialog(
     context: context,
