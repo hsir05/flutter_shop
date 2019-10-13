@@ -50,16 +50,43 @@ void initState() {
         Provide.value<ChildCategory>(context).changeChildIndex(index, rightTopBanUrl);
       },
       child: Container(
+        alignment: Alignment.centerLeft,
         height: ScreenUtil().setHeight(100),
-        padding: EdgeInsets.only(left: 10.0,top: 20.0),
+        padding: EdgeInsets.only(left: 2.0),
         decoration: BoxDecoration(
-          color: isClick ? Color.fromRGBO(236, 236, 236, 1.0) : Colors.white,
-          border: Border(
-            bottom: BorderSide(width: 1, color: Colors.black12)
-          )
+          // color: isClick ? Color.fromRGBO(236, 236, 236, 1.0) : Colors.white,
+          color: Colors.white,
+          // border: Border(
+          //   bottom: BorderSide(width: 1, color: Colors.black12)
+          // )
         ),
-        child: Text(cateList[index].name,style: TextStyle(fontSize:ScreenUtil().setSp(28)),),
+        child: leftTextItem(isClick, cateList[index].name, )
       ),
     );
+  }
+
+  Widget leftTextItem(bool isClick, String name) {
+    if (isClick) {
+      return Row(
+        children: <Widget>[
+          Container(
+            width: 2.0,
+            height: ScreenUtil().setHeight(60),
+            margin: EdgeInsets.only(right: 8.0),
+            color: Color.fromRGBO(171, 43, 43, 1.0),
+          ),
+          Text(
+          name,
+          style: TextStyle(fontSize:ScreenUtil().setSp(28), color: Color.fromRGBO(171, 43, 43, 1.0)),)
+        ],
+      );
+    } else {
+      return Padding(
+        padding: EdgeInsets.only(left: 10.0),
+        child: Text(
+        name,
+          style: TextStyle(fontSize:ScreenUtil().setSp(28), color: Color.fromRGBO(51, 51, 51, 1.0) ),),
+      );
+    }
   }
 }
