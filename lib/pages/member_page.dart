@@ -11,15 +11,20 @@ class MemberPage  extends StatelessWidget {
       "targetUrl": '/order'
     },
     {
+      "icon": 'assets/images/03.png',
+      "name": '售后服务',
+      "targetUrl": '/afterServer'
+    },
+     {
+      "icon": 'assets/images/09.png',
+      "name": '地址管理',
+      "targetUrl": '/afterServer'
+    },
+    {
       "icon": 'assets/images/02.png',
       "name": '周六一起拼'
     },
     {
-      "icon": 'assets/images/03.png',
-      "name": '售后服务'
-    },
-
-      {
       "icon":'assets/images/04.png',
       "name": '邀请返利'
     },
@@ -39,11 +44,7 @@ class MemberPage  extends StatelessWidget {
       "icon": 'assets/images/08.png',
       "name": '会员俱乐部'
     },
-    {
-      "icon": 'assets/images/09.png',
-      "name": '地址管理'
-    },
-
+   
       {
       "icon":'assets/images/10.png',
       "name": '帐号安全'
@@ -224,6 +225,7 @@ class MemberPage  extends StatelessWidget {
   Widget menuItem(BuildContext context, item) {
     return InkWell(
       onTap: (){ 
+        print(item['targetUrl']);
         Application.router.navigateTo(context, item['targetUrl']);
       },
       child: Container(

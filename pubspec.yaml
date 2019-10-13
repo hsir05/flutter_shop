@@ -63,6 +63,7 @@ flutter:
     - assets/images/weibo.png
     - assets/images/membg.png
     - assets/images/avatar.png
+    - assets/images/noInfo.png
     - assets/images/qr.png
     - assets/images/01.png
     - assets/images/02.png

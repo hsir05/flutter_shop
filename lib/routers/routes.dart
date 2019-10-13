@@ -6,6 +6,8 @@ class Routes{
   static String root='/';
   static String detailsPage = '/detail';
   static String orderPage = '/order';
+  static String afterServerPage = '/afterServer';
+  // static String searchPage = '/search';
   static void configureRoutes(Router router){
     router.notFoundHandler = new Handler(
       handlerFunc: (BuildContext context, Map<String, List<String>> params){
@@ -17,6 +19,10 @@ class Routes{
     router.define(detailsPage, handler:detailsHandler);
 
     router.define(orderPage, handler:orderHandler);
+
+    router.define(afterServerPage, handler:afterServerHandler);
+
+    // router.define(searchPage, handler:searchHandler);
     
   }
 }
