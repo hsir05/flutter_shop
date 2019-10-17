@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provide/provide.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'dart:async';
 import '../provide/details_info.dart';
@@ -32,18 +33,28 @@ class DetailsPage extends StatelessWidget {
         builder: (context, snapshot){
           if(snapshot.hasData){
              var data = snapshot.data['data'];
+             String name = data['name'];
+             String retailPrice = data['retailPrice'];
+             String itemDetail = data['itemDetail']['detailHtml'];
             List <String> swiperDataList = [];
             swiperDataList.add(data['primaryPicUrl']);
             swiperDataList.add(data['itemDetail']['picUrl1']);
             swiperDataList.add(data['itemDetail']['picUrl2']);
             swiperDataList.add(data['itemDetail']['picUrl3']);
             swiperDataList.add(data['itemDetail']['picUrl4']);
-            // List <Map> swiperDataList = (data['focus'] as List).cast();
+
+            
 
             return Container(
-              child: Column(children: <Widget>[
-                SwiperDiy(swiperDataList: swiperDataList,),
-              ],),
+              child: ListView(children: <Widget>[
+                     SwiperDiy(swiperDataList: swiperDataList,),
+                DetailName(name: name, retailPrice: retailPrice),
+                Container(
+                  child: Html(
+                    data: itemDetail
+                  ),
+                )
+              ],)
             );
           } else {
              return SpinKitFadingCircle(
@@ -65,7 +76,6 @@ class DetailsPage extends StatelessWidget {
     // await Provide.value<DetailsInfoProvide>(context).getRecGoodsInfo(itemId);
     return await Provide.value<DetailsInfoProvide>(context).getGoodsInfo(itemId);
   }
-
   
 }
 
@@ -88,6 +98,32 @@ class SwiperDiy extends StatelessWidget {
         itemCount: swiperDataList.length,
         pagination: SwiperPagination(),
         autoplay: true,
+      ),
+    );
+  }
+}
+
+// 名称 推荐理由
+
+class DetailName extends StatelessWidget {
+  final String name;
+  final String retailPrice;
+  DetailName({Key key,this.name, this.retailPrice}):super(key:key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(children: <Widget>[
+            Text('¥', style: TextStyle(color: Color.fromRGBO(180, 40, 45, 1), fontWeight: FontWeight.w700)),
+            Text(retailPrice, style: TextStyle(color: Color.fromRGBO(180, 40, 45, 1), fontSize: 24.0, fontWeight: FontWeight.w700),),
+          ],),
+          Text(name, style: TextStyle(color: Colors.black87, fontSize: 16.0, fontWeight: FontWeight.w700),),
+
+        ],
       ),
     );
   }
