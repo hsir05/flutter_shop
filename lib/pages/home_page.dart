@@ -13,7 +13,7 @@ import '../components/adBanner.dart';
 import '../components/special.dart';
 // import '../components/leaderPhone.dart';
 import '../components/floorTitle.dart';
-import '../components/floorContent.dart';
+// import '../components/floorContent.dart';
 import '../components/recommend.dart';
 
 class HomePage extends StatefulWidget {
@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
     _getRecommend();
     super.initState();
   }
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,7 +46,6 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
               List <Map> navigatorList = (data['kingKongAreaV4'] as List).cast();
               String advertesPicture = data['operationCfg'][0]['picUrls'][0];
               List <Map> specialList = (data['timePurchaseItems']['itemList'] as List).cast();
-
               String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
               // List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
 
@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
     var option={
       'size':size,
       'lastItemId':lastItemId
-    };
+    }; 
     request('recommendData', option).then((data){
         List<Map> newRecomList = (data['data']['rcmdItemList'] as List).cast();
          setState(() {

@@ -105,7 +105,7 @@ class _LeftCateoryNavState extends State<LeftCateoryNav> {
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border(
-            bottom: BorderSide(width: 1, color: Colors.redAccent)
+            bottom: BorderSide(width: 1, color: Colors.black12)
           )
         ),
         child: Text(list[index].name,style: TextStyle(fontSize:ScreenUtil().setSp(28)),),

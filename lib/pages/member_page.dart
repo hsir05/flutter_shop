@@ -21,6 +21,11 @@ class MemberPage  extends StatelessWidget {
       "targetUrl": '/afterServer'
     },
     {
+      "icon":'assets/images/10.png',
+      "name": '帐号安全', 
+      "targetUrl": '/securityCenter'
+    },
+    {
       "icon": 'assets/images/02.png',
       "name": '周六一起拼'
     },
@@ -43,11 +48,6 @@ class MemberPage  extends StatelessWidget {
     {
       "icon": 'assets/images/08.png',
       "name": '会员俱乐部'
-    },
-   
-      {
-      "icon":'assets/images/10.png',
-      "name": '帐号安全'
     },
     {
       "icon": 'assets/images/11.png',
