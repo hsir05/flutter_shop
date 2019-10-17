@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provide/provide.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+// import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -57,10 +59,12 @@ class DetailsPage extends StatelessWidget {
               ],)
             );
           } else {
-             return SpinKitFadingCircle(
-                    color: Colors.black26,
-                    size: 50.0,
-                  );
+             return Center(
+               child: CupertinoActivityIndicator(
+                radius: 20.0,
+                animating: false,
+              ),
+             );
           }
         },
       ),

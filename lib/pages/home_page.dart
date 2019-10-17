@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'dart:convert';
 import 'dart:async';
@@ -6,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/material_footer.dart';
 import 'package:flutter_easyrefresh/material_header.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+// import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../service/service_method.dart';
 import '../components/adBanner.dart';
@@ -94,10 +95,12 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                 },
                );
              } else {
-               return SpinKitFadingCircle(
-                    color: Colors.black,
-                    size: 50.0,
-                  );
+               Center(
+               child: CupertinoActivityIndicator(
+                  radius: 20.0,
+                  animating: false,
+                ),
+              );
              }
            },
          ),
