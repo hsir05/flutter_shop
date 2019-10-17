@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provide/provide.dart';
 // import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -17,9 +18,11 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+        brightness: Brightness.light,
         backgroundColor: Colors.white70,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black87,),
@@ -49,20 +52,17 @@ class DetailsPage extends StatelessWidget {
 
             return Container(
               child: ListView(children: <Widget>[
-                     SwiperDiy(swiperDataList: swiperDataList,),
-                DetailName(name: name, retailPrice: retailPrice),
-                Container(
-                  child: Html(
-                    data: itemDetail
-                  ),
-                )
+                  SwiperDiy(swiperDataList: swiperDataList,),
+                  DetailName(name: name, retailPrice: retailPrice),
+                  Container(child: Html(data: itemDetail),),
+
               ],)
             );
           } else {
              return Center(
                child: CupertinoActivityIndicator(
-                radius: 20.0,
-                animating: false,
+                radius: 15.0,
+                animating: true,
               ),
              );
           }
@@ -112,6 +112,7 @@ class SwiperDiy extends StatelessWidget {
 class DetailName extends StatelessWidget {
   final String name;
   final String retailPrice;
+  final List recommendReasons = [];
   DetailName({Key key,this.name, this.retailPrice}):super(key:key);
 
   @override
@@ -126,7 +127,18 @@ class DetailName extends StatelessWidget {
             Text(retailPrice, style: TextStyle(color: Color.fromRGBO(180, 40, 45, 1), fontSize: 24.0, fontWeight: FontWeight.w700),),
           ],),
           Text(name, style: TextStyle(color: Colors.black87, fontSize: 16.0, fontWeight: FontWeight.w700),),
-
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              Container(
+                width: ScreenUtil().setWidth(500),
+                child: Text('推荐理由', style: TextStyle(fontSize: 12.0, color: Colors.black54),),
+              ),
+              Expanded(
+                child: Text('好评率>', style: TextStyle(fontSize: 12.0, color: Colors.black54),),
+              )
+            ],
+          )
         ],
       ),
     );
