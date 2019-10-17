@@ -62,7 +62,7 @@ class DetailsPage extends StatelessWidget {
                               bottom: BorderSide(width: 12.0, color: Color.fromRGBO(244, 244, 244, 1)),
                               ),
                           ),
-                      child:  ListTile(
+                          child:  ListTile(
                             title: Row(
                               children: <Widget>[
                                 Text(data['shoppingReward']['name'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
@@ -78,6 +78,13 @@ class DetailsPage extends StatelessWidget {
                               _modalBottomSheetMenu(context,  data['shoppingRewardRule']);
                             },
                           )
+                    ),
+                    // 评论
+                  Container(
+                    color: Colors.white,   
+                    margin: EdgeInsets.only(bottom: 8.0),
+                    padding: EdgeInsets.all(10.0),
+                    child: Title(leftTitle: "用户评价(${data['commentCount']})", rightTitle: "${data['itemStar']['goodCmtRate']}>", fontSize:16.0),
                   ),
                   Container(child: Html(data: itemDetail),),
               ],)
@@ -95,8 +102,8 @@ class DetailsPage extends StatelessWidget {
     );
   }
 
-
-void _modalBottomSheetMenu(BuildContext context, Map shoppingRewardRule){
+    // 底部弹出
+    void _modalBottomSheetMenu(BuildContext context, Map shoppingRewardRule){
         showModalBottomSheet(
             context: context,
             builder: (builder){
@@ -133,6 +140,20 @@ void _modalBottomSheetMenu(BuildContext context, Map shoppingRewardRule){
             }
         );
       }
+  
+  // 评论
+  Widget comments(){
+    return Container(
+      padding: EdgeInsets.all(10.0),
+      child: Column(children: <Widget>[
+        Row(
+          children: <Widget>[
+
+          ],
+        )
+      ],),
+    );
+  }
 
    Future getGoodsInfo(String id) async{
     var formData = {'itemId': id};
@@ -191,24 +212,9 @@ class DetailName extends StatelessWidget {
             Text(retailPrice, style: TextStyle(color: Color.fromRGBO(180, 40, 45, 1), fontSize: 24.0, fontWeight: FontWeight.w700),),
           ],),
           Text(name, style: TextStyle(color: Colors.black87, fontSize: 16.0, fontWeight: FontWeight.w700),),
-          Padding(
-            padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
-            child:   Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                Container(
-                  width: ScreenUtil().setWidth(500),
-                  child: Text('推荐理由', style: TextStyle(fontSize: 12.0, color: Colors.black54),),
-                ),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    child: Text('好评率>', style: TextStyle(fontSize: 12.0, color: Colors.black54),),
-                  ),
-                )
-              ],
-            ),
-          ),
+
+          Title(leftTitle: '推荐理由', rightTitle: '好评率>', fontSize:12.0),
+          
           Container(
             padding: EdgeInsets.only(top:15.0, bottom:  15.0, left: 8.0, right: 8.0),
             color: Color.fromRGBO(244, 244, 244, 1),
@@ -237,5 +243,35 @@ class DetailName extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class Title extends StatelessWidget {
+  final String leftTitle;
+  final String rightTitle;
+  final double fontSize;
+  Title({Key key,this.leftTitle, this.rightTitle, this.fontSize}):super(key:key);
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+            padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+            child:   Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Container(
+                  width: ScreenUtil().setWidth(460),
+                  child: Text(leftTitle, style: TextStyle(fontSize: fontSize, color: Colors.black54),),
+                ),
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.centerRight,
+                    child: Text(rightTitle, style: TextStyle(fontSize: fontSize, color: Colors.black54),),
+                  ),
+                )
+              ],
+            ),
+      );
   }
 }
