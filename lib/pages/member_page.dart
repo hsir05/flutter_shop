@@ -112,7 +112,7 @@ class MemberPage  extends StatelessWidget {
            height: ScreenUtil().setHeight(100),
            child:  RaisedButton(
              onPressed: () {
-                  mCupertinoAlertDialog(context);
+                mCupertinoAlertDialog(context);
              },
              color: Colors.white,
              elevation: 0,
