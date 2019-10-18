@@ -285,7 +285,7 @@ class DetailsBottom extends StatelessWidget {
                 child:Icon(
                       Icons.shopping_cart,
                       size: 28,
-                      color: Colors.red,
+                      color: Color.fromRGBO(180, 40, 45, 1),
                     ), 
               ) ,
            ),
@@ -307,7 +307,7 @@ class DetailsBottom extends StatelessWidget {
                alignment: Alignment.center,
                width: ScreenUtil().setWidth(300),
                height: ScreenUtil().setHeight(100),
-               color: Colors.red,
+               color: Color.fromRGBO(180, 40, 45, 1),
                child: Text(
                  '马上购买',
                  style: TextStyle(color: Colors.white,fontSize: ScreenUtil().setSp(28)),
