@@ -10,7 +10,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'dart:async';
 import '../provide/details_info.dart';
 import '../service/service_method.dart';
-
+import '../tools/tools.dart';
 
 class DetailsPage extends StatelessWidget {
   final String itemId;
@@ -36,8 +36,11 @@ class DetailsPage extends StatelessWidget {
       body: FutureBuilder(
         future: getGoodsInfo(itemId) ,
         builder: (context, snapshot){
+          
           if(snapshot.hasData){
+            
              var data = snapshot.data['data'];
+
              String name = data['name'];
              String retailPrice = data['retailPrice'];
              String itemDetail = data['itemDetail']['detailHtml'];
@@ -48,7 +51,6 @@ class DetailsPage extends StatelessWidget {
             swiperDataList.add(data['itemDetail']['picUrl2']);
             swiperDataList.add(data['itemDetail']['picUrl3']);
             swiperDataList.add(data['itemDetail']['picUrl4']);
-            
             return Container(
               child: ListView(children: <Widget>[
                   SwiperDiy(swiperDataList: swiperDataList,),
@@ -67,7 +69,7 @@ class DetailsPage extends StatelessWidget {
                               children: <Widget>[
                                 Text(data['shoppingReward']['name'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
                                 Padding(
-                                  padding: EdgeInsets.only(left: 15.0, right: 8.0),
+                                  padding: EdgeInsets.only(left: 12.0, right: 8.0),
                                   child: Text(data['shoppingReward']['rewardDesc'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
                                 ),
                                 Text(data['shoppingReward']['rewardValue'], style: TextStyle(fontSize: ScreenUtil().setSp(30), color: Color.fromRGBO(180, 40, 45, 1)),)
@@ -79,13 +81,17 @@ class DetailsPage extends StatelessWidget {
                             },
                           )
                     ),
-                    // 评论
+                    // 评论标题
                   Container(
                     color: Colors.white,   
-                    margin: EdgeInsets.only(bottom: 8.0),
-                    padding: EdgeInsets.all(10.0),
-                    child: Title(leftTitle: "用户评价(${data['commentCount']})", rightTitle: "${data['itemStar']['goodCmtRate']}>", fontSize:16.0),
+                    padding: EdgeInsets.all(15.0),
+                    child: Title(leftTitle: "用户评价(${data['commentCount']})", rightTitle: "${data['itemStar']['goodCmtRate']}", fontSize:14.0),
                   ),
+                  Divider(color: Colors.black12,),
+                  // 评论内容
+                  // _comments(data['comments']),
+                  _commentItem(data['comments'][0]),
+
                   Container(child: Html(data: itemDetail),),
               ],)
             );
@@ -141,28 +147,119 @@ class DetailsPage extends StatelessWidget {
         );
       }
   
-  // 评论
-  Widget comments(){
-    return Container(
-      padding: EdgeInsets.all(10.0),
-      child: Column(children: <Widget>[
-        Row(
-          children: <Widget>[
+  // 评论内容
+  Widget _comments(comments){
+    if (comments.length !=0){
+      return Column(
+          children: comments.map((item){
+            return _commentItem(item);
+          })
+        );
+    } else {
+      return Text('');
+    }
+  }
 
+  Widget _commentItem(Map item) {
+    String createTime = DateUtil.getFormartData(item['createTime'], 'yyyy-MM-dd hh:mm:ss');
+    return Container(
+      padding: EdgeInsets.only(left:10.0, right: 10.0, bottom: 10.0),
+      child: Column(
+      children: <Widget>[
+        Row(
+            children: <Widget>[
+              CircleAvatar(
+                radius: 20.0,
+                backgroundImage: NetworkImage(item['frontUserAvatar']),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                child: Text(item['frontUserName']),
+              ),
+            _iconStarList(item['star'])
           ],
-        )
-      ],),
-    );
+        ),
+
+        Padding(
+          padding: EdgeInsets.only(left:5.0, top:5.0),
+          child: Row(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(right: 8.0),
+                child: Text(createTime, style: TextStyle(color: Colors.black54, fontSize: ScreenUtil().setSp(24)),),
+              ),
+              _skuInfoList(item['skuInfo']),
+            ],
+          ),
+        ),
+
+        Container(
+          padding: EdgeInsets.only(top:5.0, left: 5.0, bottom: 10.0, right: 5.0),
+          alignment: Alignment.centerLeft,
+          child: Text(item['content'], style:TextStyle(fontSize: ScreenUtil().setSp(26))),
+        ),
+
+        _imgList(item['picList'])
+
+      ],
+    ));
+  }
+  
+  Widget _skuInfoList(List skuInfo) {
+    if (skuInfo.length != 0){
+      List<Widget> listWidget = skuInfo.map((val){
+          return Text(val, style: TextStyle(color: Colors.black54, fontSize: ScreenUtil().setSp(24)),);
+      }).toList();
+       return Wrap(
+        spacing: 2,
+        children: listWidget,
+      );
+    } else {
+      return Text('');
+    }
+  }
+  
+  Widget _iconStarList(int star){
+    if (star > 0){
+      List<Widget> listWidget = [];
+      for (int i = 1; i<= star; i++) {
+        listWidget.add(
+          Icon(Icons.star, color: Color.fromRGBO(255, 181, 73, 1), size: 18,)
+        );
+      } 
+      return Wrap(
+        spacing: 2,
+        children: listWidget,
+      );
+    } else {
+      return Text('');
+    }
+  }
+  // 评论图片
+  Widget _imgList(List picList){
+    if (picList.length > 0){
+      return GridView.builder(
+            shrinkWrap: true,
+            itemCount: picList.length,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              childAspectRatio:1,
+            ),
+            itemBuilder: (context, index) {
+              return Image.network(picList[index], fit: BoxFit.cover,);
+            },
+          );
+    } else {
+      return Text('');
+    }
   }
 
    Future getGoodsInfo(String id) async{
     var formData = {'itemId': id};
     return await request('recItemDetailById', formData);
-  }
-
-  Future _getBackInfo(BuildContext context) async{
-    // await Provide.value<DetailsInfoProvide>(context).getRecGoodsInfo(itemId);
-    return await Provide.value<DetailsInfoProvide>(context).getGoodsInfo(itemId);
   }
   
 }
@@ -192,7 +289,6 @@ class SwiperDiy extends StatelessWidget {
 }
 
 // 名称 推荐理由
-
 class DetailName extends StatelessWidget {
   final String name;
   final String retailPrice;
@@ -213,7 +309,7 @@ class DetailName extends StatelessWidget {
           ],),
           Text(name, style: TextStyle(color: Colors.black87, fontSize: 16.0, fontWeight: FontWeight.w700),),
 
-          Title(leftTitle: '推荐理由', rightTitle: '好评率>', fontSize:12.0),
+          Title(leftTitle: '推荐理由', rightTitle: '好评率', fontSize:12.0),
           
           Container(
             padding: EdgeInsets.only(top:15.0, bottom:  15.0, left: 8.0, right: 8.0),
@@ -250,6 +346,7 @@ class Title extends StatelessWidget {
   final String leftTitle;
   final String rightTitle;
   final double fontSize;
+
   Title({Key key,this.leftTitle, this.rightTitle, this.fontSize}):super(key:key);
 
 
@@ -267,7 +364,13 @@ class Title extends StatelessWidget {
                 Expanded(
                   child: Container(
                     alignment: Alignment.centerRight,
-                    child: Text(rightTitle, style: TextStyle(fontSize: fontSize, color: Colors.black54),),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        Text(rightTitle, style: TextStyle(fontSize: fontSize, color: Colors.black54)),
+                        Icon(Icons.keyboard_arrow_right, size: 18.0, color: Colors.black54,)
+                      ],
+                    ),
                   ),
                 )
               ],
