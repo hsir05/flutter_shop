@@ -75,6 +75,7 @@ class LeftCateoryNav extends StatefulWidget {
   @override
   _LeftCateoryNavState createState() => _LeftCateoryNavState();
 }
+
 class _LeftCateoryNavState extends State<LeftCateoryNav> {
   var listIndex = 0;
   List list = [];
