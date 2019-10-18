@@ -85,7 +85,7 @@ class DetailsPage extends StatelessWidget {
                                   padding: EdgeInsets.all(15.0),
                                   child: Title(leftTitle: "用户评价(${data['commentCount']})", rightTitle: "${data['itemStar']['goodCmtRate']}", fontSize:14.0),
                                 ),
-                                Divider(color: Colors.black12,),
+                                Divider(color: Colors.black12, height: 0,),
                                 // 评论内容
                                 // _comments(data['comments']),
                                 _commentItem(data['comments'][0]),
