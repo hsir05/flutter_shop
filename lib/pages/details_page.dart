@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provide/provide.dart';
-// import 'package:flutter_spinkit/flutter_spinkit.dart';
+// import 'package:provide/provide.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'dart:async';
-import '../provide/details_info.dart';
+// import '../provide/details_info.dart';
 import '../service/service_method.dart';
 import '../tools/tools.dart';
 
@@ -51,50 +48,57 @@ class DetailsPage extends StatelessWidget {
             swiperDataList.add(data['itemDetail']['picUrl2']);
             swiperDataList.add(data['itemDetail']['picUrl3']);
             swiperDataList.add(data['itemDetail']['picUrl4']);
-            return Container(
-              child: ListView(children: <Widget>[
-                  SwiperDiy(swiperDataList: swiperDataList,),
-                  DetailName(name: name, retailPrice: retailPrice, recommendReasons: recommendReasons),
-                      // 购物返
-                   Container(
-                      decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border(
-                              top: BorderSide(width: 12.0, color: Color.fromRGBO(244, 244, 244, 1)),
-                              bottom: BorderSide(width: 12.0, color: Color.fromRGBO(244, 244, 244, 1)),
-                              ),
-                          ),
-                          child:  ListTile(
-                            title: Row(
-                              children: <Widget>[
-                                Text(data['shoppingReward']['name'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 12.0, right: 8.0),
-                                  child: Text(data['shoppingReward']['rewardDesc'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
+            return Stack(
+                    children: <Widget>[
+                         ListView(children: <Widget>[
+                                SwiperDiy(swiperDataList: swiperDataList,),
+                                DetailName(name: name, retailPrice: retailPrice, recommendReasons: recommendReasons),
+                                    // 购物返
+                                Container(
+                                    decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          border: Border(
+                                            top: BorderSide(width: 12.0, color: Color.fromRGBO(244, 244, 244, 1)),
+                                            bottom: BorderSide(width: 12.0, color: Color.fromRGBO(244, 244, 244, 1)),
+                                            ),
+                                        ),
+                                        child:  ListTile(
+                                          title: Row(
+                                            children: <Widget>[
+                                              Text(data['shoppingReward']['name'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
+                                              Padding(
+                                                padding: EdgeInsets.only(left: 12.0, right: 8.0),
+                                                child: Text(data['shoppingReward']['rewardDesc'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
+                                              ),
+                                              Text(data['shoppingReward']['rewardValue'], style: TextStyle(fontSize: ScreenUtil().setSp(30), color: Color.fromRGBO(180, 40, 45, 1)),)
+                                            ],
+                                          ),
+                                          trailing: Icon(Icons.keyboard_arrow_right),
+                                          onTap: () {
+                                            _modalBottomSheetMenu(context,  data['shoppingRewardRule']);
+                                          },
+                                        )
+                                  ),
+                                  // 评论标题
+                                Container(
+                                  color: Colors.white,   
+                                  padding: EdgeInsets.all(15.0),
+                                  child: Title(leftTitle: "用户评价(${data['commentCount']})", rightTitle: "${data['itemStar']['goodCmtRate']}", fontSize:14.0),
                                 ),
-                                Text(data['shoppingReward']['rewardValue'], style: TextStyle(fontSize: ScreenUtil().setSp(30), color: Color.fromRGBO(180, 40, 45, 1)),)
-                              ],
-                            ),
-                            trailing: Icon(Icons.keyboard_arrow_right),
-                            onTap: () {
-                              _modalBottomSheetMenu(context,  data['shoppingRewardRule']);
-                            },
-                          )
-                    ),
-                    // 评论标题
-                  Container(
-                    color: Colors.white,   
-                    padding: EdgeInsets.all(15.0),
-                    child: Title(leftTitle: "用户评价(${data['commentCount']})", rightTitle: "${data['itemStar']['goodCmtRate']}", fontSize:14.0),
-                  ),
-                  Divider(color: Colors.black12,),
-                  // 评论内容
-                  // _comments(data['comments']),
-                  _commentItem(data['comments'][0]),
+                                Divider(color: Colors.black12,),
+                                // 评论内容
+                                // _comments(data['comments']),
+                                _commentItem(data['comments'][0]),
 
-                  Container(child: Html(data: itemDetail),),
-              ],)
-            );
+                                Container(child: Html(data: itemDetail),),
+                            ],),
+                       Positioned(
+                        bottom: 0,
+                        left: 0,
+                        child: DetailsBottom()
+                      )
+                    ]);
+           
           } else {
              return Center(
                child: CupertinoActivityIndicator(
@@ -263,6 +267,58 @@ class DetailsPage extends StatelessWidget {
   }
   
 }
+  // 底部按钮
+class DetailsBottom extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+       width:ScreenUtil().setWidth(750),
+       color: Colors.white,
+       height: ScreenUtil().setHeight(100),
+       child: Row(
+         children: <Widget>[
+           InkWell(
+             onTap: (){},
+             child: Container(
+                width: ScreenUtil().setWidth(110) ,
+                alignment: Alignment.center,
+                child:Icon(
+                      Icons.shopping_cart,
+                      size: 28,
+                      color: Colors.red,
+                    ), 
+              ) ,
+           ),
+           InkWell(
+             onTap: (){},
+             child: Container(
+               alignment: Alignment.center,
+               width: ScreenUtil().setWidth(340),
+               height: ScreenUtil().setHeight(100),
+               child: Text(
+                 '加入购物车',
+                 style: TextStyle(fontSize: ScreenUtil().setSp(28)),
+               ),
+             ) ,
+           ),
+           InkWell(
+             onTap: (){},
+             child: Container(
+               alignment: Alignment.center,
+               width: ScreenUtil().setWidth(300),
+               height: ScreenUtil().setHeight(100),
+               color: Colors.red,
+               child: Text(
+                 '马上购买',
+                 style: TextStyle(color: Colors.white,fontSize: ScreenUtil().setSp(28)),
+               ),
+             ) ,
+           ),
+         ],
+       ),
+    );
+  }
+}
 
 // 轮播
 class SwiperDiy extends StatelessWidget {
@@ -287,7 +343,6 @@ class SwiperDiy extends StatelessWidget {
     );
   }
 }
-
 // 名称 推荐理由
 class DetailName extends StatelessWidget {
   final String name;
