@@ -24,7 +24,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
   String homePageContent='正在获取数据';
   int lastItemId = 0;
-  int size = 10;
+  int size = 30;
   List<Map> recomList=[];
 
   @override
@@ -96,11 +96,11 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                );
              } else {
                return Center(
-               child: CupertinoActivityIndicator(
-                  radius: 15.0,
-                  animating: false,
-                ),
-              );
+                child: CupertinoActivityIndicator(
+                    radius: 15.0,
+                    animating: false,
+                  ),
+                );
              }
            },
          ),
@@ -108,13 +108,14 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
     );
   }
 
-  void _getRecommend() {
+  void _getRecommend(){
     var option={
       'size':size,
       'lastItemId':lastItemId
     }; 
     request('recommendData', option).then((data){
         List<Map> newRecomList = (data['data']['rcmdItemList'] as List).cast();
+        print(newRecomList[newRecomList.length - 1]['id']);
          setState(() {
             recomList.addAll(newRecomList);
             lastItemId = newRecomList[newRecomList.length - 1]['id']; 

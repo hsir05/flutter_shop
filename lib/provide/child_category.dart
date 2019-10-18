@@ -7,13 +7,14 @@ class ChildCategory with ChangeNotifier {
    int childIndex = 0;
 
   getChildCategory(List list){
+    print('========list==========');
     childCategoryList=list;
-    // rightTopBanUrl=banUrl;
     childIndex = 0;
     notifyListeners();
   }
 
   changeChildIndex(index, String banUrl){
+    print('========index==========');
     childIndex = index;
     rightTopBanUrl=banUrl;
     notifyListeners();

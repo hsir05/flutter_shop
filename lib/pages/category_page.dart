@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:provide/provide.dart';
 import'./leftCategoryNav.dart';
 import '../model/category.dart';
@@ -29,34 +31,41 @@ class _CategoryPageState extends State<CategoryPage> {
             return Container(
               child: Row(children: <Widget>[
                 LeftCategoryNav(),
+
                Flexible(
                  child: Column(children: <Widget>[
                   RightTopBanner(),
                   Expanded(
                     child: RightList(),
                   )
-
                  ],),
                )
+
               ],)
             );
-          } else {
-            return Text('加载中...');
+          } else { 
+            return Center(
+                child: CupertinoActivityIndicator(
+                    radius: 15.0,
+                    animating: false,
+                  ),
+                );
           }
         });
   }
 
-  void _getCategory()async{
-    await request('getCategory',null).then((val){
+  void _getCategory(){
+     request('getCategory',null).then((val){
         CategoryModel category = CategoryModel.fromJson(val);
         setState(() {
           list = category.data.categoryList;
         });
       });
   }
-  Future _isLoadFinish(context)async{
-      Provide.value<ChildCategory>(context).getChildCategory(list);
-      Provide.value<ChildCategory>(context).changeChildIndex(0, list[0].focusBannerList[0].picUrl);
+
+  Future _isLoadFinish(context) async{
+    Provide.value<ChildCategory>(context).getChildCategory(list);
+    Provide.value<ChildCategory>(context).changeChildIndex(0, list[0].focusBannerList[0].picUrl);
       return 'end';
   }
 }
