@@ -167,7 +167,7 @@ class DetailsPage extends StatelessWidget {
   Widget _commentItem(Map item) {
     String createTime = DateUtil.getFormartData(item['createTime'], 'yyyy-MM-dd hh:mm:ss');
     return Container(
-      padding: EdgeInsets.only(left:10.0, right: 10.0, bottom: 10.0),
+      padding: EdgeInsets.all(10.0),
       child: Column(
       children: <Widget>[
         Row(
@@ -337,8 +337,18 @@ class SwiperDiy extends StatelessWidget {
           return Image.network("${swiperDataList[index]}", fit: BoxFit.fill);
         },
         itemCount: swiperDataList.length,
-        pagination: SwiperPagination(),
+        // pagination: SwiperPagination(), 分页指示器点形式
         autoplay: true,
+        
+        pagination: SwiperPagination( // 分页指示器分数形式
+            alignment: Alignment.bottomRight, // 分页指示器位置
+            builder: FractionPaginationBuilder(
+                color: Colors.black,
+                fontSize: 14.0,
+                activeFontSize: 14.0,
+                activeColor: Color.fromRGBO(180, 40, 45, 1)
+            )
+        )
       ),
     );
   }
@@ -353,7 +363,7 @@ class DetailName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.only(top:10.0, left: 10.0, right: 10.0),
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
