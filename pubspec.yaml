@@ -78,6 +78,7 @@ flutter:
     - assets/images/10.png
     - assets/images/11.png
     - assets/images/12.png
+    - assets/images/splash.jpeg
   # fonts:
   #       - family: MaterialIcons
   #         fonts:
