@@ -18,7 +18,7 @@ class MemberPage  extends StatelessWidget {
      {
       "icon": 'assets/images/09.png',
       "name": '地址管理',
-      "targetUrl": '/afterServer'
+      "targetUrl": '/afterServer' 
     },
     {
       "icon":'assets/images/10.png',
@@ -35,7 +35,8 @@ class MemberPage  extends StatelessWidget {
     },
     {
       "icon": 'assets/images/05.png',
-      "name": '回馈金卡'
+      "name": '回馈金卡',
+      "targetUrl": '/goldenCard'
     },
     {
       "icon": 'assets/images/06.png',

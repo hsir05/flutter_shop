@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provide/provide.dart';
+import 'package:amap_base/amap_base.dart';
 import './provide/child_category.dart';
 import './provide/counter.dart';
 // import './provide/details_info.dart';
@@ -8,7 +9,8 @@ import 'package:fluro/fluro.dart';
 import './routers/routes.dart';
 import './routers/application.dart';
 
-void main(){
+void main() async{
+   await AMap.init('d090f6298f62ef936c3e9e9865cc2f34');
   var counter =Counter();
   var childCategory=ChildCategory();
   // var detailsInfoProvide= DetailsInfoProvide();
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Application.router.generator,
         theme: ThemeData(
-          primaryColor:Colors.pink
+          primaryColor:Color.fromRGBO(180, 40, 45, 1)
         ),
         home:IndexPage()
       ),

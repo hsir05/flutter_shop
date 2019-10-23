@@ -39,7 +39,7 @@ dev_dependencies:
   shared_preferences: ^0.5.3+4
   flutter_html: ^0.11.0
   intl: ^0.15.6
-
+  amap_base: ^0.3.5
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec

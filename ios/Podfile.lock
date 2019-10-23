@@ -1,19 +1,48 @@
 PODS:
+  - AMap3DMap (7.0.0):
+    - AMapFoundation (~> 1.5)
+  - amap_base (0.1.8):
+    - AMapLocation
+    - AMapNavi
+    - AMapSearch
+    - Flutter
+    - MJExtension
+  - AMapFoundation (1.5.7)
+  - AMapLocation (2.6.3):
+    - AMapFoundation (~> 1.4)
+  - AMapNavi (7.0.0):
+    - AMap3DMap (~> 7.0)
+    - AMapFoundation (~> 1.5)
+  - AMapSearch (6.9.0):
+    - AMapFoundation (~> 1.4)
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
+  - MJExtension (3.2.1)
   - shared_preferences (0.0.1):
     - Flutter
   - url_launcher (0.0.1):
     - Flutter
 
 DEPENDENCIES:
+  - amap_base (from `.symlinks/plugins/amap_base/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
 
+SPEC REPOS:
+  trunk:
+    - AMap3DMap
+    - AMapFoundation
+    - AMapLocation
+    - AMapNavi
+    - AMapSearch
+    - MJExtension
+
 EXTERNAL SOURCES:
+  amap_base:
+    :path: ".symlinks/plugins/amap_base/ios"
   Flutter:
     :path: ".symlinks/flutter/ios"
   fluttertoast:
@@ -24,8 +53,15 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/url_launcher/ios"
 
 SPEC CHECKSUMS:
+  AMap3DMap: 6616761d235e9711fd8053774cec911928c00146
+  amap_base: 0d205973fa29a6e232ffc4b48c1e3d8a7f20a3a3
+  AMapFoundation: 216d58448c80356434ac4332250a8fdb2f5c4d1e
+  AMapLocation: dc2c4fde95d72087d73934338160fadc72104bb7
+  AMapNavi: eb0bca7fc721863e1f71f94949e8e6a93ed989f6
+  AMapSearch: af02822537e55b85a4752e9df5c19e4b9da82031
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
+  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
   url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298
 

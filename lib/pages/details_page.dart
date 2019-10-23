@@ -167,7 +167,7 @@ class DetailsPage extends StatelessWidget {
   Widget _commentItem(Map item) {
     String createTime = DateUtil.getFormartData(item['createTime'], 'yyyy-MM-dd hh:mm:ss');
     return Container(
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.only(top:10.0, bottom: 10.0, left: 5.0,right: 5.0),
       child: Column(
       children: <Widget>[
         Row(
@@ -177,7 +177,7 @@ class DetailsPage extends StatelessWidget {
                 backgroundImage: NetworkImage(item['frontUserAvatar']),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                padding: EdgeInsets.only(left: 5.0, right: 5.0),
                 child: Text(item['frontUserName']),
               ),
             _iconStarList(item['star'])
@@ -189,7 +189,7 @@ class DetailsPage extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(right: 8.0),
+                padding: EdgeInsets.only(right: 5.0),
                 child: Text(createTime, style: TextStyle(color: Colors.black54, fontSize: ScreenUtil().setSp(24)),),
               ),
               _skuInfoList(item['skuInfo']),
@@ -212,7 +212,7 @@ class DetailsPage extends StatelessWidget {
   Widget _skuInfoList(List skuInfo) {
     if (skuInfo.length != 0){
       List<Widget> listWidget = skuInfo.map((val){
-          return Text(val, style: TextStyle(color: Colors.black54, fontSize: ScreenUtil().setSp(24)),);
+          return Text(val, style: TextStyle(color: Colors.black54, fontSize: ScreenUtil().setSp(24)), softWrap: true);
       }).toList();
        return Wrap(
         spacing: 2,
@@ -394,7 +394,7 @@ class DetailName extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(15.0)),
                           ),
                         ),
-                        Text(item)
+                        Text(item, overflow: TextOverflow.ellipsis,)
                       ],
                     );
                   }).toList()

@@ -4,7 +4,8 @@ import '../index_page.dart';
 import '../pages/details_page.dart';
 import '../pages/order_page.dart';
 import '../pages/afterServer_page.dart';
-import '../pages/security_page.dart';
+import '../pages/security_page.dart'; 
+import '../pages/goldenCard_page.dart'; 
 // import '../pages/searchBar.dart';
 
 Handler homeHandler = Handler(
@@ -32,6 +33,11 @@ Handler afterServerHandler = Handler(
 Handler securityCenterHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return SecurityCenter();
+});
+
+Handler goldenCardHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return GoldenCard();
 });
 
 // Handler searchHandler = Handler(
