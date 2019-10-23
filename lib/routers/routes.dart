@@ -9,6 +9,8 @@ class Routes{
   static String afterServerPage = '/afterServer';
   static String securityCenter = '/securityCenter';
   static String goldenCard = '/goldenCard';
+  static String address = '/address';
+
   // static String searchPage = '/search';
   static void configureRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -27,6 +29,8 @@ class Routes{
     router.define(securityCenter, handler:securityCenterHandler);
 
     router.define(goldenCard, handler:goldenCardHandler);
+
+    router.define(address, handler:addressHandler);
 
     // router.define(searchPage, handler:searchHandler);
     

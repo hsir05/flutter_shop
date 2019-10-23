@@ -18,7 +18,7 @@ class MemberPage  extends StatelessWidget {
      {
       "icon": 'assets/images/09.png',
       "name": '地址管理',
-      "targetUrl": '/afterServer' 
+      "targetUrl": '/address' 
     },
     {
       "icon":'assets/images/10.png',
