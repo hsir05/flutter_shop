@@ -1,11 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:amap_base/amap_base.dart';
 
 import '../widgets/button.widget.dart';
 import '../widgets/dimens.dart';
-import 'package:flutter/material.dart';
-// import '../widgets/misc.dart';
 
-
+ 
 class LocationDemo extends StatefulWidget {
   @override
   _LocationDemoState createState() => _LocationDemoState();
@@ -100,7 +99,7 @@ class _ResultItem extends StatelessWidget {
   final Location _data;
 
   const _ResultItem(this._data, {Key key}) : super(key: key);
-
+ 
   @override
   Widget build(BuildContext context) {
     return Padding(
