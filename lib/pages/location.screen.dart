@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:amap_base/amap_base.dart';
 
 import '../widgets/button.widget.dart';
-import '../widgets/dimens.dart';
 
  
 class LocationDemo extends StatefulWidget {
@@ -10,8 +9,7 @@ class LocationDemo extends StatefulWidget {
   _LocationDemoState createState() => _LocationDemoState();
 }
 
-class _LocationDemoState extends State<LocationDemo>
-    with AutomaticKeepAliveClientMixin {
+class _LocationDemoState extends State<LocationDemo>with AutomaticKeepAliveClientMixin {
   final _amapLocation = AMapLocation();
 
   List<Location> _result = [];
@@ -22,7 +20,8 @@ class _LocationDemoState extends State<LocationDemo>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).primaryColor,
+      // color: Theme.of(context).primaryColor,
+      color: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -32,7 +31,6 @@ class _LocationDemoState extends State<LocationDemo>
                   _result.map((location) => _ResultItem(location)).toList(),
             ),
           ),
-          SPACE_NORMAL,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
@@ -43,7 +41,6 @@ class _LocationDemoState extends State<LocationDemo>
                     isOnceLocation: true,
                     locatingWithReGeocode: true,
                   );
-
                   if (await Permissions().requestPermission()) {
                     _amapLocation
                         .getLocation(options)
@@ -82,7 +79,6 @@ class _LocationDemoState extends State<LocationDemo>
               ),
             ],
           ),
-          SPACE_NORMAL,
         ],
       ),
     );
@@ -103,7 +99,7 @@ class _ResultItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(kSpaceBig),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -111,10 +107,9 @@ class _ResultItem extends StatelessWidget {
             DateTime.now().toIso8601String(),
             style: TextStyle(color: Colors.grey),
           ),
-          SPACE_SMALL,
           Text(
             '${_data.toJson()}',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.black54),
           ),
         ],
       ),
