@@ -18,6 +18,12 @@ PODS:
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
+  - JCore (2.1.4)
+  - JPush (3.2.6):
+    - JCore (< 3.0.0, >= 2.0.0)
+  - jpush_flutter (0.0.2):
+    - Flutter
+    - JPush
   - MJExtension (3.2.1)
   - shared_preferences (0.0.1):
     - Flutter
@@ -28,6 +34,7 @@ DEPENDENCIES:
   - amap_base (from `.symlinks/plugins/amap_base/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - jpush_flutter (from `.symlinks/plugins/jpush_flutter/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
 
@@ -38,6 +45,8 @@ SPEC REPOS:
     - AMapLocation
     - AMapNavi
     - AMapSearch
+    - JCore
+    - JPush
     - MJExtension
 
 EXTERNAL SOURCES:
@@ -47,6 +56,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/flutter/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
+  jpush_flutter:
+    :path: ".symlinks/plugins/jpush_flutter/ios"
   shared_preferences:
     :path: ".symlinks/plugins/shared_preferences/ios"
   url_launcher:
@@ -61,6 +72,9 @@ SPEC CHECKSUMS:
   AMapSearch: af02822537e55b85a4752e9df5c19e4b9da82031
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
+  JCore: d345c049141877eb61c33011455fdb5fcab1673f
+  JPush: 41dd48a69bd8c08abc692dc7f2b23c0fb281471f
+  jpush_flutter: d7e3a79466eb9447fd940233f02661b514f137c6
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
   url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298

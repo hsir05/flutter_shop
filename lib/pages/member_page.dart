@@ -48,7 +48,8 @@ class MemberPage  extends StatelessWidget {
     },
     {
       "icon": 'assets/images/08.png',
-      "name": '会员俱乐部'
+      "name": '会员俱乐部',
+       "targetUrl": '/vip'
     },
     {
       "icon": 'assets/images/11.png',
