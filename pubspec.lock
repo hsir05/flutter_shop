@@ -144,6 +144,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.15.8"
+  jpush_flutter:
+    dependency: "direct dev"
+    description:
+      name: jpush_flutter
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.0"
   matcher:
     dependency: transitive
     description:
@@ -172,6 +179,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.8.0+1"
+  platform:
+    dependency: transitive
+    description:
+      name: platform
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.2.1"
   provide:
     dependency: "direct dev"
     description:

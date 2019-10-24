@@ -55,7 +55,7 @@ class _AddressPageState extends State<AddressPage> with AutomaticKeepAliveClient
                 onPressed: () {
                     Navigator.pop(context);
                 }),
-            title: Text("回馈金卡"), 
+            title: Text("地址管理"), 
             centerTitle: true),
         body: Container(
           child: Column(
