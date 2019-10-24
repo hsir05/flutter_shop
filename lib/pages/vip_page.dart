@@ -118,13 +118,26 @@ final JPush jpush = new JPush();
 
 // 编写视图
   @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: new Center(
+  // Widget build(BuildContext context) {
+  //   return new MaterialApp(
+  //     home: new Scaffold(
+  //       appBar: new AppBar(
+  //         title: const Text('极光推送'),
+  //       ),
+  //       body: 
+   Widget build(BuildContext context) {
+    return Scaffold(
+          appBar: AppBar(
+            backgroundColor: Color.fromRGBO(180, 40, 45, 1),
+            leading: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                    Navigator.pop(context);
+                }),
+            title: Text("会员俱乐部"), 
+            centerTitle: true),
+        body:
+        new Center(
           child: new ListView(
             children:[
               new Text('result: $debugLable\n'), 
@@ -326,8 +339,8 @@ final JPush jpush = new JPush();
           )
           
         ),
-      ),
-    );
+      );
+    
   }
 }
 
