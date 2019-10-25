@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../routers/application.dart';
 
+import 'package:qr_flutter/qr_flutter.dart';
+
 class MemberPage  extends StatelessWidget {
   final List<Map> menuList = [
     {
@@ -158,8 +160,7 @@ class MemberPage  extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              print('二维码');
-              Application.router.navigateTo(context, '/cameraApp');
+              dialog(context);
             },
             child: Container(
             width: ScreenUtil().setWidth(50),
@@ -173,7 +174,20 @@ class MemberPage  extends StatelessWidget {
       ),
     );
   }
-
+  void dialog(BuildContext context) {
+    showDialog<Null>(
+            context: context,
+            builder: (BuildContext context) {
+                return SimpleDialog(
+                    title: Text('生成二维码', textAlign: TextAlign.center,),
+                    children: <Widget>[
+                       createQr(context)
+                    ],
+                );
+            },
+        );
+  }
+  
   Widget _myCapital(context) {
     return Container(
       color: Colors.white,
@@ -257,7 +271,7 @@ class MemberPage  extends StatelessWidget {
     );
   }
 
-void mCupertinoAlertDialog(BuildContext context){
+  void mCupertinoAlertDialog(BuildContext context){
   showDialog(
     context: context,
     barrierDismissible: true, // user must tap button!
@@ -286,5 +300,15 @@ void mCupertinoAlertDialog(BuildContext context){
     },
   );
 }
- 
+  
+  Widget createQr(context){
+    return Container(
+      width: ScreenUtil().setWidth(600),
+      height: ScreenUtil().setHeight(600),
+      padding: EdgeInsets.only(left:25.0, right: 25.0, bottom: 10.0, top: 10.0),
+      child: QrImage(
+          data: "https://e.xitu.io/",
+          size: 100.0,
+    ));
+  }
 }

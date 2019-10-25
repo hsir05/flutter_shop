@@ -64,13 +64,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.13"
-  fast_qr_reader_view:
-    dependency: "direct dev"
-    description:
-      name: fast_qr_reader_view
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.1.5"
   fluro:
     dependency: "direct dev"
     description:
@@ -200,6 +193,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.2"
+  qr:
+    dependency: transitive
+    description:
+      name: qr
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.2.0"
+  qr_flutter:
+    dependency: "direct dev"
+    description:
+      name: qr_flutter
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.0.1"
   quiver:
     dependency: transitive
     description:

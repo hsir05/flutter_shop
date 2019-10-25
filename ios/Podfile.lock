@@ -15,8 +15,6 @@ PODS:
     - AMapFoundation (~> 1.5)
   - AMapSearch (6.9.0):
     - AMapFoundation (~> 1.4)
-  - fast_qr_reader_view (0.0.1):
-    - Flutter
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
@@ -34,7 +32,6 @@ PODS:
 
 DEPENDENCIES:
   - amap_base (from `.symlinks/plugins/amap_base/ios`)
-  - fast_qr_reader_view (from `.symlinks/plugins/fast_qr_reader_view/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - jpush_flutter (from `.symlinks/plugins/jpush_flutter/ios`)
@@ -55,8 +52,6 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   amap_base:
     :path: ".symlinks/plugins/amap_base/ios"
-  fast_qr_reader_view:
-    :path: ".symlinks/plugins/fast_qr_reader_view/ios"
   Flutter:
     :path: ".symlinks/flutter/ios"
   fluttertoast:
@@ -75,7 +70,6 @@ SPEC CHECKSUMS:
   AMapLocation: dc2c4fde95d72087d73934338160fadc72104bb7
   AMapNavi: eb0bca7fc721863e1f71f94949e8e6a93ed989f6
   AMapSearch: af02822537e55b85a4752e9df5c19e4b9da82031
-  fast_qr_reader_view: 53b38a544886e650381ca579e0cdd5ae142fffa6
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   JCore: d345c049141877eb61c33011455fdb5fcab1673f
