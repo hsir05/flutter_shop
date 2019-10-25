@@ -43,6 +43,7 @@ dev_dependencies:
   jpush_flutter: ^0.1.0
   # fast_qr_reader_view: ^0.1.5
   qr_flutter: ^3.0.1
+  barcode_scan: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
@@ -81,6 +82,7 @@ flutter:
     - assets/images/10.png
     - assets/images/11.png
     - assets/images/12.png
+    - assets/images/scan.png
     - assets/images/splash.jpeg
   # fonts:
   #       - family: MaterialIcons

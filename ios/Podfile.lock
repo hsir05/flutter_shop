@@ -15,6 +15,9 @@ PODS:
     - AMapFoundation (~> 1.5)
   - AMapSearch (6.9.0):
     - AMapFoundation (~> 1.4)
+  - barcode_scan (0.0.1):
+    - Flutter
+    - MTBBarcodeScanner
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
@@ -25,6 +28,7 @@ PODS:
     - Flutter
     - JPush
   - MJExtension (3.2.1)
+  - MTBBarcodeScanner (5.0.11)
   - shared_preferences (0.0.1):
     - Flutter
   - url_launcher (0.0.1):
@@ -32,6 +36,7 @@ PODS:
 
 DEPENDENCIES:
   - amap_base (from `.symlinks/plugins/amap_base/ios`)
+  - barcode_scan (from `.symlinks/plugins/barcode_scan/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - jpush_flutter (from `.symlinks/plugins/jpush_flutter/ios`)
@@ -48,10 +53,13 @@ SPEC REPOS:
     - JCore
     - JPush
     - MJExtension
+    - MTBBarcodeScanner
 
 EXTERNAL SOURCES:
   amap_base:
     :path: ".symlinks/plugins/amap_base/ios"
+  barcode_scan:
+    :path: ".symlinks/plugins/barcode_scan/ios"
   Flutter:
     :path: ".symlinks/flutter/ios"
   fluttertoast:
@@ -70,12 +78,14 @@ SPEC CHECKSUMS:
   AMapLocation: dc2c4fde95d72087d73934338160fadc72104bb7
   AMapNavi: eb0bca7fc721863e1f71f94949e8e6a93ed989f6
   AMapSearch: af02822537e55b85a4752e9df5c19e4b9da82031
+  barcode_scan: 33f586d02270046fc6559135038b34b5754eaa4f
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   JCore: d345c049141877eb61c33011455fdb5fcab1673f
   JPush: 41dd48a69bd8c08abc692dc7f2b23c0fb281471f
   jpush_flutter: d7e3a79466eb9447fd940233f02661b514f137c6
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
   url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298
 

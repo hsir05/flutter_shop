@@ -4,6 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../routers/application.dart';
 
 import 'package:qr_flutter/qr_flutter.dart';
+// import './scan_read_page.dart';
+// import 'package:barcode_scan/barcode_scan.dart';
+
 
 class MemberPage  extends StatelessWidget {
   final List<Map> menuList = [
@@ -151,15 +154,30 @@ class MemberPage  extends StatelessWidget {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text('清风明月', style: TextStyle(fontSize: ScreenUtil().setSp(30), color: Colors.white),),
               Text('普通用户', style: TextStyle(fontSize: ScreenUtil().setSp(25), color: Colors.white),)
             ],
           ),
           ),
+
           InkWell(
             onTap: () {
+              print('识别二维码');
+              Application.router.navigateTo(context, '/cameraApp');
+            },
+              child: Container(
+              width: ScreenUtil().setWidth(50),
+              margin: EdgeInsets.only(right: 25.0),
+              padding: EdgeInsets.all(2.0),
+              color: Color.fromRGBO(187, 174, 148, 1),
+              child: Image.asset("assets/images/scan.png"),
+            ),
+          ),
+           InkWell(
+            onTap: () {
+              print('创建二维码');
               dialog(context);
             },
             child: Container(
@@ -174,14 +192,15 @@ class MemberPage  extends StatelessWidget {
       ),
     );
   }
+
   void dialog(BuildContext context) {
     showDialog<Null>(
             context: context,
             builder: (BuildContext context) {
                 return SimpleDialog(
-                    title: Text('生成二维码', textAlign: TextAlign.center,),
+                    title: Text('识别二维码', textAlign: TextAlign.center,),
                     children: <Widget>[
-                       createQr(context)
+                      createQr(context),
                     ],
                 );
             },
@@ -307,8 +326,18 @@ class MemberPage  extends StatelessWidget {
       height: ScreenUtil().setHeight(600),
       padding: EdgeInsets.only(left:25.0, right: 25.0, bottom: 10.0, top: 10.0),
       child: QrImage(
-          data: "https://e.xitu.io/",
+          data: "https://www.allhistory.com/",
           size: 100.0,
+          errorStateBuilder: (cxt, err) {
+            return Container(
+              child: Center(
+                child: Text(
+                  "生成二维码出错....",
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            );
+          },
     ));
   }
 }
