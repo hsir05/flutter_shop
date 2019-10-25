@@ -101,7 +101,7 @@ class MemberPage  extends StatelessWidget {
       backgroundColor: Color.fromRGBO(238, 238, 238, 1),
       body: ListView(
         children: <Widget>[
-          _headTop(),
+          _headTop(context),
           _myCapital(context),
           Container(
             height: ScreenUtil().setHeight(20),
@@ -126,7 +126,7 @@ class MemberPage  extends StatelessWidget {
     );
   }
 
-  Widget _headTop() {
+  Widget _headTop(BuildContext context) {
     return Container(
       height: ScreenUtil().setHeight(330),
       padding: EdgeInsets.only(top: 25, bottom: 25),
@@ -156,12 +156,18 @@ class MemberPage  extends StatelessWidget {
             ],
           ),
           ),
-          Container(
+          InkWell(
+            onTap: () {
+              print('二维码');
+              Application.router.navigateTo(context, '/cameraApp');
+            },
+            child: Container(
             width: ScreenUtil().setWidth(50),
             margin: EdgeInsets.only(right: 25.0),
             padding: EdgeInsets.all(2.0),
             color: Color.fromRGBO(187, 174, 148, 1),
             child: Image.asset("assets/images/qr.png"),
+          ),
           )
         ],
       ),

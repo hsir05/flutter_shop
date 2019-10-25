@@ -10,7 +10,9 @@ class Routes{
   static String securityCenter = '/securityCenter';
   static String goldenCard = '/goldenCard';
   static String address = '/address'; 
-  static String vip = '/vip';
+  static String vip = '/vip'; 
+  static String cameraApp = '/cameraApp'; 
+
 
   // static String searchPage = '/search';
   static void configureRoutes(Router router){
@@ -35,6 +37,7 @@ class Routes{
 
     router.define(vip, handler:vipHandler);
 
+    router.define(cameraApp, handler:cameraAppHandler);
 
     // router.define(searchPage, handler:searchHandler);
     

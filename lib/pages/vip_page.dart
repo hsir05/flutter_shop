@@ -88,7 +88,7 @@ final JPush jpush = new JPush();
                 onPressed: () {
                     Navigator.pop(context);
                 }),
-            title: Text("会员俱乐部"), 
+            title: Text("极光推送"), 
             centerTitle: true),
         body: Column(
             children: <Widget>[

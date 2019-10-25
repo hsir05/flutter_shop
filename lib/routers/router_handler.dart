@@ -8,6 +8,7 @@ import '../pages/security_page.dart';
 import '../pages/goldenCard_page.dart'; 
 import '../pages/address_page.dart'; 
 import '../pages/vip_page.dart'; 
+import '../pages/scan_page.dart';
 
 // import '../pages/searchBar.dart';
 
@@ -51,6 +52,11 @@ Handler addressHandler = Handler(
 Handler vipHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return VipPage();
+});
+
+Handler cameraAppHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return CameraApp();
 });
 // Handler searchHandler = Handler(
 //   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
