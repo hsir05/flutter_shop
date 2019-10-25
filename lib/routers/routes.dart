@@ -11,7 +11,7 @@ class Routes{
   static String goldenCard = '/goldenCard';
   static String address = '/address'; 
   static String vip = '/vip'; 
-  static String cameraApp = '/cameraApp'; 
+  static String scanqr = '/scanqr'; 
 
 
   // static String searchPage = '/search';
@@ -37,7 +37,7 @@ class Routes{
 
     router.define(vip, handler:vipHandler);
 
-    router.define(cameraApp, handler:cameraAppHandler);
+    router.define(scanqr, handler:scanqrHandler);
 
     // router.define(searchPage, handler:searchHandler);
     

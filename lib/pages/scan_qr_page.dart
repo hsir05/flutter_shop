@@ -45,7 +45,7 @@ class _MyScanState extends State<SacnBody> {
                   textColor: Colors.white,
                   splashColor: Colors.blueGrey,
                   onPressed: scan,
-                  child: const Text('START CAMERA SCAN')
+                  child: const Text('开始识别二维码')
 
               ),
             ),

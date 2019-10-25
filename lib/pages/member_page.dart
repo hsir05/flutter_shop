@@ -4,11 +4,29 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../routers/application.dart';
 
 import 'package:qr_flutter/qr_flutter.dart';
+
+import 'package:barcode_scan/barcode_scan.dart';
+import 'dart:async';
+import 'package:flutter/services.dart';
 // import './scan_read_page.dart';
 // import 'package:barcode_scan/barcode_scan.dart';
 
+class MemberPage extends StatefulWidget {
+  @override
+  _MemberPageState createState() => _MemberPageState();
+}
 
-class MemberPage  extends StatelessWidget {
+class _MemberPageState extends State<MemberPage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+      
+//     );
+//   }
+// }
+
+// class MemberPage  extends StatelessWidget {
+  String barcode = '';
   final List<Map> menuList = [
     {
       "icon":'assets/images/01.png',
@@ -165,7 +183,8 @@ class MemberPage  extends StatelessWidget {
           InkWell(
             onTap: () {
               print('识别二维码');
-              Application.router.navigateTo(context, '/cameraApp');
+              scan();
+              // Application.router.navigateTo(context, '/scanqr');
             },
               child: Container(
               width: ScreenUtil().setWidth(50),
@@ -178,7 +197,7 @@ class MemberPage  extends StatelessWidget {
            InkWell(
             onTap: () {
               print('创建二维码');
-              dialog(context);
+              dialogCreateQr(context);
             },
             child: Container(
             width: ScreenUtil().setWidth(50),
@@ -193,12 +212,12 @@ class MemberPage  extends StatelessWidget {
     );
   }
 
-  void dialog(BuildContext context) {
+  void dialogCreateQr(BuildContext context) {
     showDialog<Null>(
             context: context,
             builder: (BuildContext context) {
                 return SimpleDialog(
-                    title: Text('识别二维码', textAlign: TextAlign.center,),
+                    title: Text('创建二维码', textAlign: TextAlign.center,),
                     children: <Widget>[
                       createQr(context),
                     ],
@@ -207,6 +226,29 @@ class MemberPage  extends StatelessWidget {
         );
   }
   
+   Future scan() async {
+    try {
+      String barcode = await BarcodeScanner.scan();
+      setState(() {
+        return this.barcode = barcode;
+      });
+    } on PlatformException catch (e) {
+      if (e.code == BarcodeScanner.CameraAccessDenied) {
+        setState(() {
+          return this.barcode = '暂无权限!';
+        });
+      } else {
+        setState(() {
+          return this.barcode = 'Unknown error: $e';
+        });
+      }
+    } on FormatException{
+      setState(() => this.barcode = 'null (User returned using the "back"-button before scanning anything. Result)');
+    } catch (e) {
+      setState(() => this.barcode = 'Unknown error: $e');
+    }
+  }
+
   Widget _myCapital(context) {
     return Container(
       color: Colors.white,
