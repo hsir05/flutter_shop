@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-// import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import '../tools/tools.dart';
 
 class SacnResult  extends StatelessWidget {
   final String barcode;
@@ -21,20 +21,28 @@ class SacnResult  extends StatelessWidget {
           centerTitle: true
         ),
         body: Container(
-          child: WebviewScaffold(
-              url: barcode,
-              withZoom: false,
-              withLocalStorage: true,
-              withJavascript: true,
-              hidden: true,  // 等待页面加载时显示其他小部件 hiden配合initialChild使用
-              initialChild: Center(
-                child: CupertinoActivityIndicator(
-                    radius: 15.0,
-                    animating: true,
-                  ))
-            )
+          child: webviewShow(barcode)
         )
     );
+  }
+
+  Widget webviewShow(data) {
+    if (Util.isWebsite(data)) {
+      return WebviewScaffold(
+        url: data,
+        withZoom: false, // 是否缩放 
+        withLocalStorage: true,
+        withJavascript: true,
+        hidden: true,  // 等待页面加载时显示其他小部件 hiden配合initialChild使用
+        initialChild: Center(
+          child: CupertinoActivityIndicator(
+              radius: 15.0,
+              animating: true,
+            ))
+      );
+    } else {
+        return Center(child: Text(data));
+    }
   }
 }
 

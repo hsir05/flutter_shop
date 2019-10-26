@@ -88,6 +88,10 @@ class Util {
     }
     return '${compareTime.month}-${compareTime.day}  $weekDay';
   }
+
+  static bool isWebsite(String str) {
+    return RegExp(r"^((https|http|ftp|rtsp|mms)?:\/\/)[^\s]+").hasMatch(str);
+  }
 }
 
 /*
@@ -165,3 +169,4 @@ class DateUtil {
     return sb.toString();
   }
 }
+
