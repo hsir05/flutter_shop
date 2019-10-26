@@ -8,7 +8,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
-// import './scan_read_page.dart';
+// import './scan_result_page.dart'; 
 // import 'package:barcode_scan/barcode_scan.dart';
 
 class MemberPage extends StatefulWidget {
@@ -183,8 +183,7 @@ class _MemberPageState extends State<MemberPage> {
           InkWell(
             onTap: () {
               print('识别二维码');
-              scan();
-              // Application.router.navigateTo(context, '/scanqr');
+              scan(context);
             },
               child: Container(
               width: ScreenUtil().setWidth(50),
@@ -226,18 +225,26 @@ class _MemberPageState extends State<MemberPage> {
         );
   }
   
-   Future scan() async {
+   Future scan(context) async {
     try {
       String barcode = await BarcodeScanner.scan();
-      setState(() {
+        print('=========识别到二维码=========');
+        print(barcode);
+        print("/scanResult?barcode=" + barcode);
+        // Application.router.navigateTo(context, "/scanResult"); 
+        Application.router.navigateTo(context, "/scanResult?barcode=13123123"); 
+       setState(() {
         return this.barcode = barcode;
       });
     } on PlatformException catch (e) {
       if (e.code == BarcodeScanner.CameraAccessDenied) {
+        Application.router.navigateTo(context, "/scanReslut?barcode=暂无权限"); 
+
         setState(() {
           return this.barcode = '暂无权限!';
         });
       } else {
+        Application.router.navigateTo(context, "/scanReslut?barcode=Unknown error: $e"); 
         setState(() {
           return this.barcode = 'Unknown error: $e';
         });

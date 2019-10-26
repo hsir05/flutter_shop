@@ -9,11 +9,12 @@ import '../pages/goldenCard_page.dart';
 import '../pages/address_page.dart'; 
 import '../pages/vip_page.dart'; 
 import '../pages/scan_qr_page.dart';
+import '../pages/scan_result_page.dart';
 
 // import '../pages/searchBar.dart';
 
 Handler homeHandler = Handler(
-  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  handlerFunc: (BuildContext context, Map<String, List<String>>params) {
   return IndexPage();
 });
 
@@ -23,6 +24,12 @@ Handler detailsHandler = Handler(
     return DetailsPage(itemId);
   }
 );
+
+Handler scanResultHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+    String barcode = params['barcode'].first;
+     return SacnResult(barcode);
+});
 
 Handler orderHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -58,6 +65,8 @@ Handler scanqrHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return Scanqr();
 });
+
+
 // Handler searchHandler = Handler(
 //   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
 //   return SearchBarDelegate();
