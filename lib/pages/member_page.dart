@@ -230,9 +230,10 @@ class _MemberPageState extends State<MemberPage> {
       String barcode = await BarcodeScanner.scan();
         print('=========识别到二维码=========');
         print(barcode);
-        print("/scanResult?barcode=" + barcode);
-        // Application.router.navigateTo(context, "/scanResult"); 
-        Application.router.navigateTo(context, "/scanResult?barcode=13123123"); 
+        print("/scanResult?barcode=$barcode");
+        String url = Uri.encodeComponent(barcode);
+        print(url);
+        Application.router.navigateTo(context, "/scanResult?barcode=$url"); 
        setState(() {
         return this.barcode = barcode;
       });
