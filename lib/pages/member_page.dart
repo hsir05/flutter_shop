@@ -229,7 +229,6 @@ class _MemberPageState extends State<MemberPage> {
     try {
       String barcode = await BarcodeScanner.scan();
         print('=========识别到二维码=========');
-        print(barcode);
         print("/scanResult?barcode=$barcode");
         String url = Uri.encodeComponent(barcode);
         print(url);

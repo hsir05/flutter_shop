@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class SacnResult  extends StatelessWidget {
   final String barcode;
@@ -7,19 +9,25 @@ class SacnResult  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Color.fromRGBO(180, 40, 45, 1),
-            leading: IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () {
-                    Navigator.pop(context);
-                }),
-            title: Text("扫描结果"), 
-            centerTitle: true),
+        appBar: AppBar(
+          backgroundColor: Color.fromRGBO(180, 40, 45, 1),
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                  Navigator.pop(context);
+              }),
+          title: Text("扫描结果"), 
+          centerTitle: true),
         body: Container(
           child: Center(child: Padding (
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Text(barcode, textAlign: TextAlign.center,),
+              child: WebviewScaffold(
+                url: barcode,
+                withZoom: false,
+                withLocalStorage: true,
+                withJavascript: true,
+              )
+              // Text(barcode, textAlign: TextAlign.center,),
             ),)
         )
     );

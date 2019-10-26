@@ -90,7 +90,7 @@ class DetailsPage extends StatelessWidget {
                                 // _comments(data['comments']),
                                 _commentItem(data['comments'][0]),
 
-                                Container(child: Html(data: itemDetail),),
+                                Container(child: Html(data: itemDetail),), 
                             ],),
                        Positioned(
                         bottom: 0,
