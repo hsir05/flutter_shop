@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../routers/application.dart';
-
 import 'package:qr_flutter/qr_flutter.dart';
-
 import 'package:barcode_scan/barcode_scan.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
-// import './scan_result_page.dart'; 
-// import 'package:barcode_scan/barcode_scan.dart';
 
 class MemberPage extends StatefulWidget {
   @override
@@ -17,15 +13,6 @@ class MemberPage extends StatefulWidget {
 }
 
 class _MemberPageState extends State<MemberPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-      
-//     );
-//   }
-// }
-
-// class MemberPage  extends StatelessWidget {
   String barcode = '';
   final List<Map> menuList = [
     {
@@ -167,6 +154,7 @@ class _MemberPageState extends State<MemberPage> {
             margin: EdgeInsets.only(left: 30.0, right: 15.0),
             child: CircleAvatar(
               radius: 50.0,
+              backgroundColor: Colors.black54,
               backgroundImage: AssetImage("assets/images/avatar.png")),
           ),
           Expanded(
@@ -183,10 +171,10 @@ class _MemberPageState extends State<MemberPage> {
           InkWell(
             onTap: () {
               print('识别二维码');
-              scan(context);
+              scanQr(context);
             },
               child: Container(
-              width: ScreenUtil().setWidth(50),
+              width: ScreenUtil().setWidth(45),
               margin: EdgeInsets.only(right: 25.0),
               padding: EdgeInsets.all(2.0),
               color: Color.fromRGBO(187, 174, 148, 1),
@@ -196,7 +184,7 @@ class _MemberPageState extends State<MemberPage> {
            InkWell(
             onTap: () {
               print('创建二维码');
-              dialogCreateQr(context);
+              dialogQr(context);
             },
             child: Container(
             width: ScreenUtil().setWidth(50),
@@ -211,7 +199,7 @@ class _MemberPageState extends State<MemberPage> {
     );
   }
 
-  void dialogCreateQr(BuildContext context) {
+  void dialogQr(BuildContext context) {
     showDialog<Null>(
             context: context,
             builder: (BuildContext context) {
@@ -225,7 +213,7 @@ class _MemberPageState extends State<MemberPage> {
         );
   }
   
-   Future scan(context) async {
+   Future scanQr(context) async {
     try {
       String barcode = await BarcodeScanner.scan();
         print('=========识别到二维码=========');

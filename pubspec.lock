@@ -151,6 +151,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.14.0+3"
+  image_picker:
+    dependency: "direct dev"
+    description:
+      name: image_picker
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.6.1+8"
   intl:
     dependency: "direct dev"
     description:
