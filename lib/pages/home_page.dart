@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                return Center(
                 child: CupertinoActivityIndicator(
                     radius: 15.0,
-                    animating: false,
+                    animating: true,
                   ),
                 );
              }

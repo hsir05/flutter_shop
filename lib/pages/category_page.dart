@@ -47,7 +47,7 @@ class _CategoryPageState extends State<CategoryPage> {
             return Center(
                 child: CupertinoActivityIndicator(
                     radius: 15.0,
-                    animating: false,
+                    animating: true,
                   ),
                 );
           }

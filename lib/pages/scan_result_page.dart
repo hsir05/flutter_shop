@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 // import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
@@ -17,18 +18,21 @@ class SacnResult  extends StatelessWidget {
                   Navigator.pop(context);
               }),
           title: Text("扫描结果"), 
-          centerTitle: true),
+          centerTitle: true
+        ),
         body: Container(
-          child: Center(child: Padding (
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: WebviewScaffold(
-                url: barcode,
-                withZoom: false,
-                withLocalStorage: true,
-                withJavascript: true,
-              )
-              // Text(barcode, textAlign: TextAlign.center,),
-            ),)
+          child: WebviewScaffold(
+              url: barcode,
+              withZoom: false,
+              withLocalStorage: true,
+              withJavascript: true,
+              hidden: true,  // 等待页面加载时显示其他小部件 hiden配合initialChild使用
+              initialChild: Center(
+                child: CupertinoActivityIndicator(
+                    radius: 15.0,
+                    animating: true,
+                  ))
+            )
         )
     );
   }
