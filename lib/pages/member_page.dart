@@ -216,7 +216,7 @@ class _MemberPageState extends State<MemberPage> {
             context: context,
             builder: (BuildContext context) {
                 return SimpleDialog(
-                    title: Text('创建二维码', textAlign: TextAlign.center,),
+                    title: Text('二维码', textAlign: TextAlign.center,),
                     children: <Widget>[
                       createQr(context),
                     ],
@@ -230,19 +230,15 @@ class _MemberPageState extends State<MemberPage> {
       String barcode = await BarcodeScanner.scan();
         print('=========识别到二维码=========');
         String url = Uri.encodeComponent(barcode);
-        Application.router.navigateTo(context, "/scanResult?barcode=$url"); 
        setState(() {
-        return this.barcode = barcode;
+        return this.barcode = url;
       });
     } on PlatformException catch (e) {
       if (e.code == BarcodeScanner.CameraAccessDenied) {
-        Application.router.navigateTo(context, "/scanReslut?barcode=暂无权限"); 
-
         setState(() {
           return this.barcode = '暂无权限!';
         });
       } else {
-        Application.router.navigateTo(context, "/scanReslut?barcode=Unknown error: $e"); 
         setState(() {
           return this.barcode = 'Unknown error: $e';
         });
@@ -252,6 +248,7 @@ class _MemberPageState extends State<MemberPage> {
     } catch (e) {
       setState(() => this.barcode = 'Unknown error: $e');
     }
+    Application.router.navigateTo(context, "/scanResult?barcode=$barcode"); 
   }
 
   Widget _myCapital(context) {
@@ -370,8 +367,8 @@ class _MemberPageState extends State<MemberPage> {
   Widget createQr(context){
     return Container(
       width: ScreenUtil().setWidth(600),
-      height: ScreenUtil().setHeight(600),
-      padding: EdgeInsets.only(left:25.0, right: 25.0, bottom: 10.0, top: 10.0),
+      height: ScreenUtil().setHeight(520),
+      padding: EdgeInsets.only(left:35.0, right: 35.0),
       child: QrImage(
           data: "https://www.allhistory.com/",
           size: 100.0,

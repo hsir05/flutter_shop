@@ -41,7 +41,10 @@ class SacnResult  extends StatelessWidget {
             ))
       );
     } else {
-        return Center(child: Text(data));
+        return Container(
+          padding: EdgeInsets.all(20.0),
+          child: Center(child: Text(data)),
+        );
     }
   }
 }
