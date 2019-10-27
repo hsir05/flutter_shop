@@ -35,9 +35,7 @@ class DetailsPage extends StatelessWidget {
         builder: (context, snapshot){
           
           if(snapshot.hasData){
-            
              var data = snapshot.data['data'];
-
              String name = data['name'];
              String retailPrice = data['retailPrice'];
              String itemDetail = data['itemDetail']['detailHtml'];
@@ -54,7 +52,7 @@ class DetailsPage extends StatelessWidget {
                                 SwiperDiy(swiperDataList: swiperDataList,),
                                 DetailName(name: name, retailPrice: retailPrice, recommendReasons: recommendReasons),
                                     // 购物返
-                                Container(
+                                data['shoppingReward'] == null ? Text('') : Container(
                                     decoration: BoxDecoration(
                                           color: Colors.white,
                                           border: Border(
@@ -65,12 +63,12 @@ class DetailsPage extends StatelessWidget {
                                         child:  ListTile(
                                           title: Row(
                                             children: <Widget>[
-                                              Text(data['shoppingReward']['name'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
+                                              Text( data['shoppingReward'] == null ? '' : data['shoppingReward']['name'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
                                               Padding(
                                                 padding: EdgeInsets.only(left: 12.0, right: 8.0),
-                                                child: Text(data['shoppingReward']['rewardDesc'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
+                                                child: Text(data['shoppingReward'] == null ? '' :  data['shoppingReward']['rewardDesc'], style: TextStyle(fontSize: ScreenUtil().setSp(30),)),
                                               ),
-                                              Text(data['shoppingReward']['rewardValue'], style: TextStyle(fontSize: ScreenUtil().setSp(30), color: Color.fromRGBO(180, 40, 45, 1)),)
+                                              Text(data['shoppingReward'] == null ? '' : data['shoppingReward']['rewardValue'], style: TextStyle(fontSize: ScreenUtil().setSp(30), color: Color.fromRGBO(180, 40, 45, 1)),)
                                             ],
                                           ),
                                           trailing: Icon(Icons.keyboard_arrow_right),
@@ -180,7 +178,7 @@ class DetailsPage extends StatelessWidget {
                 padding: EdgeInsets.only(left: 5.0, right: 5.0),
                 child: Text(item['frontUserName']),
               ),
-            _iconStarList(item['star'])
+            item['star'] == null ? Text('') : _iconStarList(item['star'])
           ],
         ),
 
@@ -203,7 +201,7 @@ class DetailsPage extends StatelessWidget {
           child: Text(item['content'], style:TextStyle(fontSize: ScreenUtil().setSp(26))),
         ),
 
-        _imgList(item['picList'])
+        item['picList'] == null ? Text('') : _imgList(item['picList'])
 
       ],
     ));
@@ -272,6 +270,7 @@ class DetailsBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
        width:ScreenUtil().setWidth(750),
        color: Colors.white,
        height: ScreenUtil().setHeight(100),
@@ -292,6 +291,11 @@ class DetailsBottom extends StatelessWidget {
            InkWell(
              onTap: (){},
              child: Container(
+              decoration: BoxDecoration(
+                 border: Border(
+                    left: BorderSide(width: 1.0, color: Colors.black12),
+                 )
+              ),
                alignment: Alignment.center,
                width: ScreenUtil().setWidth(340),
                height: ScreenUtil().setHeight(100),

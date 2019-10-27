@@ -5,7 +5,7 @@ import '../config/service_url.dart';
 
 Future request(url,formData)async{
     try{
-      print('${url}开始获取数据...............');
+      print('$url, 开始获取数据...............');
       Response response;
       Dio dio = new Dio();
       dio.options.contentType=ContentType.parse("application/x-www-form-urlencoded");
@@ -20,7 +20,7 @@ Future request(url,formData)async{
           throw Exception('后端接口出现异常，请检测代码和服务器情况.........');
       }
     }catch(e){
-        return print('ERROR:======>${e}');
+        return print('ERROR:======>$e');
     }
      
 }
