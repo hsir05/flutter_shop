@@ -96,7 +96,6 @@ class DetailsPage extends StatelessWidget {
                         child: DetailsBottom()
                       )
                     ]);
-            
           } else {
              return Center(
                child: CupertinoActivityIndicator(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import './title.dart';
 import '../routers/application.dart';
 
@@ -24,8 +25,19 @@ class Recommend extends StatelessWidget {
         if (val['type'] == 1) {
            return InkWell(
             onTap:(){
-              Application.router.navigateTo(context,"/detail?id=${val['id']}");
-              print('点击了火爆商品');},
+              print('点击了火爆商品');
+                if (val['id'] != null){
+                  Fluttertoast.showToast(
+                      msg: "暂无数据...",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.CENTER,
+                      timeInSecForIos: 1,
+                      fontSize: 14.0
+                    );
+                }else {
+                  Application.router.navigateTo(context,"/detail?id=${val['id']}");
+                }
+              },
             child: 
             Container(
               width: ScreenUtil().setWidth(372),
@@ -48,8 +60,19 @@ class Recommend extends StatelessWidget {
         }else if (val['type'] == 2)  {
            return InkWell(
             onTap:(){
-              Application.router.navigateTo(context,"/detail?id=${val['id']}");
-              print('点击了火爆商品');},
+               print('点击了火爆商品');
+              if (val['id'] != null){
+                Fluttertoast.showToast(
+                    msg: "暂无数据...",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER,
+                    timeInSecForIos: 1,
+                    fontSize: 14.0
+                  );
+              }else {
+                Application.router.navigateTo(context,"/detail?id=${val['id']}");
+              }
+            },
             child: 
             Container(
               alignment:Alignment.centerLeft,
@@ -79,7 +102,18 @@ class Recommend extends StatelessWidget {
           return InkWell(
             onTap:(){
               print('点击了火爆商品');
-              Application.router.navigateTo(context,"/detail?id=${val['id']}");
+              // Application.router.navigateTo(context,"/detail?id=${val['id']}");
+                if (val['id'] != null){
+                  Fluttertoast.showToast(
+                      msg: "暂无数据...",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.CENTER,
+                      timeInSecForIos: 1,
+                      fontSize: 14.0
+                    );
+                }else {
+                  Application.router.navigateTo(context,"/detail?id=${val['id']}");
+                }
             },
             child: 
             Container(
