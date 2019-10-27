@@ -35,7 +35,7 @@ class Recommend extends StatelessWidget {
               child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Image.network(val['categoryItem']['listPicUrl'], width: ScreenUtil().setWidth(375),height: ScreenUtil().setHeight(360)),
+                val['categoryItem']['listPicUrl'] == null ? Image.network('assets/images/bg.png') : Image.network(val['categoryItem']['listPicUrl'], width: ScreenUtil().setWidth(375),height: ScreenUtil().setHeight(360)),
                 Padding(
                   padding: EdgeInsets.all(5.0),
                   child: Text(val['categoryItem']['name'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
@@ -60,7 +60,7 @@ class Recommend extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.network(val['pinItem']['picUrl'], width: ScreenUtil().setWidth(375), height: ScreenUtil().setHeight(360),),
+                  val['pinItem']['picUrl'] == null ? Image.network('assets/images/bg.png') : Image.network(val['pinItem']['picUrl'], width: ScreenUtil().setWidth(375), height: ScreenUtil().setHeight(360),),
                    Padding(
                   padding: EdgeInsets.all(5.0),
                   child:Text(val['pinItem']['title'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26)))),

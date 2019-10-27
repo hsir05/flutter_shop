@@ -92,6 +92,7 @@ class Util {
   static bool isWebsite(String str) {
     return RegExp(r"^((https|http|ftp|rtsp|mms)?:\/\/)[^\s]+").hasMatch(str);
   }
+
 }
 
 /*

@@ -136,7 +136,7 @@ class SwiperDiy extends StatelessWidget {
     return Container(
       color: Colors.white,
       padding: EdgeInsets.only(top:20.0),
-      height: ScreenUtil().setHeight(373),
+      height: ScreenUtil().setHeight(420),
       width: ScreenUtil().setWidth(750),
       child: Swiper(
         itemBuilder: (BuildContext buildContext, int index){
