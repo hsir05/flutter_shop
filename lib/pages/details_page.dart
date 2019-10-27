@@ -172,7 +172,7 @@ class DetailsPage extends StatelessWidget {
             children: <Widget>[
               CircleAvatar(
                 radius: 20.0,
-                backgroundImage: NetworkImage(item['frontUserAvatar']),
+                backgroundImage: item['frontUserAvatar'] == null ? AssetImage("assets/images/avatar.png") : NetworkImage(item['frontUserAvatar']) ,
               ),
               Padding(
                 padding: EdgeInsets.only(left: 5.0, right: 5.0),
