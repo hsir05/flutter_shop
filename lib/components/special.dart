@@ -8,9 +8,9 @@ class Special extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String title = '特约商品';
+    String title = '限时抢购';
     return Container(
-      height: ScreenUtil().setHeight(390),
+      height: ScreenUtil().setHeight(450),
       margin: EdgeInsets.only(top:10.0),
       child: Column(children: <Widget>[
         TitleWidget(title:title),
@@ -19,7 +19,7 @@ class Special extends StatelessWidget {
     );
   }
 
-  // 特约商品
+  // 限时抢购
   Widget _item(index) {
     return InkWell(
       onTap: () {},

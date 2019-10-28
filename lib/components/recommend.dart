@@ -5,13 +5,14 @@ import './title.dart';
 import '../routers/application.dart';
 
 class Recommend extends StatelessWidget {
-
+ 
   List<Map> recommendList=[];
   Recommend({Key key, this.recommendList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    String title = '推荐商品';
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
+    String title = '为你推荐';
     return Container(
       child: Column(children: <Widget>[
         TitleWidget(title:title),
@@ -51,11 +52,11 @@ class Recommend extends StatelessWidget {
                 val['categoryItem']['listPicUrl'] == null ? Image.network('assets/images/bg.png') : Image.network(val['categoryItem']['listPicUrl'], width: ScreenUtil().setWidth(375),height: ScreenUtil().setHeight(360)),
                 Padding(
                   padding: EdgeInsets.all(5.0),
-                  child: Text(val['categoryItem']['name'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
+                  child: Text(val['categoryItem']['name'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.black87, fontSize: ScreenUtil().setSp(26))),
                 ),
-                  Padding(
+                Padding( 
                   padding: EdgeInsets.only(left:5.0),
-                  child: Text('￥${val['categoryItem']['retailPrice']}'),
+                  child: Text('￥${val['categoryItem']['retailPrice']}', style: TextStyle(color: Color.fromRGBO(180, 40, 45, 1)),),
                   )
               ])));
         }else if (val['type'] == 2)  {
@@ -88,12 +89,12 @@ class Recommend extends StatelessWidget {
                   val['pinItem']['picUrl'] == null ? Image.network('assets/images/bg.png') : Image.network(val['pinItem']['picUrl'], width: ScreenUtil().setWidth(375), height: ScreenUtil().setHeight(360),),
                    Padding(
                   padding: EdgeInsets.all(5.0),
-                  child:Text(val['pinItem']['title'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26)))),
+                  child:Text(val['pinItem']['title'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.black87, fontSize: ScreenUtil().setSp(26)))),
                   Padding(
                     padding: EdgeInsets.only(left: 5.0),
                     child: Row(
                     children: <Widget>[
-                      Text('￥${val['pinItem']['price']}'),
+                      Text('￥${val['pinItem']['price']}', style: TextStyle(color: Color.fromRGBO(180, 40, 45, 1))),
                       Text(  '￥${val['pinItem']['originPrice']}',
                         style: TextStyle(color:Colors.black26,decoration: TextDecoration.lineThrough),
                       )
@@ -130,7 +131,7 @@ class Recommend extends StatelessWidget {
                   Image.network(val['indexRcmdPic']['picUrls'][0], width: ScreenUtil().setWidth(360),height: ScreenUtil().setHeight(350)),
                   Padding(
                     padding: EdgeInsets.only(left:5.0, top: 5.0,),
-                    child: Text(val['indexRcmdPic']['title'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
+                    child: Text(val['indexRcmdPic']['title'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.black54, fontSize: ScreenUtil().setSp(26))),
                   )
                 ]))); 
         }
