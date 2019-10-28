@@ -1,16 +1,11 @@
-# flutter_shop
+# Flutter_shop
 
-A new Flutter project.
+[]('doc/images/01.jpeg')
 
-## Getting Started
+**目前实现二维码生成与识别，定位，极光推送，选取图片等**
 
-This project is a starting point for a Flutter application.
+<img src="./doc/images/01.jpeg" alt="首页" width="200" />
+<img src="./doc/images/02.jpeg" alt="首页" width="200" />
+<img src="./doc/images/03.jpeg" alt="首页" width="200" />
+<img src="./doc/images/04.jpeg" alt="首页" width="200" />
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
