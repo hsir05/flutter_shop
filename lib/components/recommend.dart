@@ -5,6 +5,7 @@ import './title.dart';
 import '../routers/application.dart';
 
 class Recommend extends StatelessWidget {
+
   List<Map> recommendList=[];
   Recommend({Key key, this.recommendList}) : super(key: key);
 
@@ -104,7 +105,6 @@ class Recommend extends StatelessWidget {
             onTap:(){
               print('点击了火爆商品3');
               print(val['id']);
-              // Application.router.navigateTo(context,"/detail?id=${val['id']}");
                 if (val['id'] == null){
                   Fluttertoast.showToast(
                       msg: "暂无数据...",
@@ -127,7 +127,7 @@ class Recommend extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.network(val['indexRcmdPic']['picUrls'][0], width: ScreenUtil().setWidth(375),height: ScreenUtil().setHeight(360)),
+                  Image.network(val['indexRcmdPic']['picUrls'][0], width: ScreenUtil().setWidth(360),height: ScreenUtil().setHeight(350)),
                   Padding(
                     padding: EdgeInsets.only(left:5.0, top: 5.0,),
                     child: Text(val['indexRcmdPic']['title'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26))),
