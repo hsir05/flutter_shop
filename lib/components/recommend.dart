@@ -25,8 +25,8 @@ class Recommend extends StatelessWidget {
         if (val['type'] == 1) {
            return InkWell(
             onTap:(){
-              print('点击了火爆商品');
-                if (val['id'] != null){
+              print('点击了火爆商品1');
+                if (val['id'] == null){
                   Fluttertoast.showToast(
                       msg: "暂无数据...",
                       toastLength: Toast.LENGTH_SHORT,
@@ -60,8 +60,9 @@ class Recommend extends StatelessWidget {
         }else if (val['type'] == 2)  {
            return InkWell(
             onTap:(){
-               print('点击了火爆商品');
-              if (val['id'] != null){
+               print('点击了火爆商品2');
+               print(val['id']);
+              if (val['id'] == null){
                 Fluttertoast.showToast(
                     msg: "暂无数据...",
                     toastLength: Toast.LENGTH_SHORT,
@@ -101,9 +102,10 @@ class Recommend extends StatelessWidget {
         } else {
           return InkWell(
             onTap:(){
-              print('点击了火爆商品');
+              print('点击了火爆商品3');
+              print(val['id']);
               // Application.router.navigateTo(context,"/detail?id=${val['id']}");
-                if (val['id'] != null){
+                if (val['id'] == null){
                   Fluttertoast.showToast(
                       msg: "暂无数据...",
                       toastLength: Toast.LENGTH_SHORT,
