@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../routers/application.dart';
@@ -236,7 +237,7 @@ class _MemberPageState extends State<MemberPage> {
     } catch (e) {
       setState(() => this.barcode = 'Unknown error: $e');
     }
-    Application.router.navigateTo(context, "/scanResult?barcode=$barcode"); 
+    Application.router.navigateTo(context, "/scanResult?barcode=$barcode", transition: TransitionType.cupertinoFullScreenDialog); 
   }
 
   Widget _myCapital(context) {
@@ -299,7 +300,7 @@ class _MemberPageState extends State<MemberPage> {
     return InkWell(
       onTap: (){ 
         print(item['targetUrl']);
-        Application.router.navigateTo(context, item['targetUrl']);
+        Application.router.navigateTo(context, item['targetUrl'], transition: TransitionType.cupertinoFullScreenDialog);
       },
       child: Container(
       decoration: BoxDecoration(

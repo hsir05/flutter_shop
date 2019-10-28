@@ -30,7 +30,7 @@ Handler scanResultHandler = Handler(
     String barcode = params['barcode'].first;
      return SacnResult(barcode);
 });
-
+ 
 Handler orderHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return OrderPage();

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:fluro/fluro.dart';
 import './title.dart';
 import '../routers/application.dart';
 
@@ -37,7 +38,7 @@ class Recommend extends StatelessWidget {
                       fontSize: 14.0
                     );
                 }else {
-                  Application.router.navigateTo(context,"/detail?id=${val['id']}");
+                  Application.router.navigateTo(context,"/detail?id=${val['id']}", transition: TransitionType.cupertinoFullScreenDialog);
                 }
               },
             child: 
@@ -73,7 +74,7 @@ class Recommend extends StatelessWidget {
                     fontSize: 14.0
                   );
               }else {
-                Application.router.navigateTo(context,"/detail?id=${val['id']}");
+                Application.router.navigateTo(context,"/detail?id=${val['id']}", transition: TransitionType.cupertinoFullScreenDialog);
               }
             },
             child: 
@@ -115,7 +116,7 @@ class Recommend extends StatelessWidget {
                       fontSize: 14.0
                     );
                 }else {
-                  Application.router.navigateTo(context,"/detail?id=${val['id']}");
+                  Application.router.navigateTo(context,"/detail?id=${val['id']}", transition: TransitionType.cupertinoFullScreenDialog);
                 }
             },
             child: 
