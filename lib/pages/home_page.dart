@@ -45,9 +45,12 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                var data = snapshot.data['data'];
                List <Map> swiperDataList = (data['focus'] as List).cast();
               List <Map> navigatorList = (data['kingKongAreaV4'] as List).cast();
-              String advertesPicture = data['operationCfg'][0]['picUrls'][0];
+              String advertesPicture = '';
+              if(data['operationCfg'] != null){
+                advertesPicture = data['operationCfg'][0]['picUrls'][0];
+              }
               List <Map> specialList = (data['timePurchaseItems']['itemList'] as List).cast();
-              String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
+              // String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
               // List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
 
                return EasyRefresh(
@@ -57,10 +60,9 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                  children: <Widget>[
                    SwiperDiy(swiperDataList: swiperDataList,),
                    TopNavigator(navigatorList:navigatorList),
-                   AdBanner(advertesPicture:advertesPicture),
+                   advertesPicture == '' ? Text('') : AdBanner(advertesPicture:advertesPicture),
                   Special(specialList:specialList),
-                  FloorTitle(picture_address:floor1Title),
-                  // FloorContent(floorGoodsList:floor2),
+                  // FloorTitle(picture_address:floor1Title),
                   Recommend(recommendList:recomList)
                  ],
                ),
