@@ -6,7 +6,7 @@ class TitleWidget extends StatelessWidget {
   final String title;
   TitleWidget({Key key, this.title}) : super(key: key);
 
-  @override 
+  @override  
   Widget build(BuildContext context) {
       ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
       return Container(

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_shop/res/resources.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fluro/fluro.dart';
 import './title.dart';
 import '../routers/application.dart';
+import '../widgets/image.widget.dart';
 
 class Recommend extends StatelessWidget {
  
@@ -30,13 +32,7 @@ class Recommend extends StatelessWidget {
             onTap:(){
               print('点击了火爆商品1');
                 if (val['id'] == null){
-                  Fluttertoast.showToast(
-                      msg: "暂无数据...",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.CENTER,
-                      timeInSecForIos: 1,
-                      fontSize: 14.0
-                    );
+                  toast('暂无数据...');
                 }else {
                   Application.router.navigateTo(context,"/detail?id=${val['id']}", transition: TransitionType.cupertinoFullScreenDialog);
                 }
@@ -50,14 +46,15 @@ class Recommend extends StatelessWidget {
               child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                val['categoryItem']['listPicUrl'] == null ? Image.network('assets/images/bg.png') : Image.network(val['categoryItem']['listPicUrl'], width: ScreenUtil().setWidth(375),height: ScreenUtil().setHeight(360)),
+                ImageNet(url: val['categoryItem']['listPicUrl']),
+                // val['categoryItem']['listPicUrl'] == null ? Image.network('assets/images/bg.png') : Image.network(val['categoryItem']['listPicUrl'], width: ScreenUtil().setWidth(375),height: ScreenUtil().setHeight(360)),
                 Padding(
                   padding: EdgeInsets.all(5.0),
                   child: Text(val['categoryItem']['name'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.black87, fontSize: ScreenUtil().setSp(26))),
                 ),
                 Padding( 
                   padding: EdgeInsets.only(left:5.0),
-                  child: Text('￥${val['categoryItem']['retailPrice']}', style: TextStyle(color: Color.fromRGBO(180, 40, 45, 1)),),
+                  child: Text('￥${val['categoryItem']['retailPrice']}', style: TextStyle(color: Colours.app_main),),
                   )
               ])));
         }else if (val['type'] == 2)  {
@@ -66,13 +63,7 @@ class Recommend extends StatelessWidget {
                print('点击了火爆商品2');
                print(val['id']);
               if (val['id'] == null){
-                Fluttertoast.showToast(
-                    msg: "暂无数据...",
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.CENTER,
-                    timeInSecForIos: 1,
-                    fontSize: 14.0
-                  );
+               toast('暂无数据...');
               }else {
                 Application.router.navigateTo(context,"/detail?id=${val['id']}", transition: TransitionType.cupertinoFullScreenDialog);
               }
@@ -95,7 +86,7 @@ class Recommend extends StatelessWidget {
                     padding: EdgeInsets.only(left: 5.0),
                     child: Row(
                     children: <Widget>[
-                      Text('￥${val['pinItem']['price']}', style: TextStyle(color: Color.fromRGBO(180, 40, 45, 1))),
+                      Text('￥${val['pinItem']['price']}', style: TextStyle(color: Colours.app_main)),
                       Text(  '￥${val['pinItem']['originPrice']}',
                         style: TextStyle(color:Colors.black26,decoration: TextDecoration.lineThrough),
                       )
@@ -108,13 +99,7 @@ class Recommend extends StatelessWidget {
               print('点击了火爆商品3');
               print(val['id']);
                 if (val['id'] == null){
-                  Fluttertoast.showToast(
-                      msg: "暂无数据...",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.CENTER,
-                      timeInSecForIos: 1,
-                      fontSize: 14.0
-                    );
+                  toast('暂无数据...');
                 }else {
                   Application.router.navigateTo(context,"/detail?id=${val['id']}", transition: TransitionType.cupertinoFullScreenDialog);
                 }
@@ -144,5 +129,15 @@ class Recommend extends StatelessWidget {
     }else {
       return Text('加载中...');
     }
+  }
+
+  void toast(String msg) {
+    Fluttertoast.showToast(
+        msg: msg,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIos: 1,
+        fontSize: 14.0
+      );
   }
 }
