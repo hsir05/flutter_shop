@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-// import 'dart:convert';
 import 'dart:async';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/material_footer.dart';
 import 'package:flutter_easyrefresh/material_header.dart';
-// import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_shop/res/resources.dart';
 import '../service/service_method.dart';
 import '../components/adBanner.dart';
 import '../components/special.dart';
-// import '../components/leaderPhone.dart';
-import '../components/floorTitle.dart';
+// import '../components/floorTitle.dart';
 // import '../components/floorContent.dart';
 import '../components/recommend.dart';
 
@@ -37,7 +35,6 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
   Widget build(BuildContext context) {
     return Container(
        child: Scaffold(
-     
          body: FutureBuilder(
            future: request('homePageContext', null),
            builder: (context, snapshot) {
@@ -50,7 +47,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                 advertesPicture = data['operationCfg'][0]['picUrls'][0];
               }
               List <Map> specialList = (data['timePurchaseItems']['itemList'] as List).cast();
-              String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
+              // String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
               // List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
 
                return EasyRefresh(
@@ -62,7 +59,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                    TopNavigator(navigatorList:navigatorList),
                    advertesPicture == '' ? Text('') : AdBanner(advertesPicture:advertesPicture),
                   Special(specialList:specialList),
-                  FloorTitle(picture_address:floor1Title),
+                  // FloorTitle(picture_address:floor1Title),
                   Recommend(recommendList:recomList)
                  ],
                ),
@@ -118,7 +115,7 @@ class SwiperDiy extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Container(
-      color: Colors.white,
+      // color: Colors.white,
       padding: EdgeInsets.only(top:20.0),
       height: ScreenUtil().setHeight(420),
       width: ScreenUtil().setWidth(750),
@@ -161,7 +158,8 @@ class TopNavigator extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Image.network(item['picUrls'][0], width: ScreenUtil().setWidth(95), height: ScreenUtil().setHeight(95),),
-          Text(item['title'])
+          Gaps.vGap5,
+          Text(item['title'], style: TextStyles.textNormal12,)
         ],
       ),
     );

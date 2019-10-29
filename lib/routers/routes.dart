@@ -13,6 +13,7 @@ class Routes{
   static String vip = '/vip'; 
   static String scanqr = '/scanqr'; 
   static String scanResult = '/scanResult'; 
+  static String setting = '/setting';
 
 
   // static String searchPage = '/search';
@@ -30,8 +31,9 @@ class Routes{
     router.define(goldenCard, handler:goldenCardHandler);
     router.define(address, handler:addressHandler);
     router.define(vip, handler:vipHandler);
-    router.define(scanqr, handler: scanqrHandler);
-    router.define(scanResult, handler: scanResultHandler);
+    router.define(scanqr, handler: scanqrHandler); 
+    router.define(scanResult, handler: scanResultHandler); 
+    router.define(setting, handler: settingHandler); 
 
     // router.define(searchPage, handler:searchHandler);
     

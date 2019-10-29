@@ -10,12 +10,18 @@ import '../pages/address_page.dart';
 import '../pages/vip_page.dart'; 
 import '../pages/scan_qr_page.dart';
 import '../pages/scan_result_page.dart';
+import '../pages/setting_page.dart';
 
 // import '../pages/searchBar.dart';
 
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
   return IndexPage();
+});
+
+Handler settingHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>>params) {
+  return Setting();
 });
 
 Handler detailsHandler = Handler(

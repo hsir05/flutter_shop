@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/res/resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './title.dart';
 
@@ -14,7 +15,7 @@ class Special extends StatelessWidget {
       margin: EdgeInsets.only(top:10.0),
       child: Column(children: <Widget>[
         TitleWidget(title:title),
-        _specialList()
+        _specialList() 
       ],),
     );
   }
@@ -30,7 +31,7 @@ class Special extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border(
-            left: BorderSide(width: 0.5, color: Colors.black12)
+            left: BorderSide(width: 0.5, color: Colours.line)
           )
         ),
         child: Column(

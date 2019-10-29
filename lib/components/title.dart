@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/res/resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TitleWidget extends StatelessWidget {
@@ -14,11 +15,12 @@ class TitleWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border(
-          top: BorderSide(width: 0.5, color: Colors.black12),
-          bottom: BorderSide(width: 0.5, color: Colors.black12)
-        )
+          top: BorderSide(width: 0.5, color: Colours.line ),
+          bottom: BorderSide(width: 0.5, color: Colours.line)
+        ) 
       ),
-      child: Text(title, style: TextStyle(color: Colors.black87, fontSize: ScreenUtil().setSp(34), fontWeight: FontWeight.w700)),
+      // child: Text(title, style: TextStyle(color: Colors.black87, fontSize: ScreenUtil().setSp(34), fontWeight: FontWeight.w700)),
+      child: Text(title, style: TextStyles.textBoldDark18),
     );
   }
 }

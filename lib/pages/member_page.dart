@@ -72,38 +72,38 @@ class _MemberPageState extends State<MemberPage> {
     }
   ];
   final List<Map> capitalList = 
-  [
-    {
-      "fundType": 1,
-      "fundValue": "0",
-      "fundName": "回馈金",
-      "targetUrl": "/reward/index"
-      },
+    [
       {
-      "fundType": 2,
-      "fundValue": "0",
-      "fundName": "红包",
-      "targetUrl": "/redpacket"
-      },
-      {
-      "fundType": 3,
-      "fundValue": "0",
-      "fundName": "优惠券",
-      "targetUrl": "/coupon"
-      },
-      {
-      "fundType": 4,
-      "fundValue": "0",
-      "fundName": "津贴",
-      "targetUrl": "/bonus/index"
-      },
-      {
-      "fundType": 5,
-      "fundValue": "0",
-      "fundName": "礼品卡",
-      "targetUrl": "/giftCard/list"
-      }
-  ];
+        "fundType": 1,
+        "fundValue": "0",
+        "fundName": "回馈金",
+        "targetUrl": "/reward/index"
+        },
+        {
+        "fundType": 2,
+        "fundValue": "0",
+        "fundName": "红包",
+        "targetUrl": "/redpacket"
+        },
+        {
+        "fundType": 3,
+        "fundValue": "0",
+        "fundName": "优惠券",
+        "targetUrl": "/coupon"
+        },
+        {
+        "fundType": 4,
+        "fundValue": "0",
+        "fundName": "津贴",
+        "targetUrl": "/bonus/index"
+        },
+        {
+        "fundType": 5,
+        "fundValue": "0",
+        "fundName": "礼品卡",
+        "targetUrl": "/giftCard/list"
+        }
+    ];
 
   @override
   Widget build(BuildContext context) {
@@ -149,14 +149,19 @@ class _MemberPageState extends State<MemberPage> {
         ),
       child: Row(
         children: <Widget>[
-          Container(
-            width: ScreenUtil().setWidth(190),
-            height: ScreenUtil().setHeight(190),
+          InkWell(
+            onTap: (){
+               Application.router.navigateTo(context, "/setting", transition: TransitionType.inFromRight); 
+            },
+            child: Container(
+            width: ScreenUtil().setWidth(120),
+            height: ScreenUtil().setHeight(120),
             margin: EdgeInsets.only(left: 30.0, right: 15.0),
             child: CircleAvatar(
               radius: 50.0,
               backgroundColor: Colors.black54,
               backgroundImage: AssetImage("assets/images/avatar.png")),
+          ),
           ),
           Expanded(
             child: Column(
