@@ -8,11 +8,9 @@ import '../pages/security_page.dart';
 import '../pages/goldenCard_page.dart'; 
 import '../pages/address_page.dart'; 
 import '../pages/vip_page.dart'; 
-import '../pages/scan_qr_page.dart';
-import '../pages/scan_result_page.dart';
+import '../pages/scanQr_page.dart';
 import '../pages/setting_page.dart';
 
-// import '../pages/searchBar.dart';
 
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
@@ -30,12 +28,6 @@ Handler detailsHandler = Handler(
     return DetailsPage(itemId);
   }
 );
-
-Handler scanResultHandler = Handler(
-  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-    String barcode = params['barcode'].first;
-     return SacnResult(barcode);
-});
  
 Handler orderHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -67,13 +59,7 @@ Handler vipHandler = Handler(
   return VipPage();
 });
 
-Handler scanqrHandler = Handler(
+Handler scanQrHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-  return Scanqr();
+  return ScanQrPage();
 });
-
-
-// Handler searchHandler = Handler(
-//   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-//   return SearchBarDelegate();
-// });

@@ -177,7 +177,8 @@ class _MemberPageState extends State<MemberPage> {
           InkWell(
             onTap: () {
               print('识别二维码');
-              scanQr(context);
+              // scanQr(context);
+              Application.router.navigateTo(context, "/scanQr", transition: TransitionType.inFromRight); 
             },
               child: Container(
               width: ScreenUtil().setWidth(45),

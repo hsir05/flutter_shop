@@ -90,9 +90,9 @@ class Util {
   }
 
   static bool isWebsite(String str) {
+    // String url = decodeComponent(str);
     return RegExp(r"^((https|http|ftp|rtsp|mms)?:\/\/)[^\s]+").hasMatch(str);
   }
-
 }
 
 /*

@@ -11,12 +11,9 @@ class Routes{
   static String goldenCard = '/goldenCard';
   static String address = '/address'; 
   static String vip = '/vip'; 
-  static String scanqr = '/scanqr'; 
-  static String scanResult = '/scanResult'; 
+  static String scanQr = '/scanQr'; 
   static String setting = '/setting';
 
-
-  // static String searchPage = '/search';
   static void configureRoutes(Router router){
     router.notFoundHandler = new Handler(
       handlerFunc: (BuildContext context, Map<String, List<String>> params ){
@@ -31,11 +28,8 @@ class Routes{
     router.define(goldenCard, handler:goldenCardHandler);
     router.define(address, handler:addressHandler);
     router.define(vip, handler:vipHandler);
-    router.define(scanqr, handler: scanqrHandler); 
-    router.define(scanResult, handler: scanResultHandler); 
+    router.define(scanQr, handler: scanQrHandler); 
     router.define(setting, handler: settingHandler); 
 
-    // router.define(searchPage, handler:searchHandler);
-    
   }
 }
