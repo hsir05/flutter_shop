@@ -6,7 +6,7 @@ class ChildCategory with ChangeNotifier {
    String rightTopBanUrl = 'https://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png';
    int childIndex = 0;
 
-  getChildCategory(List list){
+  void getChildCategory(List list){
     childCategoryList=list;
     childIndex = 0;
     notifyListeners();

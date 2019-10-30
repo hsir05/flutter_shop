@@ -10,6 +10,7 @@ import '../pages/address_page.dart';
 import '../pages/vip_page.dart'; 
 import '../pages/scanQr_page.dart';
 import '../pages/setting_page.dart';
+import '../pages/theme_page.dart';
 
 
 Handler homeHandler = Handler(
@@ -62,4 +63,9 @@ Handler vipHandler = Handler(
 Handler scanQrHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return ScanQrPage();
+});
+
+Handler themeHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return ThemePage();
 });

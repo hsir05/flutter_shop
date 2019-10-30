@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../routers/application.dart';
+import 'package:fluro/fluro.dart';
 
 class Setting extends StatefulWidget {
   @override
@@ -13,7 +15,8 @@ class _SettingState extends State<Setting> {
     },
     {
       "icon": Icons.timer,
-      "name": '夜间模式'
+      "name": '夜间模式',
+      "url": '/theme'
     },
     {
       "icon": Icons.category,
@@ -33,7 +36,7 @@ class _SettingState extends State<Setting> {
                 }),
             title: Text("设置"), 
             centerTitle: true),
-        body: ListView.builder(
+        body: ListView.builder( 
           itemCount: list.length,
           itemBuilder: (BuildContext context, int index) {
             return Column(
@@ -42,7 +45,8 @@ class _SettingState extends State<Setting> {
                     title: Text((list[index]['name'])),
                     trailing: Icon(Icons.keyboard_arrow_right),
                     onTap: () {
-                      print(list[index]);
+                      print(list[index]['url']);
+                      Application.router.navigateTo(context, list[index]['url'], transition: TransitionType.inFromRight);
                     },
                   ),
                   Divider()

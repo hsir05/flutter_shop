@@ -36,12 +36,12 @@ class _ScanQrPageState extends State<ScanQrPage> {
             title: Text("扫描"), 
             centerTitle: true),
         body: Container(
-          child: webviewShow(barcode)
+          child: resultShow(barcode)
         ),
     );
   }
 
-   Widget webviewShow(data) {
+   Widget resultShow(data) {
     if (RegexUtil.isURL(data)) {
       return WebviewScaffold(
         url: data,
@@ -91,7 +91,7 @@ class _ScanQrPageState extends State<ScanQrPage> {
     if(await canLaunch(url)) {
       await launch(url);
     } else {
-        Fluttertoast.showToast(
+      Fluttertoast.showToast(
         msg: '不能访问...',
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,

@@ -19,8 +19,7 @@ class TitleWidget extends StatelessWidget {
           bottom: BorderSide(width: 0.5, color: Colours.line)
         ) 
       ),
-      // child: Text(title, style: TextStyle(color: Colors.black87, fontSize: ScreenUtil().setSp(34), fontWeight: FontWeight.w700)),
-      child: Text(title, style: TextStyles.textBoldDark18),
+      child: Text(title, style: TextStyles.textBold18),
     );
   }
 }

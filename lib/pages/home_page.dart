@@ -159,7 +159,7 @@ class TopNavigator extends StatelessWidget {
         children: <Widget>[
           Image.network(item['picUrls'][0], width: ScreenUtil().setWidth(95), height: ScreenUtil().setHeight(95),),
           Gaps.vGap5,
-          Text(item['title'], style: TextStyles.textNormal12,)
+          Text(item['title'], style: TextStyles.textSize12,)
         ],
       ),
     );

@@ -11,8 +11,9 @@ class Routes{
   static String goldenCard = '/goldenCard';
   static String address = '/address'; 
   static String vip = '/vip'; 
-  static String scanQr = '/scanQr'; 
+  static String scanQr = '/scanQr';  
   static String setting = '/setting';
+  static String theme = '/theme';
 
   static void configureRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -30,6 +31,7 @@ class Routes{
     router.define(vip, handler:vipHandler);
     router.define(scanQr, handler: scanQrHandler); 
     router.define(setting, handler: settingHandler); 
+    router.define(theme, handler: themeHandler); 
 
   }
 }
