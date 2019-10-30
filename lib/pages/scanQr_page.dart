@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:flutter/cupertino.dart';
-
+import 'package:flustars/flustars.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
-import '../tools/tools.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_shop/res/resources.dart';
+import '../widgets/button.widget.dart';
 
 class ScanQrPage extends StatefulWidget {
   @override
@@ -39,7 +42,7 @@ class _ScanQrPageState extends State<ScanQrPage> {
   }
 
    Widget webviewShow(data) {
-    if (Util.isWebsite(data)) {
+    if (RegexUtil.isURL(data)) {
       return WebviewScaffold(
         url: data,
         withZoom: false, // 是否缩放 
@@ -52,11 +55,49 @@ class _ScanQrPageState extends State<ScanQrPage> {
               animating: true,
             ))
       );
-    } else {
+    } if (RegexUtil.isMobileSimple(data)){
+      return Container(
+        alignment: Alignment.center,
+        margin: EdgeInsets.only(top: 130.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+              Button(
+                label: '电话号码:$data',
+                onPressed: (context) async {
+                    _launchURL('tel', data);
+                },
+              ),
+            Gaps.vGap50,
+            Button(
+                label: '发送信息:$data',
+                onPressed: (context) async {
+                    _launchURL('sms', data);
+                },
+              ),
+          ],
+        )
+        );
+    }else {
         return Container(
           padding: EdgeInsets.all(20.0),
           child: Center(child: Text(data)),
         );
+    }
+  }
+
+   void _launchURL(type, leaderPhone) async {
+    String url='$type:'+leaderPhone;
+    if(await canLaunch(url)) {
+      await launch(url);
+    } else {
+        Fluttertoast.showToast(
+        msg: '不能访问...',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIos: 1,
+        fontSize: 14.0
+      );
     }
   }
 
