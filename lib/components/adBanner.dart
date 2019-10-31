@@ -9,8 +9,7 @@ class AdBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Container(
-      padding: EdgeInsets.only(left: 10.0, right: 10.0),
-      child: Image.network(advertesPicture,),
+      child: Image.network(advertesPicture, height: ScreenUtil().setHeight(265),),
     );
   }
 }

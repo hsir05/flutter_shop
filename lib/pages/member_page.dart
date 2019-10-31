@@ -109,7 +109,8 @@ class _MemberPageState extends State<MemberPage> {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
-      backgroundColor: Color.fromRGBO(238, 238, 238, 1),
+      // backgroundColor: Color.fromRGBO(238, 238, 238, 1),
+
       body: ListView(
         children: <Widget>[
           _headTop(context),
