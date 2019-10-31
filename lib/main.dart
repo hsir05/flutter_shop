@@ -23,7 +23,6 @@ void main() async{
     ..provide(Provider<Counter>.value(counter))
     ..provide(Provider<Themer>.value(themer))
     ..provide(Provider<ChildCategory>.value(childCategory));
-
   runApp(ProviderNode(child:MyApp(),providers:providers));
 }
 
@@ -31,21 +30,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-     final router = Router();
+    final router = Router();
     Routes.configureRoutes(router);
     Application.router=router;
 
-    return Container(
-      child: MaterialApp(
-        title:'严选',
-        debugShowCheckedModeBanner: false,
-        onGenerateRoute: Application.router.generator,
-        theme: ThemeData(
-          primaryColor: Colours.app_main,
-          scaffoldBackgroundColor: Colors.white,
-        ),
-        home:IndexPage()
-      ),
+
+    return Provide<Themer>(
+      builder: (context,child,theme){
+          return MaterialApp(
+            title:'严选',
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: Application.router.generator,
+            theme: theme.getTheme(),
+            darkTheme: theme.getTheme(isDarkMode: true),
+
+            home:IndexPage()
+        );
+      }
     );
+     
+
+    // return MaterialApp(
+    //     title:'严选',
+    //     debugShowCheckedModeBanner: false,
+    //     onGenerateRoute: Application.router.generator,
+    //     theme: ThemeData(
+    //       primaryColor: Colours.app_main,
+    //       scaffoldBackgroundColor: Colors.white,
+    //     ),
+    //     home:IndexPage()
+    //   );
   }
 }
