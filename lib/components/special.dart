@@ -11,7 +11,7 @@ class Special extends StatelessWidget {
   Widget build(BuildContext context) {
     String title = '限时抢购';
     return Container(
-      height: ScreenUtil().setHeight(450),
+      height: ScreenUtil().setHeight(470),
       margin: EdgeInsets.only(top:10.0),
       child: Column(children: <Widget>[
         TitleWidget(title:title),
@@ -25,7 +25,7 @@ class Special extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        height: ScreenUtil().setHeight(280),
+        // height: ScreenUtil().setHeight(400),
         width: ScreenUtil().setWidth(250),
         padding: EdgeInsets.all(5.0),
         decoration: BoxDecoration(
@@ -36,7 +36,7 @@ class Special extends StatelessWidget {
         ),
         child: Column(
           children: <Widget>[
-            Image.network(specialList[index]['listPicUrl'], height: ScreenUtil().setHeight(260),),
+            Image.network(specialList[index]['listPicUrl'], height: ScreenUtil().setHeight(220),),
             Row(children: <Widget>[
               Text('￥${specialList[index]['actualPrice']}'),
               Text('￥${specialList[index]['retailPrice']}', style: TextStyle(decoration: TextDecoration.lineThrough, color: Colors.grey),)

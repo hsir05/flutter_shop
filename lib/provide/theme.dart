@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shop/common/common.dart';
 import 'package:flutter_shop/common/themes.dart';
 import 'package:flutter_shop/res/resources.dart';
-
-class Theme with ChangeNotifier {
+ 
+class Themer with ChangeNotifier {
   static const Map<Themes, String> themes = {
     Themes.DARK: "Dark", Themes.LIGHT : "Light", Themes.SYSTEM : "System"
   };
@@ -18,7 +18,7 @@ class Theme with ChangeNotifier {
     }
   }
 
-  void setTheme(Themes theme) {
+  setTheme(Themes theme) {
     SpUtil.putString(Constant.theme, themes[theme]);
     notifyListeners();
   }
@@ -72,7 +72,5 @@ class Theme with ChangeNotifier {
       )
     );
   }
-
-
 
 }

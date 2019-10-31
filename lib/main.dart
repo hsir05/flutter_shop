@@ -5,6 +5,7 @@ import 'package:flutter_shop/res/resources.dart';
 
 import './provide/child_category.dart';
 import './provide/counter.dart';
+import './provide/theme.dart';
 // import './provide/details_info.dart';
 import 'index_page.dart';
 import 'package:fluro/fluro.dart';
@@ -15,10 +16,12 @@ void main() async{
    await AMap.init('d090f6298f62ef936c3e9e9865cc2f34');
   var counter =Counter();
   var childCategory=ChildCategory();
+  var themer=Themer();
   var providers  =Providers();
   providers.provide(Provider<Counter>.value(counter));
   providers
     ..provide(Provider<Counter>.value(counter))
+    ..provide(Provider<Themer>.value(themer))
     ..provide(Provider<ChildCategory>.value(childCategory));
 
   runApp(ProviderNode(child:MyApp(),providers:providers));

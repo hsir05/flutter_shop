@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import '../model/details.dart';
 import '../service/service_method.dart';
 import 'dart:convert';
 
@@ -22,7 +21,6 @@ class DetailsInfoProvide with ChangeNotifier {
   getRecGoodsInfo(String id){
     var formData = {'itemId': id};
     request('recItemDetailRecById', formData).then((val){
-      // goodsInfo = DetailsModel.fromJson(val);
       notifyListeners();
     });
   }

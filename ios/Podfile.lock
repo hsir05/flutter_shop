@@ -33,6 +33,8 @@ PODS:
     - JPush
   - MJExtension (3.2.1)
   - MTBBarcodeScanner (5.0.11)
+  - path_provider (0.0.1):
+    - Flutter
   - shared_preferences (0.0.1):
     - Flutter
   - url_launcher (0.0.1):
@@ -46,6 +48,7 @@ DEPENDENCIES:
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - jpush_flutter (from `.symlinks/plugins/jpush_flutter/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
 
@@ -76,6 +79,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/image_picker/ios"
   jpush_flutter:
     :path: ".symlinks/plugins/jpush_flutter/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
   shared_preferences:
     :path: ".symlinks/plugins/shared_preferences/ios"
   url_launcher:
@@ -98,6 +103,7 @@ SPEC CHECKSUMS:
   jpush_flutter: d7e3a79466eb9447fd940233f02661b514f137c6
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
+  path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
   url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298
 
