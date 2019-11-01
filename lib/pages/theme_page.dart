@@ -6,9 +6,6 @@ import 'package:flutter_shop/common/themes.dart';
 import 'package:provide/provide.dart';
 import '../provide/theme.dart';
 
-// import 'package:flutter_deer/provider/theme_provider.dart';
-// import 'package:provider/provider.dart';
-
 class ThemePage extends StatefulWidget {
   @override
   _ThemePageState createState() => _ThemePageState();
@@ -63,8 +60,6 @@ class _ThemePageState extends State<ThemePage> {
                 print('+++++++++++++');
                 print(index);
                 Provide.value<Themer>(context).setTheme(index == 0 ? Themes.SYSTEM : (index == 1 ? Themes.DARK : Themes.LIGHT));
-
-                // Provider.of<ThemeProvider>(context).setTheme(index == 0 ? Themes.SYSTEM : (index == 1 ? Themes.DARK : Themes.LIGHT));
               },
               child: Container(
                 alignment: Alignment.centerLeft,
