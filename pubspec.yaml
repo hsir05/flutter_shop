@@ -46,6 +46,7 @@ dev_dependencies:
   flutter_webview_plugin: ^0.3.8
   image_picker: ^0.6.1+8
   flustars: ^0.2.6+1
+  city_pickers: ^0.1.28
   # path_provider: ^1.4.0
 
 # For information on the generic Dart part of this file, see the

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:amap_base/amap_base.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:city_pickers/city_pickers.dart';
+import '../widgets/button.widget.dart';
 
 class AddressPage extends StatefulWidget {
   @override
@@ -10,6 +12,9 @@ class AddressPage extends StatefulWidget {
 class _AddressPageState extends State<AddressPage> with AutomaticKeepAliveClientMixin{
   final _amapLocation = AMapLocation();
   List<Location> _result = [];
+
+  String _addressResult = '';
+
 
   @override
   bool get wantKeepAlive => true;
@@ -24,6 +29,17 @@ class _AddressPageState extends State<AddressPage> with AutomaticKeepAliveClient
   void dispose() {
       _amapLocation.stopLocate();
     super.dispose();
+  }
+
+    show(context) async {
+    Result temp  = await CityPickers.showCityPicker(
+      context: context,
+      // locationCode: '640221',
+      height: 400,
+    );
+    setState(() {
+      _addressResult = "${temp.toString()}";
+    });
   }
 
   void _initLocation() async {
@@ -60,11 +76,23 @@ class _AddressPageState extends State<AddressPage> with AutomaticKeepAliveClient
         body: Container(
           child: Column(
             children: <Widget>[
+              Button(
+                label: '地址联动',
+                onPressed: (context) {
+                  show(context);
+                },
+              ),
+
+              Container(
+                padding: EdgeInsets.all(10.0),
+                child: Text(_addressResult),
+              ),
+
                Flexible(
                 child: ListView(
                   children:  _result.map((location) => _ResultItem(location)).toList(),
                 ),
-          ),
+              ),
             ],
           ),
         )
