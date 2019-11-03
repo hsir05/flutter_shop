@@ -25,7 +25,6 @@ class Special extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        // height: ScreenUtil().setHeight(400),
         width: ScreenUtil().setWidth(250),
         padding: EdgeInsets.all(5.0),
         decoration: BoxDecoration(
@@ -40,7 +39,8 @@ class Special extends StatelessWidget {
             Row(children: <Widget>[
               Text('￥${specialList[index]['actualPrice']}'),
               Text('￥${specialList[index]['retailPrice']}', style: TextStyle(decoration: TextDecoration.lineThrough, color: Colors.grey),)
-            ],)
+            ],),
+            Text(specialList[index]['itemName']),
           ],
         ),
       ),
@@ -50,7 +50,7 @@ class Special extends StatelessWidget {
   // 横向列表
   Widget _specialList() {
     return Container(
-      height: ScreenUtil().setHeight(330),
+      height: ScreenUtil().setHeight(360),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: specialList.length,

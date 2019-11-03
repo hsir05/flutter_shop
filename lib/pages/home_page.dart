@@ -47,6 +47,8 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                 advertesPicture = data['operationCfg'][0]['picUrls'][0];
               }
               List <Map> specialList = (data['timePurchaseItems']['itemList'] as List).cast();
+              print('++++++++++');
+              print(specialList);
               // String floor1Title =data['operationCfg'][0]['picUrls'][0];//楼层1的标题图片
               // List<Map> floor2 = (data['categoryItemsV4'][1]['itemList'] as List).cast(); //楼层1商品和图片 
 
