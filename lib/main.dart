@@ -43,22 +43,9 @@ class MyApp extends StatelessWidget {
             onGenerateRoute: Application.router.generator,
             theme: theme.getTheme(),
             darkTheme: theme.getTheme(isDarkMode: true),
-
             home:IndexPage()
         );
       }
     );
-     
-
-    // return MaterialApp(
-    //     title:'严选',
-    //     debugShowCheckedModeBanner: false,
-    //     onGenerateRoute: Application.router.generator,
-    //     theme: ThemeData(
-    //       primaryColor: Colours.app_main,
-    //       scaffoldBackgroundColor: Colors.white,
-    //     ),
-    //     home:IndexPage()
-    //   );
   }
 }

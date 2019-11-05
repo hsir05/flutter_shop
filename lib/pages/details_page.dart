@@ -250,7 +250,12 @@ class DetailsPage extends StatelessWidget {
               childAspectRatio:1,
             ),
             itemBuilder: (context, index) {
-              return Image.network(picList[index], fit: BoxFit.cover,);
+              return Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                ),
+                child: Image.network(picList[index], fit: BoxFit.cover,),
+              );
             },
           );
     } else {
