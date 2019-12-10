@@ -32,7 +32,7 @@ class Recommend extends StatelessWidget {
             onTap:(){
               print('点击了火爆商品1');
                 if (val['id'] == null){
-                  toast('暂无数据...');
+                  toast('暂无数据...'); 
                 }else {
                   Application.router.navigateTo(context,"/detail?id=${val['id']}", transition: TransitionType.cupertinoFullScreenDialog);
                 }

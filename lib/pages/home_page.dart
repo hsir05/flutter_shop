@@ -7,6 +7,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/material_footer.dart';
 import 'package:flutter_easyrefresh/material_header.dart';
 import 'package:flutter_shop/res/resources.dart';
+
 import '../service/service_method.dart';
 import '../components/adBanner.dart';
 import '../components/special.dart';
@@ -33,8 +34,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
   
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: Scaffold(
+    return Scaffold(
          body: FutureBuilder(
            future: request('homePageContext', null),
            builder: (context, snapshot) {
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
                return EasyRefresh(
                  footer: MaterialFooter(),
                  header: MaterialHeader(),
-                 child: ListView(
+                 child: ListView( 
                  children: <Widget>[
                    SwiperDiy(swiperDataList: swiperDataList,),
                    TopNavigator(navigatorList:navigatorList),
@@ -86,8 +86,7 @@ class _HomePageState extends State<HomePage>with AutomaticKeepAliveClientMixin {
              }
            },
          ),
-       ),
-    );
+       );
   }
 
   void _getRecommend(){
