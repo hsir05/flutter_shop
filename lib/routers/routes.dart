@@ -32,6 +32,5 @@ class Routes{
     router.define(scanQr, handler: scanQrHandler); 
     router.define(setting, handler: settingHandler); 
     router.define(theme, handler: themeHandler); 
-
   }
 }

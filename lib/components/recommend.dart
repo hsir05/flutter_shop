@@ -47,7 +47,6 @@ class Recommend extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 ImageNet(url: val['categoryItem']['listPicUrl']),
-                // val['categoryItem']['listPicUrl'] == null ? Image.network('assets/images/bg.png') : Image.network(val['categoryItem']['listPicUrl'], width: ScreenUtil().setWidth(375),height: ScreenUtil().setHeight(360)),
                 Padding(
                   padding: EdgeInsets.all(5.0),
                   child: Text(val['categoryItem']['name'], maxLines:1, overflow:TextOverflow.ellipsis, style: TextStyle(color: Colors.black87, fontSize: ScreenUtil().setSp(26))),

@@ -11,7 +11,6 @@ class FloorContent extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
-            // _firstRow(),
             _otherGoods(),
         ],
       ),
@@ -32,7 +31,6 @@ class FloorContent extends StatelessWidget {
     return Row(children: <Widget>[
       _goodsItem(floorGoodsList[0]),
       _goodsItem(floorGoodsList[1]),
-      // _goodsItem(floorGoodsList[4])
     ],);
   }
 

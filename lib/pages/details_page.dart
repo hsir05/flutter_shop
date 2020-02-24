@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-// import 'package:provide/provide.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'dart:async';
-// import '../provide/details_info.dart';
 import '../service/service_method.dart';
 import '../tools/tools.dart';
 
@@ -84,8 +82,6 @@ class DetailsPage extends StatelessWidget {
                                   child: Title(leftTitle: "用户评价(${data['commentCount']})", rightTitle: "${data['itemStar']['goodCmtRate']}", fontSize:14.0),
                                 ),
                                 Divider(color: Colors.black12, height: 0,),
-                                // 评论内容
-                                // _comments(data['comments']),
                                 _commentItem(data['comments'][0]),
 
                                 Container(child: Html(data: itemDetail),), 

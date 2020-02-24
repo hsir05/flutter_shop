@@ -19,7 +19,6 @@ class _LocationDemoState extends State<LocationDemo>with AutomaticKeepAliveClien
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Theme.of(context).primaryColor,
       color: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

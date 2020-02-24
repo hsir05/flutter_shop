@@ -122,7 +122,6 @@ class _GoldenCardState extends State<GoldenCard> {
     if (image != null) {
       setState(() {
         _imageList.add(image);
-        // _imageStr = image;
       });
     }
   }

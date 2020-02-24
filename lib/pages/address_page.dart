@@ -15,7 +15,6 @@ class _AddressPageState extends State<AddressPage> with AutomaticKeepAliveClient
 
   String _addressResult = '';
 
-
   @override
   bool get wantKeepAlive => true;
 
@@ -34,7 +33,6 @@ class _AddressPageState extends State<AddressPage> with AutomaticKeepAliveClient
     show(context) async {
     Result temp  = await CityPickers.showCityPicker(
       context: context,
-      // locationCode: '640221',
       height: 400,
     );
     setState(() {

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provide/provide.dart';
-// import 'dart:convert';
-import '../model/category.dart';
 import '../provide/child_category.dart';
-import '../service/service_method.dart';
 
 class LeftCategoryNav extends StatefulWidget {
   @override

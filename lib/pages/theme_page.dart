@@ -57,8 +57,6 @@ class _ThemePageState extends State<ThemePage> {
           itemBuilder: (_, index){
             return InkWell(
               onTap: (){
-                print('+++++++++++++');
-                print(index);
                 Provide.value<Themer>(context).setTheme(index == 0 ? Themes.SYSTEM : (index == 1 ? Themes.DARK : Themes.LIGHT));
               },
               child: Container(

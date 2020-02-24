@@ -64,14 +64,14 @@ class _SearchContentViewState extends State<SearchContentView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left:10.0, right: 10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
             child: Text(
               '大家都在搜',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 14),
             ),
           ),
           SearchItemView(),
@@ -79,7 +79,7 @@ class _SearchContentViewState extends State<SearchContentView> {
             margin: EdgeInsets.only(top: 20),
             child: Text(
               '历史记录',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 14),
             ),
           ),
           SearchItemView()
@@ -105,7 +105,6 @@ class _SearchItemViewState extends State<SearchItemView> {
     return Container(
       child: Wrap(
         spacing: 10,
-        // runSpacing: 0,
         children: items.map((item) {
           return SearchItem(title: item);
         }).toList(),
@@ -130,7 +129,7 @@ class _SearchItemState extends State<SearchItem> {
         child: Chip(
           label: Text(widget.title),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10)
+            borderRadius: BorderRadius.circular(3)
           ),
         ),
         onTap: () {

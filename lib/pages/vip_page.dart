@@ -20,12 +20,9 @@ final JPush jpush = new JPush();
     initPlatformState();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     String platformVersion;
-    
 
-    // Platform messages may fail, so we use a try/catch PlatformException.
     jpush.getRegistrationID().then((rid) {
       setState(() {
           debugLable = "flutter getRegistrationID: $rid";

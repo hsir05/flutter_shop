@@ -6,7 +6,6 @@ import 'package:flutter_shop/res/resources.dart';
 import './provide/child_category.dart';
 import './provide/counter.dart';
 import './provide/theme.dart';
-// import './provide/details_info.dart';
 import 'index_page.dart';
 import 'package:fluro/fluro.dart';
 import './routers/routes.dart';
@@ -33,7 +32,6 @@ class MyApp extends StatelessWidget {
     final router = Router();
     Routes.configureRoutes(router);
     Application.router=router;
-
 
     return Provide<Themer>(
       builder: (context,child,theme){
